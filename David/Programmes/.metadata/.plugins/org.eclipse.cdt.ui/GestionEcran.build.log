@@ -1,0 +1,21 @@
+21:26:33 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/Micro/TpTrain/David/Programmes/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/Micro/TpTrain/David/Programmes/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2028	      0	      0	   2028	    7ec	GestionEcran.axf
+ 
+
+21:26:34 Build Finished (took 229ms)
+
