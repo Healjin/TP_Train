@@ -516,20 +516,68 @@ const unsigned char vga_fonts[] =
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x66,0x66,0x7e,0x66,0x66,0x00,0x7e,0x60,0x7c,0x60,0x60,0x60,0x00,0x00,0x00,
 };
 
-void Write_char(char character, uint8_t x,uint8_t y, uint8_t *color)
+void Write_char_with_background(char character, uint8_t x,uint8_t y, uint8_t *color_letter, uint8_t *color_background)
 {
 	Set_cursor(x, y);
 	Create_partial_screen( y, y+21 , x, x+7);
 	int pos_tab = (int)character * 22;
 	int i;
+	int shift;
+	uint8_t mask;
 	for(i = pos_tab; i < pos_tab + 22; i++){
-		unsigned char mask = 0x80;
-		int decal;
-		for (decal= 7; decal >= 0; decal--){
-			if((vga_fonts[i] & mask) >> decal)
-				Write_pixel(255,0,0);
+		mask = 0x80;
+		for (shift= 7; shift >= 0; shift--){
+			if((vga_fonts[i] & mask) >> shift)
+				Write_pixel(color_letter[0], color_letter[1], color_letter[2]);
 			else
-				Write_pixel(0,255,0);
+				Write_pixel(color_background[0], color_background[1], color_background[2]);
+			mask >>= 1;
+		}
+	}
+}
+
+void Write_char(char character, uint8_t x,uint8_t y, uint8_t *color_character)
+{
+	Set_cursor(x, y);
+	Create_partial_screen( y, y+LETTER_HEIGHT-1 , x, x+LETTER_WIDTH-1);
+	int pos_tab = (int)character * 22;
+	int x_actual = x; int y_actual = y;
+	uint8_t pixel_ignored = 0;
+	int i;
+	int shift;
+	uint8_t mask ;
+	for(i = pos_tab; i < pos_tab + 22; i++){
+		mask = 0x80;
+		for (shift = 7; shift >= 0; shift--){
+			if((vga_fonts[i] & mask) >> shift)
+			{
+				if(pixel_ignored)
+				{
+					Set_cursor(x_actual, y_actual);
+					pixel_ignored = 0;
+				}
+
+				Write_pixel(color_character[0], color_character[1], color_character[2]);
+
+				if((x_actual + 1) >= (x + LETTER_WIDTH))
+				{
+					x_actual = ((x_actual - x + 1) % (x + LETTER_WIDTH)) + x;
+					y_actual = ((y_actual - y + 1) % (y + LETTER_HEIGHT)) + y;
+				}
+				else
+					x_actual++;
+			}
+			else
+			{
+				pixel_ignored = 1;
+				if((x_actual + 1) >= (x + LETTER_WIDTH))
+				{
+					x_actual = ((x_actual - x + 1) % LETTER_WIDTH) + x;
+					y_actual = ((y_actual - y + 1) % LETTER_HEIGHT) + y;
+				}
+				else
+					x_actual++;
+			}
 			mask >>= 1;
 		}
 	}

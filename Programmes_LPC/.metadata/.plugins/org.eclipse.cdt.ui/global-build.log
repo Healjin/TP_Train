@@ -3191,3 +3191,862 @@ arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "Gestio
    text	   data	    bss	    dec	    hex	filename
  232568	      0	      0	 232568	  38c78	GestionEcran.axf
  
+22:34:43 **** Clean-only build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make clean 
+rm -rf  ./src/core_cm3.o ./src/system_LPC17xx.o  ./src/core_cm3.d ./src/system_LPC17xx.d  libCMSISv2p00_LPC17xx.a
+ 
+22:34:43 **** Clean-only build of configuration Debug for project StationDeGestion_TP_Train ****
+make clean 
+rm -rf  ./src/Ecran.o ./src/Images.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o  ./src/Ecran.d ./src/Images.d ./src/cr_startup_lpc176x.d ./src/crp.d ./src/main.d ./src/police.d  GestionEcran.axf
+ 
+22:34:44 **** Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+Building file: ../src/core_cm3.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -I../inc -O0 -Os -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/core_cm3.d" -MT"src/core_cm3.d" -o "src/core_cm3.o" "../src/core_cm3.c"
+Finished building: ../src/core_cm3.c
+ 
+Building file: ../src/system_LPC17xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -I../inc -O0 -Os -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/system_LPC17xx.d" -MT"src/system_LPC17xx.d" -o "src/system_LPC17xx.o" "../src/system_LPC17xx.c"
+arm-none-eabi-ar: creating libCMSISv2p00_LPC17xx.a
+Finished building: ../src/system_LPC17xx.c
+ 
+Building target: libCMSISv2p00_LPC17xx.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libCMSISv2p00_LPC17xx.a"  ./src/core_cm3.o ./src/system_LPC17xx.o   
+Finished building target: libCMSISv2p00_LPC17xx.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size libCMSISv2p00_LPC17xx.a ; # arm-none-eabi-objdump -h -S libCMSISv2p00_LPC17xx.a >libCMSISv2p00_LPC17xx.lss
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	core_cm3.o (ex libCMSISv2p00_LPC17xx.a)
+    400	      4	      0	    404	    194	system_LPC17xx.o (ex libCMSISv2p00_LPC17xx.a)
+ 
+22:34:45 **** Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/Ecran.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/Ecran.d" -MT"src/Ecran.d" -o "src/Ecran.o" "../src/Ecran.c"
+Finished building: ../src/Ecran.c
+ 
+Building file: ../src/Images.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/Images.d" -MT"src/Images.d" -o "src/Images.o" "../src/Images.c"
+Finished building: ../src/Images.c
+ 
+Building file: ../src/SPI.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/SPI.d" -MT"src/SPI.d" -o "src/SPI.o" "../src/SPI.c"
+Finished building: ../src/SPI.c
+ 
+Building file: ../src/cr_startup_lpc176x.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -Os -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc176x.d" -MT"src/cr_startup_lpc176x.d" -o "src/cr_startup_lpc176x.o" "../src/cr_startup_lpc176x.c"
+Finished building: ../src/cr_startup_lpc176x.c
+ 
+Building file: ../src/crp.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/crp.d" -MT"src/crp.d" -o "src/crp.o" "../src/crp.c"
+Finished building: ../src/crp.c
+ 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13520	      0	      0	  13520	   34d0	StationDeGestion_TP_Train.axf
+ 
+22:34:50 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+22:34:51 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+make: Nothing to be done for `all'.
+22:41:31 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+22:41:32 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c:538:6: error: conflicting types for 'Write_char_with_background'
+ void Write_char_with_background(char character, uint8_t x,uint8_t y, uint8_t *color)
+      ^
+../src/police.c:519:6: note: previous definition of 'Write_char_with_background' was here
+ void Write_char_with_background(char character, uint8_t x,uint8_t y, uint8_t *color_letter, uint8_t *color_background)
+      ^
+make: *** [src/police.o] Error 1
+22:50:33 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+22:50:34 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/police.c: In function 'Write_char':
+Finished building: ../src/main.c
+../src/police.c:553:17: error: 'color_letter' undeclared (first use in this function)
+ 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+     Write_pixel(color_letter[0], color_letter[1], color_letter[2]);
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+                 ^
+../src/police.c:553:17: note: each undeclared identifier is reported only once for each function it appears in
+../src/police.c:557:21: error: 'TRUE' undeclared (first use in this function)
+     pixel_ignored = TRUE;
+                     ^
+../src/police.c:544:10: warning: variable 'pixel_ignored' set but not used [-Wunused-but-set-variable]
+  uint8_t pixel_ignored;
+          ^
+make: *** [src/police.o] Error 1
+22:51:42 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+22:51:43 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13636	      0	      0	  13636	   3544	StationDeGestion_TP_Train.axf
+ 
+22:54:15 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+22:54:16 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+../src/main.c: In function 'main':
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:41:2: error: too many arguments to function 'Write_char'
+  Write_char('A',0,0,color,color_back);
+  ^
+In file included from ../src/main.c:14:0:
+../src/police.h:18:6: note: declared here
+ void Write_char(char character, uint8_t x,uint8_t y, uint8_t *color);
+      ^
+../src/main.c:44:2: error: too few arguments to function 'Write_char_with_background'
+  Write_char_with_background('B',90,90,color2);
+  ^
+In file included from ../src/main.c:14:0:
+../src/police.h:20:6: note: declared here
+ void Write_char_with_background(char character, uint8_t x,uint8_t y, uint8_t *color_letter, uint8_t *color_background);
+      ^
+make: *** [src/main.o] Error 1
+22:54:43 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+22:54:44 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13888	      0	      0	  13888	   3640	StationDeGestion_TP_Train.axf
+ 
+22:54:48 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+22:54:49 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+make: Nothing to be done for `all'.
+22:55:30 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+22:55:31 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13636	      0	      0	  13636	   3544	StationDeGestion_TP_Train.axf
+ 
+22:58:20 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+22:58:21 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13636	      0	      0	  13636	   3544	StationDeGestion_TP_Train.axf
+ 
+23:01:36 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:01:37 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13628	      0	      0	  13628	   353c	StationDeGestion_TP_Train.axf
+ 
+23:01:46 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:01:47 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+make: Nothing to be done for `all'.
+23:02:39 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:02:40 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13572	      0	      0	  13572	   3504	StationDeGestion_TP_Train.axf
+ 
+23:08:08 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:08:09 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13628	      0	      0	  13628	   353c	StationDeGestion_TP_Train.axf
+ 
+23:08:53 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:08:54 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+make: Nothing to be done for `all'.
+23:11:05 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:11:06 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13628	      0	      0	  13628	   353c	StationDeGestion_TP_Train.axf
+ 
+23:14:54 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:14:55 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13668	      0	      0	  13668	   3564	StationDeGestion_TP_Train.axf
+ 
+23:16:05 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:16:06 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13688	      0	      0	  13688	   3578	StationDeGestion_TP_Train.axf
+ 
+23:16:52 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:16:53 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13572	      0	      0	  13572	   3504	StationDeGestion_TP_Train.axf
+ 
+23:18:52 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:18:53 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13688	      0	      0	  13688	   3578	StationDeGestion_TP_Train.axf
+ 
+23:19:46 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:19:47 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13688	      0	      0	  13688	   3578	StationDeGestion_TP_Train.axf
+ 
+23:20:08 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:20:09 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13688	      0	      0	  13688	   3578	StationDeGestion_TP_Train.axf
+ 
+23:22:13 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:22:14 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13688	      0	      0	  13688	   3578	StationDeGestion_TP_Train.axf
+ 
+23:23:39 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:23:40 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c: In function 'Write_char':
+../src/police.c:581:6: error: expected expression before 'int'
+      int test ;
+      ^
+make: *** [src/police.o] Error 1
+23:23:50 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:23:51 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c: In function 'Write_char':
+../src/police.c:581:6: error: expected expression before 'int'
+      int test = 2;
+      ^
+make: *** [src/police.o] Error 1
+23:24:19 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:24:20 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c: In function 'Write_char':
+../src/police.c:581:6: error: expected expression before 'int'
+      int test = 2;
+      ^
+make: *** [src/police.o] Error 1
+23:24:52 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:24:53 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c: In function 'Write_char':
+../src/police.c:582:6: error: 'test' undeclared (first use in this function)
+      test = x_actual;
+      ^
+../src/police.c:582:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/police.c:580:9: warning: unused variable 'text' [-Wunused-variable]
+     int text;
+         ^
+make: *** [src/police.o] Error 1
+23:25:08 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:25:09 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c: In function 'Write_char':
+Finished building: ../src/police.c
+../src/police.c:580:9: warning: variable 'text' set but not used [-Wunused-but-set-variable]
+     int text;
+         ^
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13700	      0	      0	  13700	   3584	StationDeGestion_TP_Train.axf
+ 
+23:25:19 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:25:20 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+make: Nothing to be done for `all'.
+23:25:21 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:25:22 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+make: Nothing to be done for `all'.
+23:26:34 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:26:35 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13708	      0	      0	  13708	   358c	StationDeGestion_TP_Train.axf
+ 
+23:27:55 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:27:56 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13708	      0	      0	  13708	   358c	StationDeGestion_TP_Train.axf
+ 
+23:27:58 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:27:59 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+make: Nothing to be done for `all'.
+23:28:18 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:28:19 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13708	      0	      0	  13708	   358c	StationDeGestion_TP_Train.axf
+ 
+23:31:02 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:31:03 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13680	      0	      0	  13680	   3570	StationDeGestion_TP_Train.axf
+ 
+23:31:38 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:31:39 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13708	      0	      0	  13708	   358c	StationDeGestion_TP_Train.axf
+ 
+23:34:44 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13708	      0	      0	  13708	   358c	StationDeGestion_TP_Train.axf
+ 
+23:35:56 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c: In function 'Write_char':
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+../src/police.c:575:10: warning: unused variable 'test1' [-Wunused-variable]
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+      int test1 = (y_actual + 1) % (y + LETTER_HEIGHT);
+          ^
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13728	      0	      0	  13728	   35a0	StationDeGestion_TP_Train.axf
+ 
+23:37:18 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:37:19 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13720	      0	      0	  13720	   3598	StationDeGestion_TP_Train.axf
+ 
+23:38:17 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:38:18 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13712	      0	      0	  13712	   3590	StationDeGestion_TP_Train.axf
+ 
+23:39:28 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:39:29 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13720	      0	      0	  13720	   3598	StationDeGestion_TP_Train.axf
+ 
+23:41:01 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:41:02 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13724	      0	      0	  13724	   359c	StationDeGestion_TP_Train.axf
+ 
+23:41:49 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:41:50 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13744	      0	      0	  13744	   35b0	StationDeGestion_TP_Train.axf
+ 
+23:44:50 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:44:51 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2048	      0	      0	   2048	    800	StationDeGestion_TP_Train.axf
+ 
