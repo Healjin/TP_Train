@@ -52,7 +52,7 @@
 							<tool id="com.crt.advproject.link.exe.debug.1449074342" name="MCU Linker" superClass="com.crt.advproject.link.exe.debug">
 								<option id="com.crt.advproject.link.arch.847921284" name="Architecture" superClass="com.crt.advproject.link.arch" value="com.crt.advproject.link.target.cm3" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.thumb.759364406" name="Thumb mode" superClass="com.crt.advproject.link.thumb" value="true" valueType="boolean"/>
-								<option id="com.crt.advproject.link.script.810420459" name="Linker script" superClass="com.crt.advproject.link.script" value="&quot;GestionEcran_Debug.ld&quot;" valueType="string"/>
+								<option id="com.crt.advproject.link.script.810420459" name="Linker script" superClass="com.crt.advproject.link.script" value="&quot;StationDeGestion_TP_Train_Debug.ld&quot;" valueType="string"/>
 								<option id="com.crt.advproject.link.manage.1692758661" name="Manage linker script" superClass="com.crt.advproject.link.manage" value="true" valueType="boolean"/>
 								<option id="gnu.c.link.option.nostdlibs.83395872" name="No startup or default libs (-nostdlib)" superClass="gnu.c.link.option.nostdlibs" value="true" valueType="boolean"/>
 								<option id="gnu.c.link.option.other.144177624" name="Other options (-Xlinker [option])" superClass="gnu.c.link.option.other" valueType="stringList">
@@ -137,7 +137,7 @@
 							<tool id="com.crt.advproject.link.exe.release.1240439017" name="MCU Linker" superClass="com.crt.advproject.link.exe.release">
 								<option id="com.crt.advproject.link.arch.685245294" name="Architecture" superClass="com.crt.advproject.link.arch" value="com.crt.advproject.link.target.cm3" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.thumb.2056263143" name="Thumb mode" superClass="com.crt.advproject.link.thumb" value="true" valueType="boolean"/>
-								<option id="com.crt.advproject.link.script.1691501306" name="Linker script" superClass="com.crt.advproject.link.script" value="&quot;GestionEcran_Release.ld&quot;" valueType="string"/>
+								<option id="com.crt.advproject.link.script.1691501306" name="Linker script" superClass="com.crt.advproject.link.script" value="&quot;StationDeGestion_TP_Train_Release.ld&quot;" valueType="string"/>
 								<option id="com.crt.advproject.link.manage.565809651" name="Manage linker script" superClass="com.crt.advproject.link.manage" value="true" valueType="boolean"/>
 								<option id="gnu.c.link.option.nostdlibs.1212925131" name="No startup or default libs (-nostdlib)" superClass="gnu.c.link.option.nostdlibs" value="true" valueType="boolean"/>
 								<option id="gnu.c.link.option.other.1726735305" name="Other options (-Xlinker [option])" superClass="gnu.c.link.option.other" valueType="stringList">
