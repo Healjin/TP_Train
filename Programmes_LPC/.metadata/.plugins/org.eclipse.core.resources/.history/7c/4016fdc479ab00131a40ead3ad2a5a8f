@@ -1,0 +1,27 @@
+/*
+===============================================================================
+ Name        : main.c
+ Author      : 
+ Version     :
+ Copyright   : Copyright (C) 
+ Description : main definition
+===============================================================================
+*/
+
+#ifdef __USE_CMSIS
+#include "LPC17xx.h"
+#include "Ecran.h"
+#endif
+
+
+int main(void) {
+
+	Init_display();
+	Set_cursor(50,50);
+	/* Taille écran = 340x220 */
+	Create_partial_screen(0, 219, 50,339);
+	while(1) {
+		Write_pixel(39,0,0);
+	}
+	return 0 ;
+}

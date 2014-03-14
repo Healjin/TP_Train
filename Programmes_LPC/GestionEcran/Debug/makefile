@@ -29,7 +29,7 @@ all: GestionEcran.axf
 GestionEcran.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/David/Programmes/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build

@@ -1298,3 +1298,1075 @@ make: Nothing to be done for `all'.
 12:46:00 **** Incremental Build of configuration Debug for project GestionEcran ****
 make all 
 make: Nothing to be done for `all'.
+14:04:27 **** Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:04:28 **** Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+   1940	      0	      0	   1940	    794	GestionEcran.axf
+ 
+14:04:54 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:04:55 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2028	      0	      0	   2028	    7ec	GestionEcran.axf
+ 
+14:06:07 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:06:08 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2028	      0	      0	   2028	    7ec	GestionEcran.axf
+ 
+14:08:54 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:08:54 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+Finished building: ../src/main.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+../src/main.c:22:2: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+  Create_partial_screen(0, 219, 0,339);
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+  ^
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2028	      0	      0	   2028	    7ec	GestionEcran.axf
+ 
+14:09:20 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:09:20 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+Finished building: ../src/main.c
+../src/main.c:22:2: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+  Create_partial_screen(0, 219, 0,339);
+  ^
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2028	      0	      0	   2028	    7ec	GestionEcran.axf
+ 
+14:09:45 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:09:46 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2032	      0	      0	   2032	    7f0	GestionEcran.axf
+ 
+14:10:44 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:10:45 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2032	      0	      0	   2032	    7f0	GestionEcran.axf
+ 
+14:10:59 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:11:00 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2032	      0	      0	   2032	    7f0	GestionEcran.axf
+ 
+14:14:40 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:14:41 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c:518:1: error: expected '=', ',', ';', 'asm' or '__attribute__' at end of input
+ draw
+ ^
+make: *** [src/police.o] Error 1
+14:14:51 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:14:51 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2032	      0	      0	   2032	    7f0	GestionEcran.axf
+ 
+14:18:18 **** Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:18:19 **** Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:19:33 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:19:34 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:19:53 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:19:54 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:23:31 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:23:32 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2032	      0	      0	   2032	    7f0	GestionEcran.axf
+ 
+14:32:20 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:32:20 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c:518:28: error: unknown type name 'uint8_t'
+ Write_char(char character, uint8_t x,uint8_t y, uint8_t *color)
+                            ^
+../src/police.c:518:38: error: unknown type name 'uint8_t'
+ Write_char(char character, uint8_t x,uint8_t y, uint8_t *color)
+                                      ^
+../src/police.c:518:49: error: unknown type name 'uint8_t'
+ Write_char(char character, uint8_t x,uint8_t y, uint8_t *color)
+                                                 ^
+make: *** [src/police.o] Error 1
+14:32:51 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:32:51 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c:518:28: error: unknown type name 'uint8_t'
+ Write_char(char character, uint8_t x,uint8_t y, uint8_t *color)
+                            ^
+../src/police.c:518:38: error: unknown type name 'uint8_t'
+ Write_char(char character, uint8_t x,uint8_t y, uint8_t *color)
+                                      ^
+../src/police.c:518:49: error: unknown type name 'uint8_t'
+ Write_char(char character, uint8_t x,uint8_t y, uint8_t *color)
+                                                 ^
+make: *** [src/police.o] Error 1
+14:33:30 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:33:31 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+In file included from ../src/police.c:1:0:
+../src/police.h:17:1: warning: data definition has no type or storage class [enabled by default]
+ Write_char(char character, uint8_t x,uint8_t y, uint8_t *color);
+ ^
+../src/police.h:17:1: warning: type defaults to 'int' in declaration of 'Write_char' [-Wimplicit-int]
+../src/police.c:519:1: warning: return type defaults to 'int' [-Wreturn-type]
+ Write_char(char character, uint8_t x,uint8_t y, uint8_t *color)
+ ^
+../src/police.c: In function 'Write_char':
+../src/police.c:523:21: error: 'letter' undeclared (first use in this function)
+  int pos_tab = (int)letter * 22;
+                     ^
+../src/police.c:523:21: note: each undeclared identifier is reported only once for each function it appears in
+../src/police.c:524:2: error: 'for' loop initial declarations are only allowed in C99 mode
+  for(int i = pos_tab; i < pos_tab + 22; i++){
+  ^
+../src/police.c:524:2: note: use option -std=c99 or -std=gnu99 to compile your code
+../src/police.c:528:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/police.o] Error 1
+14:33:35 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:33:36 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+In file included from ../src/police.c:1:0:
+../src/police.h:17:1: warning: data definition has no type or storage class [enabled by default]
+ Write_char(char character, uint8_t x,uint8_t y, uint8_t *color);
+ ^
+../src/police.h:17:1: warning: type defaults to 'int' in declaration of 'Write_char' [-Wimplicit-int]
+../src/police.c:519:1: warning: return type defaults to 'int' [-Wreturn-type]
+ Write_char(char character, uint8_t x,uint8_t y, uint8_t *color)
+ ^
+../src/police.c: In function 'Write_char':
+../src/police.c:523:21: error: 'letter' undeclared (first use in this function)
+  int pos_tab = (int)letter * 22;
+                     ^
+../src/police.c:523:21: note: each undeclared identifier is reported only once for each function it appears in
+../src/police.c:524:2: error: 'for' loop initial declarations are only allowed in C99 mode
+  for(int i = pos_tab; i < pos_tab + 22; i++){
+  ^
+../src/police.c:524:2: note: use option -std=c99 or -std=gnu99 to compile your code
+../src/police.c:528:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/police.o] Error 1
+14:34:05 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:34:06 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+In file included from ../src/police.c:1:0:
+Finished building: ../src/police.c
+../src/police.h:17:1: warning: data definition has no type or storage class [enabled by default]
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ Write_char(char character, uint8_t x,uint8_t y, uint8_t *color);
+ 
+ ^
+../src/police.h:17:1: warning: type defaults to 'int' in declaration of 'Write_char' [-Wimplicit-int]
+make --no-print-directory post-build
+../src/police.c:519:1: warning: return type defaults to 'int' [-Wreturn-type]
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+ Write_char(char character, uint8_t x,uint8_t y, uint8_t *color)
+ ^
+../src/police.c: In function 'Write_char':
+../src/police.c:529:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+   2032	      0	      0	   2032	    7f0	GestionEcran.axf
+ 
+14:34:25 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:34:26 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2032	      0	      0	   2032	    7f0	GestionEcran.axf
+ 
+14:35:36 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:35:36 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:27:2: warning: implicit declaration of function 'Write_char' [-Wimplicit-function-declaration]
+  Write_char("A",0,0,[255,0,0])
+  ^
+../src/main.c:27:21: error: expected expression before '[' token
+  Write_char("A",0,0,[255,0,0])
+                     ^
+../src/main.c:27:25: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  Write_char("A",0,0,[255,0,0])
+                         ^
+../src/main.c:27:27: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  Write_char("A",0,0,[255,0,0])
+                           ^
+../src/main.c:32:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/main.o] Error 1
+14:36:38 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:36:38 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:26:26: error: expected expression before ',' token
+  uint8_t color[3] = {255,,0,0};
+                          ^
+../src/main.c:27:2: warning: implicit declaration of function 'Write_char' [-Wimplicit-function-declaration]
+  Write_char("A",0,0,[255,0,0])
+  ^
+../src/main.c:27:21: error: expected expression before '[' token
+  Write_char("A",0,0,[255,0,0])
+                     ^
+../src/main.c:27:25: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  Write_char("A",0,0,[255,0,0])
+                         ^
+../src/main.c:27:27: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  Write_char("A",0,0,[255,0,0])
+                           ^
+../src/main.c:26:10: warning: unused variable 'color' [-Wunused-variable]
+  uint8_t color[3] = {255,,0,0};
+          ^
+../src/main.c:32:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/main.o] Error 1
+14:36:51 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:36:52 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:26:26: error: expected expression before ',' token
+  uint8_t color[3] = {255,,0,0};
+                          ^
+../src/main.c:27:2: warning: implicit declaration of function 'Write_char' [-Wimplicit-function-declaration]
+  Write_char("A",0,0,color)
+  ^
+../src/main.c:28:2: error: expected ';' before 'while'
+  while(1) {
+  ^
+../src/main.c:32:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/main.o] Error 1
+14:37:03 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:37:04 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:27:2: warning: implicit declaration of function 'Write_char' [-Wimplicit-function-declaration]
+  Write_char("A",0,0,color)
+  ^
+../src/main.c:28:2: error: expected ';' before 'while'
+  while(1) {
+  ^
+../src/main.c:32:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/main.o] Error 1
+14:37:14 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:37:15 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:27:2: warning: implicit declaration of function 'Write_char' [-Wimplicit-function-declaration]
+Finished building: ../src/main.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+  Write_char("A",0,0,color);
+Finished building target: GestionEcran.axf
+ 
+  ^
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13460	      0	      0	  13460	   3494	GestionEcran.axf
+ 
+14:37:33 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:37:34 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+Finished building: ../src/main.c
+../src/main.c:28:2: warning: passing argument 1 of 'Write_char' makes integer from pointer without a cast [enabled by default]
+  Write_char("A",0,0,color);
+  ^
+In file included from ../src/main.c:14:0:
+../src/police.h:17:6: note: expected 'char' but argument is of type 'char *'
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13464	      0	      0	  13464	   3498	GestionEcran.axf
+ 
+ void Write_char(char character, uint8_t x,uint8_t y, uint8_t *color);
+      ^
+14:38:58 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:38:59 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+Finished building: ../src/main.c
+ 
+../src/main.c:32:2: warning: passing argument 1 of 'Write_char' makes integer from pointer without a cast [enabled by default]
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+  Write_char("A",0,0,color);
+   text	   data	    bss	    dec	    hex	filename
+  ^
+  13492	      0	      0	  13492	   34b4	GestionEcran.axf
+ 
+In file included from ../src/main.c:14:0:
+../src/police.h:17:6: note: expected 'char' but argument is of type 'char *'
+ void Write_char(char character, uint8_t x,uint8_t y, uint8_t *color);
+      ^
+14:39:26 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:39:26 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13480	      0	      0	  13480	   34a8	GestionEcran.axf
+ 
+14:40:25 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:40:26 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13492	      0	      0	  13492	   34b4	GestionEcran.axf
+ 
+14:42:41 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:42:41 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2200	      0	      0	   2200	    898	GestionEcran.axf
+ 
+14:43:14 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:43:14 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:45:19 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:45:20 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:45:46 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:45:47 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:47:08 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:47:09 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:48:25 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:48:26 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:48:44 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:50:02 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:50:03 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:51:56 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:51:57 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:52:35 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:52:36 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:53:31 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:55:08 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:55:08 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13492	      0	      0	  13492	   34b4	GestionEcran.axf
+ 
+14:55:54 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:55:55 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13492	      0	      0	  13492	   34b4	GestionEcran.axf
+ 
+14:57:30 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:57:31 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:58:12 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:58:13 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+14:59:24 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13504	      0	      0	  13504	   34c0	GestionEcran.axf
+ 
+14:59:53 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+14:59:54 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+15:01:08 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+15:04:06 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+15:04:59 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+15:04:59 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+15:05:03 **** Clean-only build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make clean 
+rm -rf  ./src/core_cm3.o ./src/system_LPC17xx.o  ./src/core_cm3.d ./src/system_LPC17xx.d  libCMSISv2p00_LPC17xx.a
+ 
+15:05:03 **** Clean-only build of configuration Debug for project GestionEcran ****
+make clean 
+rm -rf  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o  ./src/Ecran.d ./src/cr_startup_lpc176x.d ./src/crp.d ./src/main.d ./src/police.d  GestionEcran.axf
+ 
+15:05:04 **** Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+Building file: ../src/core_cm3.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -I../inc -O0 -Os -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/core_cm3.d" -MT"src/core_cm3.d" -o "src/core_cm3.o" "../src/core_cm3.c"
+Finished building: ../src/core_cm3.c
+ 
+Building file: ../src/system_LPC17xx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -I../inc -O0 -Os -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/system_LPC17xx.d" -MT"src/system_LPC17xx.d" -o "src/system_LPC17xx.o" "../src/system_LPC17xx.c"
+Finished building: ../src/system_LPC17xx.c
+ 
+arm-none-eabi-ar: creating libCMSISv2p00_LPC17xx.a
+Building target: libCMSISv2p00_LPC17xx.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libCMSISv2p00_LPC17xx.a"  ./src/core_cm3.o ./src/system_LPC17xx.o   
+Finished building target: libCMSISv2p00_LPC17xx.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size libCMSISv2p00_LPC17xx.a ; # arm-none-eabi-objdump -h -S libCMSISv2p00_LPC17xx.a >libCMSISv2p00_LPC17xx.lss
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	core_cm3.o (ex libCMSISv2p00_LPC17xx.a)
+    400	      4	      0	    404	    194	system_LPC17xx.o (ex libCMSISv2p00_LPC17xx.a)
+ 
+15:05:05 **** Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/Ecran.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/Ecran.d" -MT"src/Ecran.d" -o "src/Ecran.o" "../src/Ecran.c"
+../src/Ecran.c: In function 'Index_out':
+Finished building: ../src/Ecran.c
+../src/Ecran.c:36:6: warning: unused variable 'test' [-Wunused-variable]
+ 
+  int test = LPC_GPIO0->FIOPIN;
+      ^
+Building file: ../src/cr_startup_lpc176x.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -Os -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc176x.d" -MT"src/cr_startup_lpc176x.d" -o "src/cr_startup_lpc176x.o" "../src/cr_startup_lpc176x.c"
+Finished building: ../src/cr_startup_lpc176x.c
+ 
+Building file: ../src/crp.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/crp.d" -MT"src/crp.d" -o "src/crp.o" "../src/crp.c"
+Finished building: ../src/crp.c
+ 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+Finished building: ../src/police.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13504	      0	      0	  13504	   34c0	GestionEcran.axf
+ 
+15:05:26 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+15:05:58 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+15:06:44 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+15:11:59 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+15:12:50 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+15:12:51 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+15:15:04 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+15:15:05 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13492	      0	      0	  13492	   34b4	GestionEcran.axf
+ 
+15:33:06 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+15:33:08 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c: In function 'Write_char':
+Finished building: ../src/police.c
+../src/police.c:529:8: warning: unused variable 'test' [-Wunused-variable]
+    int test = (vga_fonts[bit] & mask) >> i;
+        ^
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13556	      0	      0	  13556	   34f4	GestionEcran.axf
+ 
+15:33:45 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+15:34:55 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+15:34:58 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+15:36:19 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+15:36:22 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+make: Nothing to be done for `all'.
+15:38:25 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+15:38:28 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c: In function 'Write_char':
+Finished building: ../src/police.c
+ 
+../src/police.c:529:8: warning: unused variable 'test' [-Wunused-variable]
+Building target: GestionEcran.axf
+    int test = (vga_fonts[i] & mask) >> decal;
+Invoking: MCU Linker
+        ^
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13556	      0	      0	  13556	   34f4	GestionEcran.axf
+ 
+15:39:00 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+15:39:03 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c: In function 'Write_char':
+Finished building: ../src/police.c
+../src/police.c:529:8: warning: unused variable 'test' [-Wunused-variable]
+ 
+    int test = (vga_fonts[i] & mask) >> decal;
+        ^
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13556	      0	      0	  13556	   34f4	GestionEcran.axf
+ 
+15:41:46 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+15:41:47 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c: In function 'Write_char':
+Finished building: ../src/police.c
+../src/police.c:529:8: warning: unused variable 'test' [-Wunused-variable]
+    int test = (vga_fonts[i] & mask) >> decal;
+        ^
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13556	      0	      0	  13556	   34f4	GestionEcran.axf
+ 
+15:43:23 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+15:43:24 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c: In function 'Write_char':
+Finished building: ../src/police.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+../src/police.c:529:8: warning: unused variable 'test' [-Wunused-variable]
+    int test = (vga_fonts[i] & mask) >> decal;
+        ^
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+   text	   data	    bss	    dec	    hex	filename
+  13540	      0	      0	  13540	   34e4	GestionEcran.axf
+ 
+15:48:56 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+15:48:57 **** Incremental Build of configuration Debug for project GestionEcran ****
+make all 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+../src/police.c: In function 'Write_char':
+Finished building: ../src/police.c
+ 
+Building target: GestionEcran.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="GestionEcran.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "GestionEcran_Debug.ld" -o "GestionEcran.axf"  ./src/Ecran.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: GestionEcran.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "GestionEcran.axf"; # arm-none-eabi-objcopy -O binary "GestionEcran.axf" "GestionEcran.bin" ; checksum -p LPC1769 -d "GestionEcran.bin";
+../src/police.c:529:8: warning: unused variable 'test' [-Wunused-variable]
+   text	   data	    bss	    dec	    hex	filename
+    int test = (vga_fonts[i] & mask) >> decal;
+        ^
+  13540	      0	      0	  13540	   34e4	GestionEcran.axf
+ 
