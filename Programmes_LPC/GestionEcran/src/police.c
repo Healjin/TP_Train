@@ -526,7 +526,6 @@ void Write_char(char character, uint8_t x,uint8_t y, uint8_t *color)
 		unsigned char mask = 0x80;
 		int decal;
 		for (decal= 7; decal >= 0; decal--){
-			int test = (vga_fonts[i] & mask) >> decal;
 			if((vga_fonts[i] & mask) >> decal)
 				Write_pixel(255,0,0);
 			else

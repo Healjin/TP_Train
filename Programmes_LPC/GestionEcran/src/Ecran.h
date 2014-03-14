@@ -14,6 +14,9 @@
 #define DISPLAY_CS 19
 #define DISPLAY_RS 18
 #define DISPLAY_WRB 20
+#define LCD_WIDTH 240
+#define LCD_HEIGHT 320
+#define SIZE_LCD 76800 // Number of pixels on the lcd
 
 void Init_ports_display();
 void Index_out(uint8_t idx);

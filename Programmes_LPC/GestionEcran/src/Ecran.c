@@ -33,7 +33,6 @@ void Index_out(uint8_t idx)
 	LPC_GPIO0->FIOPIN = idx << 4; // Index to send to the display
 	LPC_GPIO0->FIOMASK = 0; // Mask set to default
 
-	int test = LPC_GPIO0->FIOPIN;
 	/* -- Send index -- */
 	LPC_GPIO1->FIOCLR = 1 << DISPLAY_RS; // Set 0 on RS
 	LPC_GPIO1->FIOCLR = 1 << DISPLAY_CS; // Set 0 on CS

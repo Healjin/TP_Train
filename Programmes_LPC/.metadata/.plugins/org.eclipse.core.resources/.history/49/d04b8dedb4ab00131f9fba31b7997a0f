@@ -1,0 +1,16 @@
+#include "Images.h"
+
+ typedef struct {
+     const uint8_t *data;
+     uint16_t width;
+     uint16_t height;
+ } tImage;
+
+void Draw_Images(tImage *image)
+{
+	int size_array = (image->height * image->height)*3;
+	int i;
+	for (i = 0; i < size_array; i+3) {
+		Write_pixel(image->data[i],)
+	}
+}
