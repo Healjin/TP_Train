@@ -4,7 +4,7 @@ src/main.d: ../src/main.c \
  /Users/David/Google\ Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc/core_cmInstr.h \
  /Users/David/Google\ Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc/core_cmFunc.h \
  /Users/David/Google\ Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc/system_LPC17xx.h \
- ../src/Ecran.h ../src/police.h ../src/mario.h ../src/Images.h
+ ../src/Ecran.h ../src/police.h ../src/SPI.h
 
 /Users/David/Google\ Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc/LPC17xx.h:
 
@@ -20,6 +20,4 @@ src/main.d: ../src/main.c \
 
 ../src/police.h:
 
-../src/mario.h:
-
-../src/Images.h:
+../src/SPI.h:

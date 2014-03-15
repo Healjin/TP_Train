@@ -4702,3 +4702,511 @@ arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O b
    text	   data	    bss	    dec	    hex	filename
  244092	      0	      0	 244092	  3b97c	StationDeGestion_TP_Train.axf
  
+23:20:25 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:20:26 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/SPI.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/SPI.d" -MT"src/SPI.d" -o "src/SPI.o" "../src/SPI.c"
+Finished building: ../src/SPI.c
+ 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:52:2: error: unknown type name 'uint8'
+  uint8 test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
+  ^
+../src/main.c:53:2: error: unknown type name 'uint8'
+  uint8 test2 = Write_Read_SPI_8bits(0x00);
+  ^
+../src/main.c:54:2: error: unknown type name 'uint8'
+  uint8 test2 = Write_Read_SPI_8bits();
+  ^
+../src/main.c:54:8: error: redefinition of 'test2'
+  uint8 test2 = Write_Read_SPI_8bits();
+        ^
+../src/main.c:53:8: note: previous definition of 'test2' was here
+  uint8 test2 = Write_Read_SPI_8bits(0x00);
+        ^
+../src/main.c:54:2: error: too few arguments to function 'Write_Read_SPI_8bits'
+  uint8 test2 = Write_Read_SPI_8bits();
+  ^
+In file included from ../src/main.c:16:0:
+../src/SPI.h:23:9: note: declared here
+ uint8_t Write_Read_SPI_8bits(uint8_t datas);
+         ^
+../src/main.c:54:8: warning: unused variable 'test2' [-Wunused-variable]
+  uint8 test2 = Write_Read_SPI_8bits();
+        ^
+../src/main.c:52:8: warning: unused variable 'test1' [-Wunused-variable]
+  uint8 test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
+        ^
+make: *** [src/main.o] Error 1
+23:20:43 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:20:44 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:54:10: error: redefinition of 'test2'
+  uint8_t test2 = Write_Read_SPI_8bits();
+          ^
+../src/main.c:53:10: note: previous definition of 'test2' was here
+  uint8_t test2 = Write_Read_SPI_8bits(0x00);
+          ^
+../src/main.c:54:2: error: too few arguments to function 'Write_Read_SPI_8bits'
+  uint8_t test2 = Write_Read_SPI_8bits();
+  ^
+In file included from ../src/main.c:16:0:
+../src/SPI.h:23:9: note: declared here
+ uint8_t Write_Read_SPI_8bits(uint8_t datas);
+         ^
+../src/main.c:54:10: warning: unused variable 'test2' [-Wunused-variable]
+  uint8_t test2 = Write_Read_SPI_8bits();
+          ^
+../src/main.c:52:10: warning: unused variable 'test1' [-Wunused-variable]
+  uint8_t test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
+          ^
+make: *** [src/main.o] Error 1
+23:20:53 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:20:54 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:54:2: error: too few arguments to function 'Write_Read_SPI_8bits'
+  uint8_t test3 = Write_Read_SPI_8bits();
+  ^
+In file included from ../src/main.c:16:0:
+../src/SPI.h:23:9: note: declared here
+ uint8_t Write_Read_SPI_8bits(uint8_t datas);
+         ^
+../src/main.c:54:10: warning: unused variable 'test3' [-Wunused-variable]
+  uint8_t test3 = Write_Read_SPI_8bits();
+          ^
+../src/main.c:53:10: warning: unused variable 'test2' [-Wunused-variable]
+  uint8_t test2 = Write_Read_SPI_8bits(0x00);
+          ^
+../src/main.c:52:10: warning: unused variable 'test1' [-Wunused-variable]
+  uint8_t test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
+          ^
+make: *** [src/main.o] Error 1
+23:21:03 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:21:04 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:54:10: warning: unused variable 'test3' [-Wunused-variable]
+  uint8_t test3 = Write_Read_SPI_8bits(0x00);
+          ^
+../src/main.c:53:10: warning: unused variable 'test2' [-Wunused-variable]
+  uint8_t test2 = Write_Read_SPI_8bits(0x00);
+          ^
+../src/main.c:52:10: warning: unused variable 'test1' [-Wunused-variable]
+  uint8_t test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
+          ^
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+ 244284	      4	      0	 244288	  3ba40	StationDeGestion_TP_Train.axf
+ 
+23:21:15 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:21:17 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+make: Nothing to be done for `all'.
+23:22:55 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:22:56 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:55:10: warning: unused variable 'test3' [-Wunused-variable]
+  uint8_t test3 = Write_Read_SPI_8bits(0x00);
+          ^
+../src/main.c:54:10: warning: unused variable 'test2' [-Wunused-variable]
+  uint8_t test2 = Write_Read_SPI_8bits(0x00);
+          ^
+../src/main.c:53:10: warning: unused variable 'test1' [-Wunused-variable]
+  uint8_t test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
+          ^
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2244	      4	      0	   2248	    8c8	StationDeGestion_TP_Train.axf
+ 
+23:23:11 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:23:12 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+Finished building: ../src/main.c
+../src/main.c:55:10: warning: unused variable 'test3' [-Wunused-variable]
+ 
+  uint8_t test3 = Write_Read_SPI_8bits(0x00);
+Building target: StationDeGestion_TP_Train.axf
+          ^
+Invoking: MCU Linker
+../src/main.c:54:10: warning: unused variable 'test2' [-Wunused-variable]
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2244	      4	      0	   2248	    8c8	StationDeGestion_TP_Train.axf
+ 
+  uint8_t test2 = Write_Read_SPI_8bits(0x00);
+          ^
+../src/main.c:53:10: warning: unused variable 'test1' [-Wunused-variable]
+  uint8_t test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
+          ^
+23:25:00 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/SPI.c
+../src/SPI.c: In function 'Write_Read_SPI_8bits':
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/SPI.d" -MT"src/SPI.d" -o "src/SPI.o" "../src/SPI.c"
+../src/SPI.c:31:9: error: 'sLPC_SPI' undeclared (first use in this function)
+  while((sLPC_SPI->SPSR & (1 << SPIF)) == 0);
+         ^
+../src/SPI.c:31:9: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/SPI.o] Error 1
+23:25:06 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/SPI.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/SPI.d" -MT"src/SPI.d" -o "src/SPI.o" "../src/SPI.c"
+Finished building: ../src/SPI.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2244	      4	      0	   2248	    8c8	StationDeGestion_TP_Train.axf
+ 
+23:29:37 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:29:38 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+Finished building: ../src/main.c
+../src/main.c:53:2: warning: implicit declaration of function 'Valide_datas_bus_to_extlab2' [-Wimplicit-function-declaration]
+ 
+  Valide_datas_bus_to_extlab2();
+  ^
+../src/main.c:57:10: warning: unused variable 'test3' [-Wunused-variable]
+  uint8_t test3 = Write_Read_SPI_8bits(0x00);
+          ^
+../src/main.c:56:10: warning: unused variable 'test2' [-Wunused-variable]
+Building target: StationDeGestion_TP_Train.axf
+  uint8_t test2 = Write_Read_SPI_8bits(0x00);
+          ^
+../src/main.c:55:10: warning: unused variable 'test1' [-Wunused-variable]
+Invoking: MCU Linker
+  uint8_t test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
+          ^
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2260	      4	      0	   2264	    8d8	StationDeGestion_TP_Train.axf
+ 
+23:30:03 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:30:04 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/Ecran.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/Ecran.d" -MT"src/Ecran.d" -o "src/Ecran.o" "../src/Ecran.c"
+In file included from ../src/Ecran.c:2:0:
+../src/Ecran.h:31:1: warning: data definition has no type or storage class [enabled by default]
+ Valide_datas_bus_to_extlab2();
+ ^
+../src/Ecran.h:31:1: warning: type defaults to 'int' in declaration of 'Valide_datas_bus_to_extlab2' [-Wimplicit-int]
+../src/Ecran.c:19:6: error: conflicting types for 'Valide_datas_bus_to_extlab2'
+ void Valide_datas_bus_to_extlab2()
+      ^
+In file included from ../src/Ecran.c:2:0:
+../src/Ecran.h:31:1: note: previous declaration of 'Valide_datas_bus_to_extlab2' was here
+ Valide_datas_bus_to_extlab2();
+ ^
+make: *** [src/Ecran.o] Error 1
+23:30:18 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:30:19 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/Ecran.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/Ecran.d" -MT"src/Ecran.d" -o "src/Ecran.o" "../src/Ecran.c"
+Finished building: ../src/Ecran.c
+ 
+Building file: ../src/Images.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/Images.d" -MT"src/Images.d" -o "src/Images.o" "../src/Images.c"
+../src/main.c: In function 'main':
+Finished building: ../src/Images.c
+../src/main.c:57:10: warning: unused variable 'test3' [-Wunused-variable]
+ 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+  uint8_t test3 = Write_Read_SPI_8bits(0x00);
+          ^
+../src/main.c:56:10: warning: unused variable 'test2' [-Wunused-variable]
+Finished building: ../src/main.c
+ 
+Building file: ../src/police.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/police.d" -MT"src/police.d" -o "src/police.o" "../src/police.c"
+  uint8_t test2 = Write_Read_SPI_8bits(0x00);
+          ^
+../src/main.c:55:10: warning: unused variable 'test1' [-Wunused-variable]
+Finished building: ../src/police.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+  uint8_t test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
+          ^
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2260	      4	      0	   2264	    8d8	StationDeGestion_TP_Train.axf
+ 
+23:30:51 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+make: Nothing to be done for `all'.
+23:38:08 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:38:10 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/SPI.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/SPI.d" -MT"src/SPI.d" -o "src/SPI.o" "../src/SPI.c"
+../src/main.c: In function 'main':
+Finished building: ../src/SPI.c
+../src/main.c:57:10: warning: unused variable 'test3' [-Wunused-variable]
+ 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+  uint8_t test3 = Write_Read_SPI_8bits(0x00);
+          ^
+../src/main.c:56:10: warning: unused variable 'test2' [-Wunused-variable]
+  uint8_t test2 = Write_Read_SPI_8bits(0x00);
+          ^
+../src/main.c:55:10: warning: unused variable 'test1' [-Wunused-variable]
+  uint8_t test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
+Finished building: ../src/main.c
+ 
+          ^
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2244	      0	      0	   2244	    8c4	StationDeGestion_TP_Train.axf
+ 
+23:40:11 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:40:12 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/SPI.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/SPI.d" -MT"src/SPI.d" -o "src/SPI.o" "../src/SPI.c"
+Finished building: ../src/SPI.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2244	      0	      0	   2244	    8c4	StationDeGestion_TP_Train.axf
+ 
+23:41:01 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:41:02 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:57:10: warning: unused variable 'test3' [-Wunused-variable]
+Finished building: ../src/main.c
+ 
+  uint8_t test3 = Write_Read_SPI_8bits(0x80|0x10);
+Building target: StationDeGestion_TP_Train.axf
+          ^
+Invoking: MCU Linker
+../src/main.c:56:10: warning: unused variable 'test2' [-Wunused-variable]
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+  uint8_t test2 = Write_Read_SPI_8bits(0x00);
+Finished building target: StationDeGestion_TP_Train.axf
+          ^
+ 
+../src/main.c:55:10: warning: unused variable 'test1' [-Wunused-variable]
+  uint8_t test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
+          ^
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2244	      0	      0	   2244	    8c4	StationDeGestion_TP_Train.axf
+ 
+23:42:09 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:42:10 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2240	      0	      0	   2240	    8c0	StationDeGestion_TP_Train.axf
+ 
+23:43:29 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:43:30 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2256	      0	      0	   2256	    8d0	StationDeGestion_TP_Train.axf
+ 
+23:45:56 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:45:57 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+make: Nothing to be done for `all'.
+23:49:19 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:49:20 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2256	      0	      0	   2256	    8d0	StationDeGestion_TP_Train.axf
+ 
+23:58:30 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+23:58:31 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2268	      0	      0	   2268	    8dc	StationDeGestion_TP_Train.axf
+ 
