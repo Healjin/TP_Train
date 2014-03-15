@@ -1,0 +1,27 @@
+/*
+ * SPI.c
+ *
+ *  Created on: 14 mars 2014
+ *      Author: David
+ */
+#include "SPI.h"
+
+void Init_SPI_master_mode(uint8_t CPOL, uint32_t SPI_rate, uint8_t _16_or_8bits_com)
+{
+	LPC_SPI->SPCCR = SPI_rate / (SystemCoreClock / 4);
+}
+
+void Change_CS_SPI()
+{
+
+}
+
+void Write_only_SPI()
+{
+
+}
+
+void Write_Read_SPI()
+{
+
+}

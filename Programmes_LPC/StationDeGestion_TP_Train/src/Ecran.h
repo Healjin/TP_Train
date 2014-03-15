@@ -26,6 +26,8 @@ void Init_display();
 void Write_pixel(uint8_t red,uint8_t green,uint8_t blue);
 void Set_cursor(uint8_t x,uint8_t y);
 void Create_partial_screen(uint16_t v_start, uint16_t v_end, uint8_t h_start, uint8_t h_end);
+void Select_display_bus();
+void Select_control_bus();
 
 
 

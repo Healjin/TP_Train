@@ -19,5 +19,5 @@
      uint16_t height;
  } tImage;
 
-void Draw_Images(const tImage *image);
+void Draw_Image(const tImage *image);
 #endif /* IMAGES_H_ */

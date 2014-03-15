@@ -7,6 +7,7 @@ C_SRCS += \
 ../src/Ecran.c \
 ../src/Images.c \
 ../src/SPI.c \
+../src/Touchscreen.c \
 ../src/cr_startup_lpc176x.c \
 ../src/crp.c \
 ../src/main.c \
@@ -16,6 +17,7 @@ OBJS += \
 ./src/Ecran.o \
 ./src/Images.o \
 ./src/SPI.o \
+./src/Touchscreen.o \
 ./src/cr_startup_lpc176x.o \
 ./src/crp.o \
 ./src/main.o \
@@ -25,6 +27,7 @@ C_DEPS += \
 ./src/Ecran.d \
 ./src/Images.d \
 ./src/SPI.d \
+./src/Touchscreen.d \
 ./src/cr_startup_lpc176x.d \
 ./src/crp.d \
 ./src/main.d \
