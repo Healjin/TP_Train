@@ -14,7 +14,15 @@
 #include "police.h"
 //#include "mario.h"
 #include "SPI.h"
+#include "Touchscreen.h"
 #endif
+
+void EINT3_IRQHandler(void)
+{
+	int test = 0;
+	LPC_GPIOINT->IO2IntClr |= 1 << IRQ_Touchscreen;
+}
+
 
 //const tImage mario = {image_data_mario, 320, 240};
 
@@ -46,8 +54,18 @@ int main(void) {
 	/*uint8_t color2[3] = {255,255,255};
 	Write_char('B',90,90,color2);*/
 
-	/* -- SPI for touchscreen -- */
+	/* -- Test pressing on touchscreen, init interrupt -- */
+	LPC_GPIO2->FIODIR |= 0b111 << 11; // Bit for select input
+	LPC_GPIO2->FIOCLR = 0b111 << 11;
+	LPC_GPIO2->FIOSET = 0b101 << 11;
+	LPC_GPIO2->FIODIR &=~ 1 << IRQ_Touchscreen;
 
+	int test = LPC_GPIO2->FIOPIN;
+	NVIC_EnableIRQ(EINT3_IRQn);
+	LPC_GPIOINT->IO2IntEnF |= 1 << IRQ_Touchscreen;
+
+
+	/* -- SPI for touchscreen -- */
 	Select_control_bus();
 	LPC_GPIO0->FIODIR |= 1<<8;
 	LPC_GPIO0->FIOCLR = 1 << 8; // Select (/CS) touchscreen

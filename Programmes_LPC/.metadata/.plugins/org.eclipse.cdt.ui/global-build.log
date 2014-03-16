@@ -5210,3 +5210,226 @@ arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O b
    text	   data	    bss	    dec	    hex	filename
    2268	      0	      0	   2268	    8dc	StationDeGestion_TP_Train.axf
  
+09:47:29 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+09:47:30 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:17:2: error: invalid preprocessing directive #includ
+ #includ "Touchscreen.h"
+  ^
+../src/main.c: In function 'main':
+../src/main.c:58:32: error: 'IRQ_Touchscreen' undeclared (first use in this function)
+  LPC_GPIOINT->IO2IntEnF = 1 << IRQ_Touchscreen;
+                                ^
+../src/main.c:58:32: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/main.o] Error 1
+09:47:39 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+09:47:40 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2344	      0	      0	   2344	    928	StationDeGestion_TP_Train.axf
+ 
+09:52:48 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+09:52:49 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'EINT3_IRQHandler':
+Finished building: ../src/main.c
+ 
+../src/main.c:22:6: warning: unused variable 'test' [-Wunused-variable]
+  int test = 0;
+      ^
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2380	      0	      0	   2380	    94c	StationDeGestion_TP_Train.axf
+ 
+10:26:58 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:26:59 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'EINT3_IRQHandler':
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+../src/main.c:22:6: warning: unused variable 'test' [-Wunused-variable]
+  int test = 0;
+      ^
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2172	      0	      0	   2172	    87c	StationDeGestion_TP_Train.axf
+ 
+10:31:49 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:31:50 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'EINT3_IRQHandler':
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+../src/main.c:22:6: warning: unused variable 'test' [-Wunused-variable]
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+  int test = 0;
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+      ^
+   text	   data	    bss	    dec	    hex	filename
+   2188	      0	      0	   2188	    88c	StationDeGestion_TP_Train.axf
+ 
+10:38:33 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:38:34 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'EINT3_IRQHandler':
+Finished building: ../src/main.c
+../src/main.c:22:6: warning: unused variable 'test' [-Wunused-variable]
+ 
+  int test = 0;
+Building target: StationDeGestion_TP_Train.axf
+      ^
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2412	      0	      0	   2412	    96c	StationDeGestion_TP_Train.axf
+ 
+10:43:24 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:43:25 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+make: Nothing to be done for `all'.
+10:45:49 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:45:50 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'EINT3_IRQHandler':
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+../src/main.c:22:6: warning: unused variable 'test' [-Wunused-variable]
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+   2416	      0	      0	   2416	    970	StationDeGestion_TP_Train.axf
+ 
+  int test = 0;
+      ^
+../src/main.c: In function 'main':
+../src/main.c:63:6: warning: unused variable 'test' [-Wunused-variable]
+  int test = LPC_GPIO2->FIOPIN;
+      ^
+10:47:25 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:47:26 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'EINT3_IRQHandler':
+../src/main.c:22:6: warning: unused variable 'test' [-Wunused-variable]
+  int test = 0;
+      ^
+../src/main.c: In function 'main':
+../src/main.c:65:32: error: 'IRQ_Touchscren' undeclared (first use in this function)
+  LPC_GPIOINT->IO2IntEnF = 1 << IRQ_Touchscren;
+                                ^
+../src/main.c:65:32: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:63:6: warning: unused variable 'test' [-Wunused-variable]
+  int test = LPC_GPIO2->FIOPIN;
+      ^
+make: *** [src/main.o] Error 1
+10:47:54 **** Incremental Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:47:55 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'EINT3_IRQHandler':
+Finished building: ../src/main.c
+ 
+Building target: StationDeGestion_TP_Train.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
+Finished building target: StationDeGestion_TP_Train.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
+   text	   data	    bss	    dec	    hex	filename
+../src/main.c:22:6: warning: unused variable 'test' [-Wunused-variable]
+   2424	      0	      0	   2424	    978	StationDeGestion_TP_Train.axf
+ 
+  int test = 0;
+      ^
+../src/main.c: In function 'main':
+../src/main.c:63:6: warning: unused variable 'test' [-Wunused-variable]
+  int test = LPC_GPIO2->FIOPIN;
+      ^

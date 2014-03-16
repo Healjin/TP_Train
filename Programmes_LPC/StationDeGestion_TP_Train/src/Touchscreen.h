@@ -13,5 +13,6 @@
 #include <cr_section_macros.h>
 #include "SPI.h"
 
+#define IRQ_Touchscreen 0
 
 #endif /* TOUCHSCREEN_H_ */

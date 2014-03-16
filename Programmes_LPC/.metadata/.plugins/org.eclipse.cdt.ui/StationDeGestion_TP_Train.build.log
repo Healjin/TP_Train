@@ -1,8 +1,9 @@
-23:58:31 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+10:47:55 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
 make all 
 Building file: ../src/main.c
 Invoking: MCU C Compiler
 arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'EINT3_IRQHandler':
 Finished building: ../src/main.c
  
 Building target: StationDeGestion_TP_Train.axf
@@ -14,8 +15,15 @@ make --no-print-directory post-build
 Performing post-build steps
 arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
    text	   data	    bss	    dec	    hex	filename
-   2268	      0	      0	   2268	    8dc	StationDeGestion_TP_Train.axf
+../src/main.c:22:6: warning: unused variable 'test' [-Wunused-variable]
+   2424	      0	      0	   2424	    978	StationDeGestion_TP_Train.axf
  
+  int test = 0;
+      ^
+../src/main.c: In function 'main':
+../src/main.c:63:6: warning: unused variable 'test' [-Wunused-variable]
+  int test = LPC_GPIO2->FIOPIN;
+      ^
 
-23:58:31 Build Finished (took 313ms)
+10:47:55 Build Finished (took 311ms)
 
