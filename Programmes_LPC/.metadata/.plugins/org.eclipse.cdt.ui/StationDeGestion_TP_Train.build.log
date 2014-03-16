@@ -1,29 +1,34 @@
-10:47:55 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
+15:06:20 **** Incremental Build of configuration Debug for project StationDeGestion_TP_Train ****
 make all 
 Building file: ../src/main.c
 Invoking: MCU C Compiler
 arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
 ../src/main.c: In function 'EINT3_IRQHandler':
 Finished building: ../src/main.c
+../src/main.c:31:10: warning: unused variable 'test3' [-Wunused-variable]
  
+  uint8_t test3 = Write_Read_SPI_8bits(0xD8);
+          ^
 Building target: StationDeGestion_TP_Train.axf
 Invoking: MCU Linker
 arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf"  ./src/Ecran.o ./src/Images.o ./src/SPI.o ./src/Touchscreen.o ./src/cr_startup_lpc176x.o ./src/crp.o ./src/main.o ./src/police.o   -lCMSISv2p00_LPC17xx
 Finished building target: StationDeGestion_TP_Train.axf
  
 make --no-print-directory post-build
+../src/main.c:30:10: warning: unused variable 'test2' [-Wunused-variable]
+  uint8_t test2 = Write_Read_SPI_8bits(0xD9);
+          ^
+../src/main.c:26:10: warning: unused variable 'test1' [-Wunused-variable]
+  uint8_t test1 = Write_Read_SPI_8bits(0xD9); // Send options
+          ^
+../src/main.c:25:11: warning: unused variable 'test4' [-Wunused-variable]
+  uint32_t test4 = LPC_GPIO0->FIOPIN;
+           ^
 Performing post-build steps
 arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O binary "StationDeGestion_TP_Train.axf" "StationDeGestion_TP_Train.bin" ; checksum -p LPC1769 -d "StationDeGestion_TP_Train.bin";
    text	   data	    bss	    dec	    hex	filename
-../src/main.c:22:6: warning: unused variable 'test' [-Wunused-variable]
-   2424	      0	      0	   2424	    978	StationDeGestion_TP_Train.axf
+   2448	      0	      0	   2448	    990	StationDeGestion_TP_Train.axf
  
-  int test = 0;
-      ^
-../src/main.c: In function 'main':
-../src/main.c:63:6: warning: unused variable 'test' [-Wunused-variable]
-  int test = LPC_GPIO2->FIOPIN;
-      ^
 
-10:47:55 Build Finished (took 311ms)
+15:06:20 Build Finished (took 320ms)
 
