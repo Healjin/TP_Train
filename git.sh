@@ -1,1 +1,1 @@
-find . -d -name '.git' -exec find {} -name 'Icon?' -delete \;
+find . -iname 'Icon?' -exec rm -rfv {} +

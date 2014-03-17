@@ -17,10 +17,13 @@
 #include "Touchscreen.h"
 #endif
 
-// test ignore
-
 void EINT3_IRQHandler(void)
 {
+	//uint8_t test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
+	//uint8_t test2 = Write_Read_SPI_8bits(0x00);
+	//uint8_t test3 = Write_Read_SPI_8bits(0x80|0x10);
+
+
 	/* -- Clear interrupt on the touchscreen -- */
 	LPC_GPIOINT->IO2IntClr |= 1 << IRQ_Touchscreen;
 
@@ -80,9 +83,6 @@ int main(void) {
 	LPC_GPIO0->FIOCLR = 1 << 8; // Select (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();
 	Init_SPI_master_mode(0, 0, 100000, 8);
-	//uint8_t test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
-	//uint8_t test2 = Write_Read_SPI_8bits(0x00);
-	//uint8_t test3 = Write_Read_SPI_8bits(0x80|0x10);
 
 	while(1) {
 
