@@ -1,4 +1,4 @@
-19:20:46 **** Build of configuration Debug for project StationDeGestion_TP_Train ****
+19:26:05 **** Build of configuration Debug for project StationDeGestion_TP_Train ****
 make all 
 Building file: ../src/Ecran.c
 Invoking: MCU C Compiler
@@ -19,28 +19,28 @@ Building file: ../src/Touchscreen.c
 Invoking: MCU C Compiler
 arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/Touchscreen.d" -MT"src/Touchscreen.d" -o "src/Touchscreen.o" "../src/Touchscreen.c"
 ../src/main.c: In function 'EINT3_IRQHandler':
-Finished building: ../src/Touchscreen.c
 ../src/main.c:31:10: warning: unused variable 'test3' [-Wunused-variable]
- 
   uint8_t test3 = Write_Read_SPI_8bits(0xD8);
+Finished building: ../src/Touchscreen.c
           ^
+ 
 Building file: ../src/cr_startup_lpc176x.c
 ../src/main.c:30:10: warning: unused variable 'test2' [-Wunused-variable]
-Invoking: MCU C Compiler
   uint8_t test2 = Write_Read_SPI_8bits(0xD9);
+Invoking: MCU C Compiler
+          ^
+../src/main.c:26:10: warning: unused variable 'test1' [-Wunused-variable]
+  uint8_t test1 = Write_Read_SPI_8bits(0xD9); // Send options
 arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -Os -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc176x.d" -MT"src/cr_startup_lpc176x.d" -o "src/cr_startup_lpc176x.o" "../src/cr_startup_lpc176x.c"
           ^
 Finished building: ../src/cr_startup_lpc176x.c
-../src/main.c:26:10: warning: unused variable 'test1' [-Wunused-variable]
  
-  uint8_t test1 = Write_Read_SPI_8bits(0xD9); // Send options
-          ^
 ../src/main.c:25:11: warning: unused variable 'test4' [-Wunused-variable]
   uint32_t test4 = LPC_GPIO0->FIOPIN;
+           ^
 Building file: ../src/crp.c
 Invoking: MCU C Compiler
 arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_CMSIS=CMSISv2p00_LPC17xx -I"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/crp.d" -MT"src/crp.d" -o "src/crp.o" "../src/crp.c"
-           ^
 Finished building: ../src/crp.c
  
 Building file: ../src/main.c
@@ -65,5 +65,5 @@ arm-none-eabi-size "StationDeGestion_TP_Train.axf"; # arm-none-eabi-objcopy -O b
    2448	      0	      0	   2448	    990	StationDeGestion_TP_Train.axf
  
 
-19:20:47 Build Finished (took 1s.26ms)
+19:26:06 Build Finished (took 1s.240ms)
 

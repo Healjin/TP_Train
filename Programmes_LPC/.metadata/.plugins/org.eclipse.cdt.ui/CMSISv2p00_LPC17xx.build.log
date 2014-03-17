@@ -1,4 +1,4 @@
-19:20:45 **** Build of configuration Debug for project CMSISv2p00_LPC17xx ****
+19:26:04 **** Build of configuration Debug for project CMSISv2p00_LPC17xx ****
 make all 
 Building file: ../src/core_cm3.c
 Invoking: MCU C Compiler
@@ -8,12 +8,12 @@ Finished building: ../src/core_cm3.c
 Building file: ../src/system_LPC17xx.c
 Invoking: MCU C Compiler
 arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -I../inc -O0 -Os -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/system_LPC17xx.d" -MT"src/system_LPC17xx.d" -o "src/system_LPC17xx.o" "../src/system_LPC17xx.c"
+arm-none-eabi-ar: creating libCMSISv2p00_LPC17xx.a
 Finished building: ../src/system_LPC17xx.c
  
 Building target: libCMSISv2p00_LPC17xx.a
 Invoking: MCU Archiver
 arm-none-eabi-ar -r  "libCMSISv2p00_LPC17xx.a"  ./src/core_cm3.o ./src/system_LPC17xx.o   
-arm-none-eabi-ar: creating libCMSISv2p00_LPC17xx.a
 Finished building target: libCMSISv2p00_LPC17xx.a
  
 make --no-print-directory post-build
@@ -24,5 +24,5 @@ arm-none-eabi-size libCMSISv2p00_LPC17xx.a ; # arm-none-eabi-objdump -h -S libCM
     400	      4	      0	    404	    194	system_LPC17xx.o (ex libCMSISv2p00_LPC17xx.a)
  
 
-19:20:46 Build Finished (took 214ms)
+19:26:04 Build Finished (took 219ms)
 
