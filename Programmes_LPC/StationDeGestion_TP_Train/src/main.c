@@ -17,6 +17,8 @@
 #include "Touchscreen.h"
 #endif
 
+// test ignore
+
 void EINT3_IRQHandler(void)
 {
 	/* -- Clear interrupt on the touchscreen -- */
@@ -30,7 +32,6 @@ void EINT3_IRQHandler(void)
 	uint8_t test2 = Write_Read_SPI_8bits(0xD9);
 	uint8_t test3 = Write_Read_SPI_8bits(0xD8);
 }
-//salut
 
 
 //const tImage mario = {image_data_mario, 320, 240};
