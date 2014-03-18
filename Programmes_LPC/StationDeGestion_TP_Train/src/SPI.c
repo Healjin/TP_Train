@@ -18,7 +18,7 @@ void Init_SPI_master_mode(uint8_t S_CPHA, uint8_t S_CPOL, uint32_t SPI_rate, uin
 		LPC_SPI->SPCR |= BIT_ENABLE; // set 16bits mode on SPI
 
 	LPC_SPI->SPCR |= 1 << MODE_SELECT; // configure spi on master mode
-	LPC_SPI->SPCCR = 8; 	// SCK = pclk/8
+	LPC_SPI->SPCCR = 1000; 	// SCK = pclk/8
 }
 
 void Write_only_SPI_8bits(uint8_t datas)

@@ -17,6 +17,8 @@
 #include "Touchscreen.h"
 #endif
 
+int flag_interrupt = 0;
+
 void EINT3_IRQHandler(void)
 {
 	//uint8_t test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
@@ -25,15 +27,9 @@ void EINT3_IRQHandler(void)
 
 
 	/* -- Clear interrupt on the touchscreen -- */
-	LPC_GPIOINT->IO2IntClr |= 1 << IRQ_Touchscreen;
+	LPC_GPIOINT->IO2IntClr |= 1 << 10;
 
-	uint32_t test4 = LPC_GPIO0->FIOPIN;
-	uint8_t test1 = Write_Read_SPI_8bits(0xD9); // Send options
-	int i;
-	for (i = 0; i < 100; i++) {
-	}
-	uint8_t test2 = Write_Read_SPI_8bits(0xD9);
-	uint8_t test3 = Write_Read_SPI_8bits(0xD8);
+	flag_interrupt = 1;
 }
 
 
@@ -71,10 +67,10 @@ int main(void) {
 	LPC_GPIO2->FIODIR |= 0b111 << 11; // Bit for select input
 	LPC_GPIO2->FIOCLR = 0b111 << 11;
 	LPC_GPIO2->FIOSET = 0b101 << 11;
-	LPC_GPIO2->FIODIR &=~ 1 << IRQ_Touchscreen;
+	LPC_GPIO2->FIODIR &=~ (1 << IRQ_Touchscreen);
 
 	NVIC_EnableIRQ(EINT3_IRQn);
-	LPC_GPIOINT->IO2IntEnF |= 1 << IRQ_Touchscreen;
+	LPC_GPIOINT->IO2IntEnF |= 1 << 10;
 
 
 	/* -- SPI for touchscreen -- */
@@ -83,10 +79,17 @@ int main(void) {
 	LPC_GPIO0->FIOCLR = 1 << 8; // Select (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();
 	Init_SPI_master_mode(0, 0, 100000, 8);
+	LPC_PINCON->PINSEL0 |= 0x3 << 30; // SCK select
+	LPC_PINCON->PINSEL1 |= 0xF << 2; // Select MOSI and MISO
 
 	while(1) {
-
-
+		if(flag_interrupt == 1)
+		{
+			uint8_t test1 = Write_Read_SPI_8bits(0x80|0x10); // Send options
+			uint8_t test2 = Write_Read_SPI_8bits(0x00);
+			uint8_t test3 = Write_Read_SPI_8bits(0x80|0x10);
+			flag_interrupt = 0;
+		}
 	}
 	return 0 ;
 }

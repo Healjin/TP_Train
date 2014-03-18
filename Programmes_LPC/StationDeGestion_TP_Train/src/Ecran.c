@@ -4,14 +4,14 @@
 void Select_control_bus()
 {
 	/* -- Select control bus -- */
-	LPC_GPIO0->FIOPIN &=~ 0x3 << 21;
+	LPC_GPIO0->FIOPIN &=~ (0x3 << 21);
 	LPC_GPIO0->FIOPIN |= 0x3 << 21;
 }
 
 void Select_display_bus()
 {
 	/* -- Select display control -- */
-	LPC_GPIO0->FIOPIN &=~ 0x3 << 21;
+	LPC_GPIO0->FIOPIN &=~ (0x3 << 21);
 	LPC_GPIO0->FIOPIN |= 0x2 << 21;
 }
 
@@ -20,7 +20,7 @@ void Valide_datas_bus_to_extlab2()
 {
 	/* -- Validate all values set on P2 bus -- */
 	LPC_GPIO2->FIOPIN |= 1 << 8;
-	LPC_GPIO2->FIOPIN &=~ 1 << 8;
+	LPC_GPIO2->FIOPIN &=~ (1 << 8);
 }
 
 void Init_ports_display()
