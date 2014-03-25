@@ -1,0 +1,662 @@
+Archive member included because of file (symbol)
+
+/home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+                              ./src/cr_startup_lpc176x.o (SystemInit)
+/home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv7-m/libcr_c.a(__weak__main.o)
+                              ./src/cr_startup_lpc176x.o (__main)
+/home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_64.o)
+                              /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o) (__aeabi_uldivmod)
+/home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_idiv0.o)
+                              /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_64.o) (__aeabi_idiv0)
+
+Discarded input sections
+
+ .group         0x00000000        0x8 ./src/Ecran.o
+ .group         0x00000000        0x8 ./src/Ecran.o
+ .group         0x00000000        0x8 ./src/Ecran.o
+ .group         0x00000000        0x8 ./src/Ecran.o
+ .group         0x00000000        0x8 ./src/Ecran.o
+ .group         0x00000000        0x8 ./src/Ecran.o
+ .group         0x00000000        0x8 ./src/Ecran.o
+ .group         0x00000000        0x8 ./src/Ecran.o
+ .group         0x00000000        0x8 ./src/Ecran.o
+ .group         0x00000000        0x8 ./src/Ecran.o
+ .group         0x00000000        0x8 ./src/Ecran.o
+ .text          0x00000000        0x0 ./src/Ecran.o
+ .data          0x00000000        0x0 ./src/Ecran.o
+ .bss           0x00000000        0x0 ./src/Ecran.o
+ .group         0x00000000        0x8 ./src/Images.o
+ .group         0x00000000        0x8 ./src/Images.o
+ .group         0x00000000        0x8 ./src/Images.o
+ .group         0x00000000        0x8 ./src/Images.o
+ .group         0x00000000        0x8 ./src/Images.o
+ .group         0x00000000        0x8 ./src/Images.o
+ .group         0x00000000        0x8 ./src/Images.o
+ .group         0x00000000        0x8 ./src/Images.o
+ .group         0x00000000        0x8 ./src/Images.o
+ .group         0x00000000        0x8 ./src/Images.o
+ .group         0x00000000        0x8 ./src/Images.o
+ .text          0x00000000        0x0 ./src/Images.o
+ .data          0x00000000        0x0 ./src/Images.o
+ .bss           0x00000000        0x0 ./src/Images.o
+ .text.Draw_Image
+                0x00000000       0x64 ./src/Images.o
+ .debug_info    0x00000000      0x135 ./src/Images.o
+ .debug_abbrev  0x00000000       0xc5 ./src/Images.o
+ .debug_aranges
+                0x00000000       0x20 ./src/Images.o
+ .debug_ranges  0x00000000       0x10 ./src/Images.o
+ .debug_macro   0x00000000       0x91 ./src/Images.o
+ .debug_macro   0x00000000      0x856 ./src/Images.o
+ .debug_macro   0x00000000       0x1c ./src/Images.o
+ .debug_macro   0x00000000       0x2e ./src/Images.o
+ .debug_macro   0x00000000       0x10 ./src/Images.o
+ .debug_macro   0x00000000      0x122 ./src/Images.o
+ .debug_macro   0x00000000      0x5b9 ./src/Images.o
+ .debug_macro   0x00000000       0x18 ./src/Images.o
+ .debug_macro   0x00000000      0x7af ./src/Images.o
+ .debug_macro   0x00000000      0x2c7 ./src/Images.o
+ .debug_macro   0x00000000       0x76 ./src/Images.o
+ .debug_macro   0x00000000       0x2e ./src/Images.o
+ .debug_line    0x00000000      0x1e1 ./src/Images.o
+ .debug_str     0x00000000     0x808d ./src/Images.o
+ .comment       0x00000000       0x71 ./src/Images.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/Images.o
+ .debug_frame   0x00000000       0x30 ./src/Images.o
+ .group         0x00000000        0x8 ./src/SPI.o
+ .group         0x00000000        0x8 ./src/SPI.o
+ .group         0x00000000        0x8 ./src/SPI.o
+ .group         0x00000000        0x8 ./src/SPI.o
+ .group         0x00000000        0x8 ./src/SPI.o
+ .group         0x00000000        0x8 ./src/SPI.o
+ .group         0x00000000        0x8 ./src/SPI.o
+ .group         0x00000000        0x8 ./src/SPI.o
+ .group         0x00000000        0x8 ./src/SPI.o
+ .group         0x00000000        0x8 ./src/SPI.o
+ .group         0x00000000        0x8 ./src/SPI.o
+ .text          0x00000000        0x0 ./src/SPI.o
+ .data          0x00000000        0x0 ./src/SPI.o
+ .bss           0x00000000        0x0 ./src/SPI.o
+ .text.Init_SPI_master_mode
+                0x00000000       0x64 ./src/SPI.o
+ .text.Write_only_SPI_8bits
+                0x00000000       0x2c ./src/SPI.o
+ .debug_macro   0x00000000      0x856 ./src/SPI.o
+ .debug_macro   0x00000000       0x1c ./src/SPI.o
+ .debug_macro   0x00000000       0x2e ./src/SPI.o
+ .debug_macro   0x00000000       0x10 ./src/SPI.o
+ .debug_macro   0x00000000      0x122 ./src/SPI.o
+ .debug_macro   0x00000000      0x5b9 ./src/SPI.o
+ .debug_macro   0x00000000       0x18 ./src/SPI.o
+ .debug_macro   0x00000000      0x7af ./src/SPI.o
+ .debug_macro   0x00000000      0x2c7 ./src/SPI.o
+ .debug_macro   0x00000000       0x76 ./src/SPI.o
+ .group         0x00000000        0x8 ./src/Touchscreen.o
+ .text          0x00000000        0x0 ./src/Touchscreen.o
+ .data          0x00000000        0x0 ./src/Touchscreen.o
+ .bss           0x00000000        0x0 ./src/Touchscreen.o
+ .debug_info    0x00000000       0x21 ./src/Touchscreen.o
+ .debug_abbrev  0x00000000       0x13 ./src/Touchscreen.o
+ .debug_aranges
+                0x00000000       0x18 ./src/Touchscreen.o
+ .debug_macro   0x00000000       0x11 ./src/Touchscreen.o
+ .debug_macro   0x00000000      0x856 ./src/Touchscreen.o
+ .debug_line    0x00000000       0x35 ./src/Touchscreen.o
+ .debug_str     0x00000000     0x23db ./src/Touchscreen.o
+ .comment       0x00000000       0x71 ./src/Touchscreen.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/Touchscreen.o
+ .group         0x00000000        0x8 ./src/cr_startup_lpc176x.o
+ .group         0x00000000        0x8 ./src/cr_startup_lpc176x.o
+ .group         0x00000000        0x8 ./src/cr_startup_lpc176x.o
+ .group         0x00000000        0x8 ./src/cr_startup_lpc176x.o
+ .text          0x00000000        0x0 ./src/cr_startup_lpc176x.o
+ .data          0x00000000        0x0 ./src/cr_startup_lpc176x.o
+ .bss           0x00000000        0x0 ./src/cr_startup_lpc176x.o
+ .debug_macro   0x00000000       0x10 ./src/cr_startup_lpc176x.o
+ .debug_macro   0x00000000      0x122 ./src/cr_startup_lpc176x.o
+ .debug_macro   0x00000000      0x5b9 ./src/cr_startup_lpc176x.o
+ .group         0x00000000        0x8 ./src/crp.o
+ .group         0x00000000        0x8 ./src/crp.o
+ .text          0x00000000        0x0 ./src/crp.o
+ .data          0x00000000        0x0 ./src/crp.o
+ .bss           0x00000000        0x0 ./src/crp.o
+ .debug_macro   0x00000000      0x856 ./src/crp.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .text          0x00000000        0x0 ./src/main.o
+ .data          0x00000000        0x0 ./src/main.o
+ .bss           0x00000000        0x0 ./src/main.o
+ .debug_macro   0x00000000      0x856 ./src/main.o
+ .debug_macro   0x00000000       0x1c ./src/main.o
+ .debug_macro   0x00000000       0x2e ./src/main.o
+ .debug_macro   0x00000000       0x10 ./src/main.o
+ .debug_macro   0x00000000      0x122 ./src/main.o
+ .debug_macro   0x00000000      0x5b9 ./src/main.o
+ .debug_macro   0x00000000       0x18 ./src/main.o
+ .debug_macro   0x00000000      0x7af ./src/main.o
+ .debug_macro   0x00000000      0x2c7 ./src/main.o
+ .debug_macro   0x00000000       0x76 ./src/main.o
+ .debug_macro   0x00000000       0x28 ./src/main.o
+ .group         0x00000000        0x8 ./src/police.o
+ .group         0x00000000        0x8 ./src/police.o
+ .group         0x00000000        0x8 ./src/police.o
+ .group         0x00000000        0x8 ./src/police.o
+ .group         0x00000000        0x8 ./src/police.o
+ .group         0x00000000        0x8 ./src/police.o
+ .group         0x00000000        0x8 ./src/police.o
+ .group         0x00000000        0x8 ./src/police.o
+ .group         0x00000000        0x8 ./src/police.o
+ .group         0x00000000        0x8 ./src/police.o
+ .group         0x00000000        0x8 ./src/police.o
+ .group         0x00000000        0x8 ./src/police.o
+ .group         0x00000000        0x8 ./src/police.o
+ .text          0x00000000        0x0 ./src/police.o
+ .data          0x00000000        0x0 ./src/police.o
+ .bss           0x00000000        0x0 ./src/police.o
+ .debug_macro   0x00000000      0x856 ./src/police.o
+ .debug_macro   0x00000000       0x1c ./src/police.o
+ .debug_macro   0x00000000       0x2e ./src/police.o
+ .debug_macro   0x00000000       0x10 ./src/police.o
+ .debug_macro   0x00000000      0x122 ./src/police.o
+ .debug_macro   0x00000000      0x5b9 ./src/police.o
+ .debug_macro   0x00000000       0x18 ./src/police.o
+ .debug_macro   0x00000000      0x7af ./src/police.o
+ .debug_macro   0x00000000      0x2c7 ./src/police.o
+ .debug_macro   0x00000000       0x76 ./src/police.o
+ .debug_macro   0x00000000       0x2e ./src/police.o
+ .debug_macro   0x00000000       0xc4 ./src/police.o
+ .debug_macro   0x00000000       0x10 ./src/police.o
+ .group         0x00000000        0x8 ./src/uart.o
+ .group         0x00000000        0x8 ./src/uart.o
+ .group         0x00000000        0x8 ./src/uart.o
+ .group         0x00000000        0x8 ./src/uart.o
+ .group         0x00000000        0x8 ./src/uart.o
+ .group         0x00000000        0x8 ./src/uart.o
+ .group         0x00000000        0x8 ./src/uart.o
+ .group         0x00000000        0x8 ./src/uart.o
+ .group         0x00000000        0x8 ./src/uart.o
+ .text          0x00000000        0x0 ./src/uart.o
+ .data          0x00000000        0x0 ./src/uart.o
+ .bss           0x00000000        0x0 ./src/uart.o
+ .debug_macro   0x00000000      0x856 ./src/uart.o
+ .debug_macro   0x00000000       0x1c ./src/uart.o
+ .debug_macro   0x00000000       0x2e ./src/uart.o
+ .debug_macro   0x00000000       0x10 ./src/uart.o
+ .debug_macro   0x00000000      0x122 ./src/uart.o
+ .debug_macro   0x00000000      0x5b9 ./src/uart.o
+ .debug_macro   0x00000000       0x18 ./src/uart.o
+ .debug_macro   0x00000000      0x7af ./src/uart.o
+ .debug_macro   0x00000000      0x2c7 ./src/uart.o
+ .group         0x00000000        0x8 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .group         0x00000000        0x8 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .group         0x00000000        0x8 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .group         0x00000000        0x8 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .group         0x00000000        0x8 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .group         0x00000000        0x8 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .group         0x00000000        0x8 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .group         0x00000000        0x8 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .group         0x00000000        0x8 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .text          0x00000000        0x0 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .data          0x00000000        0x0 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .bss           0x00000000        0x0 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .text.SystemCoreClockUpdate
+                0x00000000       0xb0 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_macro   0x00000000       0x10 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_macro   0x00000000      0x122 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_macro   0x00000000      0x5b9 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_macro   0x00000000       0x1c /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_macro   0x00000000       0x2e /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_macro   0x00000000       0x18 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_macro   0x00000000      0x7af /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_macro   0x00000000      0x2c7 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .text          0x00000000        0x0 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv7-m/libcr_c.a(__weak__main.o)
+ .data          0x00000000        0x0 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv7-m/libcr_c.a(__weak__main.o)
+ .bss           0x00000000        0x0 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv7-m/libcr_c.a(__weak__main.o)
+ .text          0x00000000        0x0 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_64.o)
+ .data          0x00000000        0x0 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_64.o)
+ .bss           0x00000000        0x0 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_64.o)
+ .text.__aeabi_division_ldivmod
+                0x00000000       0x26 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_64.o)
+ .text.__aeabi_division_uldivmod
+                0x00000000      0x188 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_64.o)
+ .ARM.attributes
+                0x00000000       0x21 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_64.o)
+ .text          0x00000000        0x0 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_idiv0.o)
+ .data          0x00000000        0x0 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_idiv0.o)
+ .bss           0x00000000        0x0 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_idiv0.o)
+ .text.__aeabi_division_idiv0
+                0x00000000        0x2 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_idiv0.o)
+ .ARM.attributes
+                0x00000000       0x21 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a(division_idiv0.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+MFlash512        0x00000000         0x00080000         xr
+RamLoc32         0x10000000         0x00008000         xrw
+RamAHB32         0x2007c000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ./src/Ecran.o
+LOAD ./src/Images.o
+LOAD ./src/SPI.o
+LOAD ./src/Touchscreen.o
+LOAD ./src/cr_startup_lpc176x.o
+LOAD ./src/crp.o
+LOAD ./src/main.o
+LOAD ./src/police.o
+LOAD ./src/uart.o
+LOAD /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a
+START GROUP
+LOAD /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv7-m/libcr_c.a
+LOAD /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/armv7-m/libcr_eabihelpers.a
+END GROUP
+                0x00080000                __top_MFlash512 = 0x80000
+                0x10008000                __top_RamLoc32 = 0x10008000
+                0x20084000                __top_RamAHB32 = 0x20084000
+
+.text           0x00000000     0x38c8
+ FILL mask 0xff
+                0x00000000                __vectors_start__ = ABSOLUTE (.)
+ *(.isr_vector)
+ .isr_vector    0x00000000       0xcc ./src/cr_startup_lpc176x.o
+                0x00000000                g_pfnVectors
+                0x000000cc                . = ALIGN (0x4)
+                0x000000cc                __section_table_start = .
+                0x000000cc                __data_section_table = .
+                0x000000cc        0x4 LONG 0x38c8 LOADADDR (.data)
+                0x000000d0        0x4 LONG 0x10000000 ADDR (.data)
+                0x000000d4        0x4 LONG 0x4 SIZEOF (.data)
+                0x000000d8        0x4 LONG 0x38c8 LOADADDR (.data_RAM2)
+                0x000000dc        0x4 LONG 0x2007c000 ADDR (.data_RAM2)
+                0x000000e0        0x4 LONG 0x0 SIZEOF (.data_RAM2)
+                0x000000e4                __data_section_table_end = .
+                0x000000e4                __bss_section_table = .
+                0x000000e4        0x4 LONG 0x10000004 ADDR (.bss)
+                0x000000e8        0x4 LONG 0x0 SIZEOF (.bss)
+                0x000000ec        0x4 LONG 0x2007c000 ADDR (.bss_RAM2)
+                0x000000f0        0x4 LONG 0x0 SIZEOF (.bss_RAM2)
+                0x000000f4                __bss_section_table_end = .
+                0x000000f4                __section_table_end = .
+ *(.after_vectors*)
+ .after_vectors
+                0x000000f4       0x78 ./src/cr_startup_lpc176x.o
+                0x000000f4                NMI_Handler
+                0x000000f6                HardFault_Handler
+                0x000000f8                MemManage_Handler
+                0x000000fa                BusFault_Handler
+                0x000000fc                UsageFault_Handler
+                0x000000fe                SVC_Handler
+                0x00000100                DebugMon_Handler
+                0x00000102                PendSV_Handler
+                0x00000104                SysTick_Handler
+                0x00000106                TIMER2_IRQHandler
+                0x00000106                RIT_IRQHandler
+                0x00000106                I2C0_IRQHandler
+                0x00000106                USBActivity_IRQHandler
+                0x00000106                PWM1_IRQHandler
+                0x00000106                I2C1_IRQHandler
+                0x00000106                EINT2_IRQHandler
+                0x00000106                UART1_IRQHandler
+                0x00000106                CANActivity_IRQHandler
+                0x00000106                TIMER3_IRQHandler
+                0x00000106                UART0_IRQHandler
+                0x00000106                IntDefaultHandler
+                0x00000106                PLL0_IRQHandler
+                0x00000106                CAN_IRQHandler
+                0x00000106                PLL1_IRQHandler
+                0x00000106                SSP0_IRQHandler
+                0x00000106                I2S_IRQHandler
+                0x00000106                I2C2_IRQHandler
+                0x00000106                RTC_IRQHandler
+                0x00000106                TIMER0_IRQHandler
+                0x00000106                SPI_IRQHandler
+                0x00000106                EINT1_IRQHandler
+                0x00000106                TIMER1_IRQHandler
+                0x00000106                UART2_IRQHandler
+                0x00000106                ADC_IRQHandler
+                0x00000106                SSP1_IRQHandler
+                0x00000106                USB_IRQHandler
+                0x00000106                BOD_IRQHandler
+                0x00000106                WDT_IRQHandler
+                0x00000106                QEI_IRQHandler
+                0x00000106                EINT0_IRQHandler
+                0x00000106                DMA_IRQHandler
+                0x00000106                UART3_IRQHandler
+                0x00000106                MCPWM_IRQHandler
+                0x00000106                ENET_IRQHandler
+                0x00000108                data_init
+                0x0000011a                bss_init
+                0x0000012a                ResetISR
+                0x000002fc                . = 0x2fc
+ *fill*         0x0000016c      0x190 ff
+                0x000002fc                PROVIDE (__CRP_WORD_START__, .)
+ *(.crp)
+ .crp           0x000002fc        0x4 ./src/crp.o
+                0x000002fc                CRP_WORD
+                0x00000300                PROVIDE (__CRP_WORD_END__, .)
+                0x00000001                ASSERT (! ((__CRP_WORD_START__ == __CRP_WORD_END__)), Linker CRP Enabled, but no CRP_WORD provided within application)
+ *(.text*)
+ .text.Select_control_bus
+                0x00000300       0x28 ./src/Ecran.o
+                0x00000300                Select_control_bus
+ .text.Select_display_bus
+                0x00000328       0x28 ./src/Ecran.o
+                0x00000328                Select_display_bus
+ .text.Valide_datas_bus_to_extlab2
+                0x00000350       0x2c ./src/Ecran.o
+                0x00000350                Valide_datas_bus_to_extlab2
+ .text.Init_ports_display
+                0x0000037c       0x78 ./src/Ecran.o
+                0x0000037c                Init_ports_display
+ .text.Index_out
+                0x000003f4       0x64 ./src/Ecran.o
+                0x000003f4                Index_out
+ .text.Parameter_out
+                0x00000458       0x8c ./src/Ecran.o
+                0x00000458                Parameter_out
+ .text.Set_gamma
+                0x000004e4       0x84 ./src/Ecran.o
+                0x000004e4                Set_gamma
+ .text.Send_color
+                0x00000568       0x54 ./src/Ecran.o
+                0x00000568                Send_color
+ .text.Init_display
+                0x000005bc       0x64 ./src/Ecran.o
+                0x000005bc                Init_display
+ .text.Write_pixel
+                0x00000620       0x38 ./src/Ecran.o
+                0x00000620                Write_pixel
+ .text.Set_cursor
+                0x00000658       0x34 ./src/Ecran.o
+                0x00000658                Set_cursor
+ .text.Create_partial_screen
+                0x0000068c       0x4c ./src/Ecran.o
+                0x0000068c                Create_partial_screen
+ .text.Write_Read_SPI_8bits
+                0x000006d8       0x34 ./src/SPI.o
+                0x000006d8                Write_Read_SPI_8bits
+ .text.EINT3_IRQHandler
+                0x0000070c       0x58 ./src/main.o
+                0x0000070c                EINT3_IRQHandler
+ .text.main     0x00000764       0x98 ./src/main.o
+                0x00000764                main
+ .text.Write_char_with_background
+                0x000007fc       0xd0 ./src/police.o
+                0x000007fc                Write_char_with_background
+ .text.Write_char
+                0x000008cc      0x190 ./src/police.o
+                0x000008cc                Write_char
+ .text.Write_string_with_background
+                0x00000a5c       0x54 ./src/police.o
+                0x00000a5c                Write_string_with_background
+ .text.Write_string
+                0x00000ab0       0x50 ./src/police.o
+                0x00000ab0                Write_string
+ .text.Uart0_init
+                0x00000b00       0xac ./src/uart.o
+                0x00000b00                Uart0_init
+ .text.Send_uart
+                0x00000bac       0x20 ./src/uart.o
+                0x00000bac                Send_uart
+ .text.SystemInit
+                0x00000bcc       0xe0 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+                0x00000bcc                SystemInit
+ .text.__weak_main
+                0x00000cac        0x4 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv7-m/libcr_c.a(__weak__main.o)
+                0x00000cac                __main
+                0x00000cac                __weak_main
+ *(.rodata .rodata.* .constdata .constdata.*)
+ .rodata        0x00000cb0       0x18 ./src/main.o
+ .rodata.vga_fonts
+                0x00000cc8     0x2c00 ./src/police.o
+                0x00000cc8                vga_fonts
+                0x000038c8                . = ALIGN (0x4)
+
+.glue_7         0x000038c8        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x000038c8        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x000038c8        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x000038c8        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x000038c8        0x0
+ .iplt          0x00000000        0x0 ./src/Ecran.o
+
+.rel.dyn        0x000038c8        0x0
+ .rel.iplt      0x00000000        0x0 ./src/Ecran.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x000038c8                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x000038c8                __exidx_end = .
+                0x000038c8                _etext = .
+
+.data_RAM2      0x2007c000        0x0 load address 0x000038c8
+ FILL mask 0xff
+ *(.ramfunc.$RAM2)
+ *(.data.$RAM2*)
+ *(.data.$RamAHB32*)
+                0x2007c000                . = ALIGN (0x4)
+
+.uninit_RESERVED
+                0x10000000        0x0
+ *(.bss.$RESERVED*)
+                0x10000000                . = ALIGN (0x4)
+                0x10000000                _end_uninit_RESERVED = .
+
+.data           0x10000000        0x4 load address 0x000038c8
+ FILL mask 0xff
+                0x10000000                _data = .
+ *(vtable)
+ *(.ramfunc*)
+ *(.data*)
+ .data.SystemCoreClock
+                0x10000000        0x4 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+                0x10000000                SystemCoreClock
+                0x10000004                . = ALIGN (0x4)
+                0x10000004                _edata = .
+
+.igot.plt       0x10000004        0x0 load address 0x000038cc
+ .igot.plt      0x00000000        0x0 ./src/Ecran.o
+
+.bss_RAM2       0x2007c000        0x0
+ *(.bss.$RAM2*)
+ *(.bss.$RamAHB32*)
+                0x2007c000                . = ALIGN (0x4)
+
+.bss            0x10000004        0x0
+                0x10000004                _bss = .
+ *(.bss*)
+ *(COMMON)
+                0x10000004                . = ALIGN (0x4)
+                0x10000004                _ebss = .
+                0x10000004                PROVIDE (end, .)
+
+.noinit_RAM2    0x2007c000        0x0
+ *(.noinit.$RAM2*)
+ *(.noinit.$RamAHB32*)
+                0x2007c000                . = ALIGN (0x4)
+
+.noinit         0x10000004        0x0
+                0x10000004                _noinit = .
+ *(.noinit*)
+                0x10000004                . = ALIGN (0x4)
+                0x10000004                _end_noinit = .
+                0x10000004                PROVIDE (_pvHeapStart, .)
+                0x10008000                PROVIDE (_vStackTop, (__top_RamLoc32 - 0x0))
+OUTPUT(StationDeGestion_TP_Train.axf elf32-littlearm)
+
+.debug_info     0x00000000     0x1cae
+ .debug_info    0x00000000      0x505 ./src/Ecran.o
+ .debug_info    0x00000505      0x335 ./src/SPI.o
+ .debug_info    0x0000083a      0x2be ./src/cr_startup_lpc176x.o
+ .debug_info    0x00000af8       0x3f ./src/crp.o
+ .debug_info    0x00000b37      0x4fe ./src/main.o
+ .debug_info    0x00001035      0x2ed ./src/police.o
+ .debug_info    0x00001322      0x674 ./src/uart.o
+ .debug_info    0x00001996      0x318 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+
+.debug_abbrev   0x00000000      0x814
+ .debug_abbrev  0x00000000      0x154 ./src/Ecran.o
+ .debug_abbrev  0x00000154       0xf5 ./src/SPI.o
+ .debug_abbrev  0x00000249      0x12b ./src/cr_startup_lpc176x.o
+ .debug_abbrev  0x00000374       0x36 ./src/crp.o
+ .debug_abbrev  0x000003aa      0x146 ./src/main.o
+ .debug_abbrev  0x000004f0       0xdb ./src/police.o
+ .debug_abbrev  0x000005cb      0x163 ./src/uart.o
+ .debug_abbrev  0x0000072e       0xe6 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+
+.debug_aranges  0x00000000      0x1f0
+ .debug_aranges
+                0x00000000       0x78 ./src/Ecran.o
+ .debug_aranges
+                0x00000078       0x30 ./src/SPI.o
+ .debug_aranges
+                0x000000a8       0x80 ./src/cr_startup_lpc176x.o
+ .debug_aranges
+                0x00000128       0x18 ./src/crp.o
+ .debug_aranges
+                0x00000140       0x28 ./src/main.o
+ .debug_aranges
+                0x00000168       0x38 ./src/police.o
+ .debug_aranges
+                0x000001a0       0x28 ./src/uart.o
+ .debug_aranges
+                0x000001c8       0x28 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+
+.debug_ranges   0x00000000      0x168
+ .debug_ranges  0x00000000       0x68 ./src/Ecran.o
+ .debug_ranges  0x00000068       0x20 ./src/SPI.o
+ .debug_ranges  0x00000088       0x70 ./src/cr_startup_lpc176x.o
+ .debug_ranges  0x000000f8       0x18 ./src/main.o
+ .debug_ranges  0x00000110       0x28 ./src/police.o
+ .debug_ranges  0x00000138       0x18 ./src/uart.o
+ .debug_ranges  0x00000150       0x18 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+
+.debug_macro    0x00000000     0x3147
+ .debug_macro   0x00000000       0x8d ./src/Ecran.o
+ .debug_macro   0x0000008d      0x856 ./src/Ecran.o
+ .debug_macro   0x000008e3       0x1c ./src/Ecran.o
+ .debug_macro   0x000008ff       0x2e ./src/Ecran.o
+ .debug_macro   0x0000092d       0x10 ./src/Ecran.o
+ .debug_macro   0x0000093d      0x122 ./src/Ecran.o
+ .debug_macro   0x00000a5f      0x5b9 ./src/Ecran.o
+ .debug_macro   0x00001018       0x18 ./src/Ecran.o
+ .debug_macro   0x00001030      0x7af ./src/Ecran.o
+ .debug_macro   0x000017df      0x2c7 ./src/Ecran.o
+ .debug_macro   0x00001aa6       0x76 ./src/Ecran.o
+ .debug_macro   0x00001b1c       0x28 ./src/Ecran.o
+ .debug_macro   0x00001b44       0x8d ./src/SPI.o
+ .debug_macro   0x00001bd1       0x22 ./src/SPI.o
+ .debug_macro   0x00001bf3       0x52 ./src/cr_startup_lpc176x.o
+ .debug_macro   0x00001c45      0x85c ./src/cr_startup_lpc176x.o
+ .debug_macro   0x000024a1       0x1a ./src/crp.o
+ .debug_macro   0x000024bb       0x34 ./src/crp.o
+ .debug_macro   0x000024ef       0xb7 ./src/main.o
+ .debug_macro   0x000025a6       0xc4 ./src/main.o
+ .debug_macro   0x0000266a       0x10 ./src/main.o
+ .debug_macro   0x0000267a       0x28 ./src/main.o
+ .debug_macro   0x000026a2       0x10 ./src/main.o
+ .debug_macro   0x000026b2       0x9f ./src/police.o
+ .debug_macro   0x00002751       0x75 ./src/uart.o
+ .debug_macro   0x000027c6      0x12b /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .debug_macro   0x000028f1      0x856 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+
+.debug_line     0x00000000      0xeb4
+ .debug_line    0x00000000      0x2d3 ./src/Ecran.o
+ .debug_line    0x000002d3      0x1f7 ./src/SPI.o
+ .debug_line    0x000004ca      0x18a ./src/cr_startup_lpc176x.o
+ .debug_line    0x00000654       0x6f ./src/crp.o
+ .debug_line    0x000006c3      0x235 ./src/main.o
+ .debug_line    0x000008f8      0x269 ./src/police.o
+ .debug_line    0x00000b61      0x18d ./src/uart.o
+ .debug_line    0x00000cee      0x1c6 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+
+.debug_str      0x00000000     0x9373
+ .debug_str     0x00000000     0x81f2 ./src/Ecran.o
+                               0x8279 (size before relaxing)
+ .debug_str     0x000081f2      0x1e9 ./src/SPI.o
+                               0x81cf (size before relaxing)
+ .debug_str     0x000083db      0x2a1 ./src/cr_startup_lpc176x.o
+                               0x3cfe (size before relaxing)
+ .debug_str     0x0000867c       0xe9 ./src/crp.o
+                               0x24bc (size before relaxing)
+ .debug_str     0x00008765      0x5fa ./src/main.o
+                               0x87bd (size before relaxing)
+ .debug_str     0x00008d5f       0xcb ./src/police.o
+                               0x8617 (size before relaxing)
+ .debug_str     0x00008e2a      0x193 ./src/uart.o
+                               0x7ebd (size before relaxing)
+ .debug_str     0x00008fbd      0x3b6 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+                               0x801b (size before relaxing)
+
+.comment        0x00000000       0x70
+ .comment       0x00000000       0x70 ./src/Ecran.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 ./src/SPI.o
+ .comment       0x00000000       0x71 ./src/cr_startup_lpc176x.o
+ .comment       0x00000000       0x71 ./src/crp.o
+ .comment       0x00000000       0x71 ./src/main.o
+ .comment       0x00000000       0x71 ./src/police.o
+ .comment       0x00000000       0x71 ./src/uart.o
+ .comment       0x00000000       0x71 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .comment       0x00000000       0x71 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv7-m/libcr_c.a(__weak__main.o)
+
+.ARM.attributes
+                0x00000000       0x31
+ .ARM.attributes
+                0x00000000       0x33 ./src/Ecran.o
+ .ARM.attributes
+                0x00000033       0x33 ./src/SPI.o
+ .ARM.attributes
+                0x00000066       0x33 ./src/cr_startup_lpc176x.o
+ .ARM.attributes
+                0x00000099       0x33 ./src/crp.o
+ .ARM.attributes
+                0x000000cc       0x33 ./src/main.o
+ .ARM.attributes
+                0x000000ff       0x33 ./src/police.o
+ .ARM.attributes
+                0x00000132       0x33 ./src/uart.o
+ .ARM.attributes
+                0x00000165       0x33 /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+ .ARM.attributes
+                0x00000198       0x33 /home/mignam/HEPIA/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv7-m/libcr_c.a(__weak__main.o)
+
+.debug_frame    0x00000000      0x418
+ .debug_frame   0x00000000      0x160 ./src/Ecran.o
+ .debug_frame   0x00000160       0x64 ./src/SPI.o
+ .debug_frame   0x000001c4       0xf0 ./src/cr_startup_lpc176x.o
+ .debug_frame   0x000002b4       0x50 ./src/main.o
+ .debug_frame   0x00000304       0x90 ./src/police.o
+ .debug_frame   0x00000394       0x48 ./src/uart.o
+ .debug_frame   0x000003dc       0x3c /home/mignam/workspace/CMSISv2p00_LPC17xx/Debug/libCMSISv2p00_LPC17xx.a(system_LPC17xx.o)
+
+.debug_loc      0x00000000      0x15f
+ .debug_loc     0x00000000      0x15f ./src/cr_startup_lpc176x.o
