@@ -150,8 +150,6 @@ void Init_display()
 
 	LPC_GPIO0->FIOPIN |= 1 << 4; // Enable display
 	Valide_datas_bus_to_extlab2();
-
-	void Select_control_bus();
 }
 
 void Write_pixel(uint8_t red,uint8_t green,uint8_t blue)
