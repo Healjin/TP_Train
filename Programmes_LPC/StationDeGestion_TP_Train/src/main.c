@@ -1,7 +1,7 @@
 /*
 ===============================================================================
  Name        : main.c
- Author      : 
+ Author      : Da Silva Andrade David
  Version     :
  Copyright   : Copyright (C) 
  Description : main definition
@@ -33,6 +33,7 @@ void EINT3_IRQHandler(void)
 int main(void) {
 
 	Init_display();
+	Select_display_bus();
 	Set_cursor(0,0);
 	/* -- All screen selected -- */
 	/* Display size = 320x240 */
@@ -41,27 +42,32 @@ int main(void) {
 	/* -- Set the "background" on the LCD -- */
 	int var;
 	for (var = 0; var < 320*240; var++) {
-		Write_pixel(255,255,255);
+		Write_pixel(128,255,128);
 	}
+	uint8_t red[3]={255,0,0};
+	uint8_t green[3]={0,255,0};
+	uint8_t blue[3]={0,0,255};
+	/* -- Test text -- */
+	Write_string_with_background("Animaux",10,10,red,green);
+	Write_string("MmmMmVvfNNnn",100,20,blue);
 
 	/* -- Test to draw an image on the display -- */
 	//Select_display_bus();
 	//Draw_Image(&mario);
 
 	/* -- Test writing letter -- */
-	uint8_t color[3] = {255,255,255};
+	/*uint8_t color[3] = {255,255,255};
 	uint8_t color_back[3] = {0,0,255};
-	Write_char_with_background('A',90,0,color,color_back);
-
-
-    /* -- Test writing letter without background -- */
-	uint8_t color2[3] = {255,255,255};
-	Write_char('B',90,90,color2);
+	Write_char_with_background('A',90,0,color,color_back);*/
 
 	/* -- Test touchscreen -- */
-
 	Init_SPI_master_mode(0, 0, 100000, 8);
 	Init_touchscreen();
+
+    /* -- Test writing letter without background -- */
+	Select_display_bus();
+	uint8_t color2[3] = {0,0,0};
+	Write_char('B',200,200,red);
 
 	while(1) {
 		if(flag_interrupt == 1)
@@ -73,8 +79,6 @@ int main(void) {
 
 			uint16_t x_pixel = (240*x)/4096;
 			uint16_t y_pixel = 320 - (320*y)/4096;
-			Set_cursor(x_pixel,y_pixel);
-			Write_pixel(255,255,255);
 
 			flag_interrupt = 0;
 		}

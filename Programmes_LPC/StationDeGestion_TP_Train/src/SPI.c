@@ -16,7 +16,8 @@
 */
 void Init_SPI_master_mode(uint8_t S_CPHA, uint8_t S_CPOL, uint32_t SPI_rate, uint8_t _16_or_8bits_com)
 {
-	LPC_PINCON->PINSEL0 |=0x5500;
+	LPC_PINCON->PINSEL0 |= 0x3 << 30; // Enable SCK
+	LPC_PINCON->PINSEL1 |= 0x3C; // Enable MISO and MOSI
 
 	if(_16_or_8bits_com == 8)
 		LPC_SPI->SPCR &=~ BIT_ENABLE; // set 8bits mode on SPI
@@ -31,7 +32,6 @@ void Init_SPI_master_mode(uint8_t S_CPHA, uint8_t S_CPOL, uint32_t SPI_rate, uin
 		LPC_SPI->SPCCR = div + 1;
 	else
 		LPC_SPI->SPCCR = div;
-
 }
 /**
 *@brief

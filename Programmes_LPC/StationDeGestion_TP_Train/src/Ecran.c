@@ -122,6 +122,9 @@ void Init_display()
 {
 	Init_ports_display();
 
+	LPC_GPIO0->FIOPIN &=~ (1 << 4); // Disable display
+	Valide_datas_bus_to_extlab2();
+
 	Select_display_bus();
 
 	/* -- 8bits mode -- */
@@ -147,7 +150,6 @@ void Init_display()
 	Parameter_out(0x0001);
 
 	Select_control_bus();
-
 	LPC_GPIO0->FIOPIN |= 1 << 4; // Enable display
 	Valide_datas_bus_to_extlab2();
 }
