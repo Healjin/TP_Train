@@ -8,27 +8,19 @@
 
 void Init_touchscreen()
 {
-	/* -- Test pressing on touchscreen, init interrupt -- */
-	/*LPC_GPIO2->FIODIR |= 0b111 << 11; // Bit for select input
-	LPC_GPIO2->FIOCLR = 0b111 << 11;
-	LPC_GPIO2->FIOSET = 0b101 << 11;
-	LPC_GPIO2->FIODIR &=~ (1 << IRQ_Touchscreen);*/
-
 	NVIC_EnableIRQ(EINT3_IRQn);
 	LPC_GPIOINT->IO2IntEnF |= 1 << ExtLab2_IRQ;
-
 
 	/* -- SPI for touchscreen -- */
 	Select_control_bus();
 	LPC_GPIO0->FIODIR |= 1 << CS_touchscreen;
 	LPC_GPIO0->FIOSET = 1 << CS_touchscreen; // Release (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();
-	LPC_PINCON->PINSEL0 |= 0x3 << 30; // SCK select
-	LPC_PINCON->PINSEL1 |= 0xF << 2; // Select MOSI and MISO
 }
 
 uint16_t Read_x_12bits()
 {
+	Select_control_bus();
 	LPC_GPIO0->FIOCLR = 1 << CS_touchscreen; // Select (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();
 
@@ -49,6 +41,7 @@ uint16_t Read_x_12bits()
 
 uint16_t Read_y_12bits()
 {
+	Select_control_bus();
 	LPC_GPIO0->FIOCLR = 1 << CS_touchscreen; // Select (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();
 
@@ -69,6 +62,7 @@ uint16_t Read_y_12bits()
 
 void Read_x_and_y_12bits(uint16_t* x, uint16_t* y)
 {
+	Select_control_bus();
 	LPC_GPIO0->FIOCLR = 1 << CS_touchscreen; // Select (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();
 

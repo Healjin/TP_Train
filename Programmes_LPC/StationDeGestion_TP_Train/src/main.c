@@ -32,6 +32,7 @@ void EINT3_IRQHandler(void)
 
 int main(void) {
 
+	Init_ports_display();
 	Init_display();
 	Select_display_bus();
 	Set_cursor(0,0);
@@ -61,8 +62,8 @@ int main(void) {
 	Write_char_with_background('A',90,0,color,color_back);*/
 
 	/* -- Test touchscreen -- */
-	Init_SPI_master_mode(0, 0, 100000, 8);
 	Init_touchscreen();
+	Init_SPI_master_mode(0, 0, 100000, 8);
 
     /* -- Test writing letter without background -- */
 	Select_display_bus();
