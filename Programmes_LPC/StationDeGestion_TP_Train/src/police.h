@@ -1,4 +1,4 @@
-/**
+/*
 *@file police.h
 *@author Swagteam
 *@version 1.0

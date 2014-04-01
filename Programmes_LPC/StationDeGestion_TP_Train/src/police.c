@@ -1,4 +1,4 @@
-/**
+/*
 *@file police.c
 *@author Swagteam
 *@version 1.0
@@ -603,7 +603,7 @@ void Write_char(char character, uint8_t x,uint8_t y, uint8_t *color_character)
 		}
 	}
 }
-/**
+/*
 *@brief Write chosen letter on screen with background
 *@param string
 *@param x	-->  position x on the screen (0 - 239)
