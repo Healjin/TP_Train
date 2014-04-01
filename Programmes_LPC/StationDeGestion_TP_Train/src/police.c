@@ -635,7 +635,7 @@ void Write_string(char * string,uint8_t x,uint8_t y, uint8_t *color_character){
 	}
 }
 /**
-void Write_dess(uint8_t r,uint8_t*color_character){
+void Write_forme(uint8_t r,uint8_t*color_character){
 	int x =100;
 	int d = r - 1;
 	int y = r;
