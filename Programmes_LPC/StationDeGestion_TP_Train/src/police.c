@@ -557,7 +557,7 @@ void Write_char_with_background(char character, uint8_t x,uint8_t y, uint8_t *co
 *@param y	-->  position y on the screen (0 - 319)
 *@param *color_character  -->  color of the char RGB
 */
-void Write_char(char character, uint8_t x,uint8_t y, uint8_t *color_character)
+void Write_char(char character, uint16_t x,uint16_t y, uint8_t *color_character)
 {
 	Set_cursor(x, y);
 	Create_partial_screen( y, y+LETTER_HEIGHT-1 , x, x+LETTER_WIDTH-1);

@@ -32,7 +32,6 @@ void EINT3_IRQHandler(void)
 
 int main(void) {
 
-	Init_ports_display();
 	Init_display();
 	Select_display_bus();
 	Set_cursor(0,0);
@@ -65,22 +64,19 @@ int main(void) {
 	Init_touchscreen();
 	Init_SPI_master_mode(0, 0, 100000, 8);
 
-    /* -- Test writing letter without background -- */
-	Select_display_bus();
-	uint8_t color2[3] = {0,0,0};
-	Write_char('B',200,200,red);
-
 	while(1) {
 		if(flag_interrupt == 1)
 		{
-			uint16_t x;
-			uint16_t y;
+			uint16_t x = 0;
+			uint16_t y = 0;
 
 			Read_x_and_y_12bits(&x, &y);
 
-			uint16_t x_pixel = (240*x)/4096;
-			uint16_t y_pixel = 320 - (320*y)/4096;
-
+			uint32_t y_pixel = (240*(uint32_t)x)/4096;
+			uint32_t x_pixel = 320 - (320*(uint32_t)y)/4096;
+			Select_display_bus();
+			uint8_t color_back[3] = {0,0,255};
+			Write_char('A',300,100,color_back);
 			flag_interrupt = 0;
 		}
 	}
