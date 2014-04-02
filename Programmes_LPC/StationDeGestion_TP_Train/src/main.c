@@ -76,7 +76,15 @@ int main(void) {
 			uint32_t x_pixel = 320 - (320*(uint32_t)y)/4096;
 			Select_display_bus();
 			uint8_t color_back[3] = {0,0,255};
-			Write_char('A',300,100,color_back);
+			Write_char('A',5,290,color_back);
+			Set_cursor(y_pixel, x_pixel);
+			Write_pixel(0,0,0);
+			Set_cursor(y_pixel+1, x_pixel);
+			Write_pixel(0,0,0);
+			Set_cursor(y_pixel, x_pixel+1);
+			Write_pixel(0,0,0);
+			Set_cursor(y_pixel+1, x_pixel+1);
+			Write_pixel(0,0,0);
 			flag_interrupt = 0;
 		}
 	}

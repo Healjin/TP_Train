@@ -168,7 +168,7 @@ void Write_pixel(uint8_t red,uint8_t green,uint8_t blue)
 	Send_color(blue);
 }
 
-void Set_cursor(uint16_t x,uint8_t y)
+void Set_cursor(uint16_t x,uint16_t y)
 {
 	Index_out(0x20);
 	Parameter_out(x);
