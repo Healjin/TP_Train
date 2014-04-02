@@ -1,11 +1,11 @@
 /*
-===============================================================================
- Name        : main.c
- Author      : Da Silva Andrade David
- Version     :
- Copyright   : Copyright (C) 
- Description : main definition
-===============================================================================
+*@file main.c
+*@author Swagteam
+*@version 1.0
+*@date 1 april 2014
+*@brief main definition
+*@brief
+*@brief yolooo
 */
 
 #ifdef __USE_CMSIS
