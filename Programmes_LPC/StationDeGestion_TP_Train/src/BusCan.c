@@ -8,8 +8,8 @@
 #include "BusCan.h"
 
 void Init_BusCan(){
-	LPC_GPIO0->PCCAN1 |= 0x1 << 13;
-	LPC_GPIO0->PCLK_CAN1  |= 0x00 << 26;
-	LPC_GPIO0->PINSEL0
-	LPC_GPIO0->PINMODE0
+//	LPC_GPIO0->PCCAN1 |= 0x1 << 13;
+//	LPC_GPIO0->PCLK_CAN1  |= 0x00 << 26;
+//	LPC_GPIO0->PINSEL0
+//	LPC_GPIO0->PINMODE0
 }
