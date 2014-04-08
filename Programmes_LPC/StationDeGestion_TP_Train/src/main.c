@@ -17,6 +17,11 @@
 
 int flag_interrupt = 0;
 
+
+/**
+*@brief Interuption Timer 3
+*
+*/
 void EINT3_IRQHandler(void)
 {
 	/* -- Clear interrupt on the touchscreen -- */

@@ -1,6 +1,6 @@
 /*
 *@file police.c
-*@author Swagteam
+*@author ITI_2
 *@version 1.0
 *@date 11 march 2014
 *@brief Write chosen letter on screen
@@ -635,7 +635,13 @@ void Write_string(char * string,uint8_t x,uint8_t y, uint8_t *color_character){
 	}
 }
 
-
+/**
+*@brief Create a button on the screen
+*@param x
+*@param y
+*@param v_cote largeur du bouton
+*@param h_cote longueur du bouton
+*/
 void Create_button(uint8_t x,uint8_t y,uint16_t v_cote,uint16_t h_cote){
 
 		uint8_t grey[3]={200,200,200};
