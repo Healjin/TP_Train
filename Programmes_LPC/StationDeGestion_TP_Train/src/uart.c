@@ -49,8 +49,4 @@ void Uart0_init(uint32_t baudrate)
   LPC_UART0->FCR = 0x07;            /* Enable and reset TX and RX FIFO. */
 }
 
-void Send_uart(uint8_t string){
-	//LPC_UART0->LSR
-	//LPC_UART0->RBR
-	LPC_UART0->THR = string;
-}
+

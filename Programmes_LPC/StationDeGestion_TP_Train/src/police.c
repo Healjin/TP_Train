@@ -1,6 +1,6 @@
 /*
 *@file police.c
-*@author Swagteam
+*@author ITI_2
 *@version 1.0
 *@date 11 march 2014
 *@brief Write chosen letter on screen
@@ -557,7 +557,7 @@ void Write_char_with_background(char character, uint8_t x,uint8_t y, uint8_t *co
 *@param y	-->  position y on the screen (0 - 319)
 *@param *color_character  -->  color of the char RGB
 */
-void Write_char(char character, uint8_t x,uint8_t y, uint8_t *color_character)
+void Write_char(char character, uint16_t x,uint16_t y, uint8_t *color_character)
 {
 	Set_cursor(x, y);
 	Create_partial_screen( y, y+LETTER_HEIGHT-1 , x, x+LETTER_WIDTH-1);
@@ -634,6 +634,52 @@ void Write_string(char * string,uint8_t x,uint8_t y, uint8_t *color_character){
 		i++;
 	}
 }
+
+/**
+*@brief Create a button on the screen
+*@param x
+*@param y
+*@param v_cote largeur du bouton
+*@param h_cote longueur du bouton
+*/
+void Create_button(char * string,uint8_t x,uint8_t y,uint8_t hauteur,uint8_t largeur){
+
+	Set_cursor(x,y);
+	Create_partial_screen(x,x+hauteur,y,y+largeur);
+	int c;
+	int taille= hauteur*largeur;
+			for (c = 1; c < taille-1; c++) {
+				Write_pixel(0,0,0);
+			}
+
+
+
+
+/*
+		uint8_t grey[3]={200,200,200};
+		uint8_t black[3]={0,0,0};
+
+		int taille = h_cote*v_cote;
+		Set_cursor(x,y);
+		Create_partial_screen(v_start,v_end,h_start,h_end);
+
+		int c;
+		for (c = 1; c < taille; c++) {
+			Write_pixel(0,0,0);
+		}
+
+		Set_cursor(x+2,y+2);
+		Create_partial_screen(x+2, x+v_cote-2, x+2, x+h_cote-2);
+		int a;
+		taille = (h_cote-4)*(v_cote-4);
+			for (a = 1; a < taille; a++) {
+				Write_pixel(200,200,200);
+			}
+
+*/
+}
+
+
 /**
 void Write_forme(uint8_t r,uint8_t*color_character){
 	int x =100;

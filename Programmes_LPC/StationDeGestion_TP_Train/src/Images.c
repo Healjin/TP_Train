@@ -1,5 +1,9 @@
 #include "Images.h"
 
+/**
+*@brief
+*@param image
+*/
 void Draw_Image(const tImage *image)
 {
 	int size_array = (image->width * image->height)*3;
