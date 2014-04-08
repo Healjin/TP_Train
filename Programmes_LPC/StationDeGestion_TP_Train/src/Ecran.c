@@ -9,6 +9,10 @@
 */
 void Select_control_bus()
 {
+	/* -- Restore bus control -- */
+	LPC_GPIO0->FIOMASK = ~ (0xFF << 4);
+	LPC_GPIO0->FIOPIN = (save_data_bus_values << 4);
+	LPC_GPIO0->FIOMASK = 0;
 	/* -- Select control bus -- */
 	LPC_GPIO0->FIOPIN &=~ (0x3 << 21);
 	LPC_GPIO0->FIOPIN |= 0x3 << 21;
@@ -35,6 +39,7 @@ void Select_display_bus()
 */
 void Valide_datas_bus_to_extlab2()
 {
+	save_data_bus_values = (LPC_GPIO0->FIOPIN >> 4) & 0xFF ;
 	/* -- Validate all values set on P2 bus -- */
 	LPC_GPIO2->FIOPIN |= 1 << 8;
 	LPC_GPIO2->FIOPIN &=~ (1 << 8);
@@ -50,11 +55,11 @@ void Init_ports_display()
 	LPC_GPIO0->FIODIR |= 0x3 << 21; // Configure select (display) to output
 	Select_control_bus(); // Enable control mode on P2
 
-	LPC_GPIO0->FIODIR |= 0xFF << 4; // Configure bus display to output (8bits)
-	LPC_GPIO0->FIOPIN &=~ 0x3 << 4; // Set write mode for display and disable display
-
 	LPC_GPIO2->FIODIR |= 1 << 8; // Set output for the bit that send the bus
 	LPC_GPIO2->FIOCLR = 1 << 8; // Preset 0 to send the bus
+
+	LPC_GPIO0->FIODIR |= 0xFF << 4; // Configure bus display to output (8bits)
+	LPC_GPIO0->FIOPIN &=~ 0x3 << 4; // Set write mode for display and disable display
 
 	LPC_GPIO1->FIODIR |= 1 << DISPLAY_WRB; // Configuration output WRB
 	LPC_GPIO1->FIODIR |= 1 << DISPLAY_CS; // Configuration output CS
@@ -215,7 +220,7 @@ void Write_pixel(uint8_t red,uint8_t green,uint8_t blue)
 *@param x value between 0 and 240
 *@param y value between 0 and 320
 */
-void Set_cursor(uint8_t x,uint8_t y)
+void Set_cursor(uint16_t x,uint16_t y)
 {
 	Index_out(0x20);
 	Parameter_out(x);

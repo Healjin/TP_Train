@@ -18,13 +18,15 @@
 #define LCD_HEIGHT 320
 #define SIZE_LCD 76800 // Number of pixels on the lcd
 
+static uint8_t save_data_bus_values = 0xFE;
+
 void Init_ports_display();
 void Index_out(uint8_t idx);
 void Parameter_out(uint16_t param);
 void Send_color(uint8_t color);
 void Init_display();
 void Write_pixel(uint8_t red,uint8_t green,uint8_t blue);
-void Set_cursor(uint8_t x,uint8_t y);
+void Set_cursor(uint16_t x,uint16_t y);
 void Create_partial_screen(uint16_t v_start, uint16_t v_end, uint8_t h_start, uint8_t h_end);
 void Select_display_bus();
 void Select_control_bus();
