@@ -3,6 +3,12 @@
 
 static uint8_t save_data_bus_values = 0xFE;
 
+/**
+*@brief
+*@details
+*@param
+*@param
+*/
 void Select_control_bus()
 {
 	/* -- Restore bus control -- */
@@ -14,6 +20,12 @@ void Select_control_bus()
 	LPC_GPIO0->FIOPIN |= 0x3 << 21;
 }
 
+/**
+*@brief
+*@details
+*@param
+*@param
+*/
 void Select_display_bus()
 {
 	/* -- Select display control -- */
@@ -21,7 +33,12 @@ void Select_display_bus()
 	LPC_GPIO0->FIOPIN |= 0x2 << 21;
 }
 
-
+/**
+*@brief
+*@details
+*@param
+*@param
+*/
 void Valide_datas_bus_to_extlab2()
 {
 	save_data_bus_values = (LPC_GPIO0->FIOPIN >> 4) & 0xFF ;
@@ -29,7 +46,12 @@ void Valide_datas_bus_to_extlab2()
 	LPC_GPIO2->FIOPIN |= 1 << 8;
 	LPC_GPIO2->FIOPIN &=~ (1 << 8);
 }
-
+/**
+*@brief
+*@details
+*@param
+*@param
+*/
 void Init_ports_display()
 {
 	LPC_GPIO0->FIODIR |= 0x3 << 21; // Configure select (display) to output
@@ -47,7 +69,12 @@ void Init_ports_display()
 
 	Valide_datas_bus_to_extlab2(); // Update configuration
 }
-
+/**
+*@brief
+*@details
+*@param
+*@param
+*/
 void Index_out(uint8_t idx)
 {
 	/* -- Prepare index to be send -- */
@@ -63,7 +90,12 @@ void Index_out(uint8_t idx)
 	LPC_GPIO1->FIOSET = 1 << DISPLAY_CS; // Set 1 on CS
 	LPC_GPIO1->FIOSET = 1 << DISPLAY_RS; // Set 1 on RS
 }
-
+/**
+*@brief
+*@details
+*@param
+*@param
+*/
 void Parameter_out(uint16_t param)
 {
 	/* -- Prepare params to be send -- */
@@ -88,7 +120,10 @@ void Parameter_out(uint16_t param)
 	LPC_GPIO1->FIOSET = 1 << DISPLAY_WRB; // Set 1 on WRB
 	LPC_GPIO1->FIOSET = 1 << DISPLAY_CS; // Set 1 on CS
 }
-
+/**
+*@brief Set gamma of the screen
+*@details Set register value, to fix color on th screen
+*/
 void Set_gamma()
 {
 	Index_out(0x70);
@@ -111,6 +146,10 @@ void Set_gamma()
 	Parameter_out(0x2115);
 }
 
+/**
+*@brief set a color
+*@param color color sent
+*/
 void Send_color(uint8_t color)
 {
 	/* -- Prepare color to be send -- */
@@ -124,7 +163,10 @@ void Send_color(uint8_t color)
 	LPC_GPIO1->FIOSET = 1 << DISPLAY_WRB; // Set 1 on WRB
 	LPC_GPIO1->FIOSET = 1 << DISPLAY_CS; // Set 1 on CS
 }
-
+/**
+*@brief Screen initialisation
+*@details Set configuration: 8bits,262k color,CPU interface,Standby OFF,Set Gamma,Display on
+*/
 void Init_display()
 {
 	Init_ports_display();
@@ -160,7 +202,12 @@ void Init_display()
 	LPC_GPIO0->FIOPIN |= 1 << 4; // Enable display
 	Valide_datas_bus_to_extlab2();
 }
-
+/**
+*@brief send RGB color on pixel
+*@param red value between 0 and 255
+*@param green value between 0 and 255
+*@param blue value between 0 and 255
+*/
 void Write_pixel(uint8_t red,uint8_t green,uint8_t blue)
 {
 	Index_out(0x22);
@@ -170,6 +217,11 @@ void Write_pixel(uint8_t red,uint8_t green,uint8_t blue)
 	Send_color(blue);
 }
 
+/**
+*@brief Set cursor localisation
+*@param x value between 0 and 240
+*@param y value between 0 and 320
+*/
 void Set_cursor(uint16_t x,uint16_t y)
 {
 	Index_out(0x20);
@@ -177,7 +229,14 @@ void Set_cursor(uint16_t x,uint16_t y)
 	Index_out(0x21);
 	Parameter_out(y);
 }
-
+/**
+*@brief creation of a window on the screen
+*@details create a window on the screen by precising a size
+*@param v_start largeur = v_start to v_end
+*@param v_end
+*@param h_start longueur = h_start to h_end
+*@param h_end
+*/
 void Create_partial_screen(uint16_t v_start, uint16_t v_end, uint8_t h_start, uint8_t h_end)
 {
 	Index_out(0x35);
@@ -187,3 +246,4 @@ void Create_partial_screen(uint16_t v_start, uint16_t v_end, uint8_t h_start, ui
 	Index_out(0x37);
 	Parameter_out((h_start << 8)|h_end);
 }
+

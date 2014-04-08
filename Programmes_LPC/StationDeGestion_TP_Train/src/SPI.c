@@ -26,7 +26,6 @@ void Init_SPI_master_mode(uint8_t S_CPHA, uint8_t S_CPOL, uint32_t SPI_rate, uin
 
 	LPC_SPI->SPCR |= 1 << MODE_SELECT; // configure spi on master mode
 
-
 	uint16_t div = (SystemCoreClock/4) / SPI_rate;
 	if (div % 2)
 		LPC_SPI->SPCCR = div + 1;

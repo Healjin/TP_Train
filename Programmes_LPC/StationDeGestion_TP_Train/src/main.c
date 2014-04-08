@@ -4,8 +4,6 @@
 *@version 1.0
 *@date 1 april 2014
 *@brief main definition
-*@brief
-*@brief yolooo
 */
 
 #ifdef __USE_CMSIS
@@ -19,6 +17,11 @@
 
 int flag_interrupt = 0;
 
+
+/**
+*@brief Interuption Timer 3
+*
+*/
 void EINT3_IRQHandler(void)
 {
 	/* -- Clear interrupt on the touchscreen -- */
@@ -56,14 +59,23 @@ int main(void) {
 	/* -- Set the "background" on the LCD -- */
 	int var;
 	for (var = 0; var < 320*240; var++) {
-		Write_pixel(128,255,128);
+		Write_pixel(255,255,255);
 	}
+
+
+	Create_button("yolo",100,50,100,50);  // x,y, hauteur, largeur
+
+
+
+
 	uint8_t red[3]={255,0,0};
 	uint8_t green[3]={0,255,0};
 	uint8_t blue[3]={0,0,255};
 	/* -- Test text -- */
-	Write_string_with_background("Animaux",10,10,red,green);
-	Write_string("MmmMmVvfNNnn",100,20,blue);
+	//Write_string_with_background("Animaux",10,10,red,green);
+	//Write_string("MmmMmVvfNNnn",20,300,blue);
+
+	//Set_Button(0,100,0,100);
 
 	/* -- Test to draw an image on the display -- */
 	//Select_display_bus();
@@ -80,6 +92,10 @@ int main(void) {
 	LPC_TIM0 ->MCR = 1; /* Interrupt on MR0 value */
 	NVIC_EnableIRQ(TIMER0_IRQn);
 
+    /* -- Test writing letter without background -- */
+	//Select_display_bus();
+	//uint8_t color2[3] = {0,0,0};
+	//Write_char('B',200,200,red);
 	while(1) {
 		if((flag_interrupt == 1) && ((LPC_GPIO2->FIOPIN & (1 << 10)) == 0))
 		{
