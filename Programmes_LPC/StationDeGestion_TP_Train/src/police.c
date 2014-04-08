@@ -634,6 +634,36 @@ void Write_string(char * string,uint8_t x,uint8_t y, uint8_t *color_character){
 		i++;
 	}
 }
+
+
+void Create_button(uint8_t x,uint8_t y,uint16_t v_cote,uint16_t h_cote){
+
+		uint8_t grey[3]={200,200,200};
+		uint8_t black[3]={0,0,0};
+
+
+		int taille = h_cote*v_cote;
+		Set_cursor(x,y);
+		Create_partial_screen(x,x+v_cote,x,x+h_cote);
+
+		int c;
+		for (c = 1; c < taille; c++) {
+			Write_pixel(0,0,0);
+		}
+
+
+		Set_cursor(x+2,y+2);
+		Create_partial_screen(x+2, x+v_cote-2, x+2, x+h_cote-2);
+		int a;
+		taille = (h_cote-4)*(v_cote-4);
+			for (a = 1; a < taille; a++) {
+				Write_pixel(200,200,200);
+			}
+
+
+}
+
+
 /**
 void Write_forme(uint8_t r,uint8_t*color_character){
 	int x =100;

@@ -21,5 +21,6 @@ void Write_char(char character, uint8_t x,uint8_t y, uint8_t *color);
 void Write_string(char * string,uint8_t x,uint8_t y, uint8_t *color_character);
 void Write_string_with_background(char * string,uint8_t x,uint8_t y, uint8_t *color_character,uint8_t *color_background);
 void Write_char_with_background(char character, uint8_t x,uint8_t y, uint8_t *color_letter, uint8_t *color_background);
+void Create_button(uint8_t x,uint8_t y,uint16_t v_cote,uint16_t h_cote);
 
 #endif /* POLICE_H_ */

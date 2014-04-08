@@ -4,8 +4,6 @@
 *@version 1.0
 *@date 1 april 2014
 *@brief main definition
-*@brief
-*@brief yolooo
 */
 
 #ifdef __USE_CMSIS
@@ -43,14 +41,23 @@ int main(void) {
 	/* -- Set the "background" on the LCD -- */
 	int var;
 	for (var = 0; var < 320*240; var++) {
-		Write_pixel(128,255,128);
+		Write_pixel(255,255,255);
 	}
+
+
+	Create_button(100,100,50,100);  // x,y, largeur, hauteur
+
+
+
+
 	uint8_t red[3]={255,0,0};
 	uint8_t green[3]={0,255,0};
 	uint8_t blue[3]={0,0,255};
 	/* -- Test text -- */
-	Write_string_with_background("Animaux",10,10,red,green);
-	Write_string("MmmMmVvfNNnn",100,20,blue);
+	//Write_string_with_background("Animaux",10,10,red,green);
+	//Write_string("MmmMmVvfNNnn",20,300,blue);
+
+	//Set_Button(0,100,0,100);
 
 	/* -- Test to draw an image on the display -- */
 	//Select_display_bus();
@@ -62,13 +69,13 @@ int main(void) {
 	Write_char_with_background('A',90,0,color,color_back);*/
 
 	/* -- Test touchscreen -- */
-	Init_touchscreen();
-	Init_SPI_master_mode(0, 0, 100000, 8);
+	//Init_touchscreen();
+	//Init_SPI_master_mode(0, 0, 100000, 8);
 
     /* -- Test writing letter without background -- */
-	Select_display_bus();
-	uint8_t color2[3] = {0,0,0};
-	Write_char('B',200,200,red);
+	//Select_display_bus();
+	//uint8_t color2[3] = {0,0,0};
+	//Write_char('B',200,200,red);
 
 	while(1) {
 		if(flag_interrupt == 1)

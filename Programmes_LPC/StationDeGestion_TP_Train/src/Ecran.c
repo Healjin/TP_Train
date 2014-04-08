@@ -180,3 +180,4 @@ void Create_partial_screen(uint16_t v_start, uint16_t v_end, uint8_t h_start, ui
 	Index_out(0x37);
 	Parameter_out((h_start << 8)|h_end);
 }
+
