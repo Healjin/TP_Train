@@ -76,14 +76,10 @@ int main(void) {
 	//Init_touchscreen();
 	//Init_SPI_master_mode(0, 0, 100000, 8);
 
-<<<<<<< HEAD
     /* -- Test writing letter without background -- */
 	//Select_display_bus();
 	//uint8_t color2[3] = {0,0,0};
 	//Write_char('B',200,200,red);
-
-=======
->>>>>>> fbab48245a4d1eacf5781cf37b76ddf841ab10ca
 	while(1) {
 		if(flag_interrupt == 1)
 		{
