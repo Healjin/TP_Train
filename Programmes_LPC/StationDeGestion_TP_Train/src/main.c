@@ -24,8 +24,13 @@ void EINT3_IRQHandler(void)
 	/* -- Clear interrupt on the touchscreen -- */
 	LPC_GPIOINT->IO2IntClr |= 1 << 10;
 
-	LPC_TIM0 -> MR0 = LPC_TIM0 -> TC + 50000; /* Interruption in the next 1ms */
-	LPC_TIM0 -> TCR = 1; /* Enable timer 0 for anti-rebound */
+	flag_interrupt = 1;
+	/* if anti-rebound is not running */
+//	if(!LPC_TIM0 -> TCR)
+//	{
+//		LPC_TIM0 -> MR0 = LPC_TIM0 -> TC + 12500; /* Interruption in the next 0.5ms */
+//		LPC_TIM0 -> TCR = 1; /* Enable timer 0 for anti-rebound */
+//	}
 }
 /* Interrupt for anti-rebound */
 void TIMER0_IRQHandler() {
@@ -82,19 +87,23 @@ int main(void) {
 			uint16_t y = 0;
 
 			Read_x_and_y_12bits(&x, &y);
+			/* Except a bug of read SPI on touchscreen */
+			if((x == 0) || (y == 4095)){
+				flag_interrupt = 0;
+				continue;
+			}
 
-			uint32_t y_pixel = (240*(uint32_t)x)/4096;
-			uint32_t x_pixel = 320 - (320*(uint32_t)y)/4096;
+			uint32_t x_pixel = (240*(uint32_t)x)/4096;
+			uint32_t y_pixel = 320 - (320*(uint32_t)y)/4096;
+			/* Draw a square on click */
 			Select_display_bus();
-			uint8_t color_back[3] = {0,0,255};
-			Write_char('A',5,290,color_back);
-			Set_cursor(y_pixel, x_pixel);
+			Set_cursor(x_pixel, y_pixel);
 			Write_pixel(0,0,0);
-			Set_cursor(y_pixel+1, x_pixel);
+			Set_cursor(x_pixel+1, y_pixel);
 			Write_pixel(0,0,0);
-			Set_cursor(y_pixel, x_pixel+1);
+			Set_cursor(x_pixel, y_pixel+1);
 			Write_pixel(0,0,0);
-			Set_cursor(y_pixel+1, x_pixel+1);
+			Set_cursor(x_pixel+1, y_pixel+1);
 			Write_pixel(0,0,0);
 			flag_interrupt = 0;
 		}
