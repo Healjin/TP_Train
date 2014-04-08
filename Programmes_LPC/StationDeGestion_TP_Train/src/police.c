@@ -647,7 +647,6 @@ void Create_button(uint8_t x,uint8_t y,uint16_t v_cote,uint16_t h_cote){
 		uint8_t grey[3]={200,200,200};
 		uint8_t black[3]={0,0,0};
 
-
 		int taille = h_cote*v_cote;
 		Set_cursor(x,y);
 		Create_partial_screen(x,x+v_cote,x,x+h_cote);
