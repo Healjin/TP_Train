@@ -642,20 +642,31 @@ void Write_string(char * string,uint8_t x,uint8_t y, uint8_t *color_character){
 *@param v_cote largeur du bouton
 *@param h_cote longueur du bouton
 */
-void Create_button(uint8_t x,uint8_t y,uint16_t v_cote,uint16_t h_cote){
+void Create_button(char * string,uint8_t x,uint8_t y,uint8_t hauteur,uint8_t largeur){
 
+	Set_cursor(x,y);
+	Create_partial_screen(x,x+hauteur,y,y+largeur);
+	int c;
+	int taille= hauteur*largeur;
+			for (c = 1; c < taille-1; c++) {
+				Write_pixel(0,0,0);
+			}
+
+
+
+
+/*
 		uint8_t grey[3]={200,200,200};
 		uint8_t black[3]={0,0,0};
 
 		int taille = h_cote*v_cote;
 		Set_cursor(x,y);
-		Create_partial_screen(x,x+v_cote,x,x+h_cote);
+		Create_partial_screen(v_start,v_end,h_start,h_end);
 
 		int c;
 		for (c = 1; c < taille; c++) {
 			Write_pixel(0,0,0);
 		}
-
 
 		Set_cursor(x+2,y+2);
 		Create_partial_screen(x+2, x+v_cote-2, x+2, x+h_cote-2);
@@ -665,7 +676,7 @@ void Create_button(uint8_t x,uint8_t y,uint16_t v_cote,uint16_t h_cote){
 				Write_pixel(200,200,200);
 			}
 
-
+*/
 }
 
 

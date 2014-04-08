@@ -49,7 +49,7 @@ int main(void) {
 	}
 
 
-	Create_button(100,100,50,100);  // x,y, largeur, hauteur
+	Create_button("yolo",100,50,100,50);  // x,y, hauteur, largeur
 
 
 
