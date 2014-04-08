@@ -1,6 +1,8 @@
 
 #include "Ecran.h"
 
+static uint8_t save_data_bus_values = 0xFE;
+
 void Select_control_bus()
 {
 	/* -- Restore bus control -- */

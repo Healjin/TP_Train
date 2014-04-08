@@ -24,9 +24,18 @@ void EINT3_IRQHandler(void)
 	/* -- Clear interrupt on the touchscreen -- */
 	LPC_GPIOINT->IO2IntClr |= 1 << 10;
 
-	flag_interrupt = 1;
+	LPC_TIM0 -> MR0 = LPC_TIM0 -> TC + 50000; /* Interruption in the next 1ms */
+	LPC_TIM0 -> TCR = 1; /* Enable timer 0 for anti-rebound */
 }
-
+/* Interrupt for anti-rebound */
+void TIMER0_IRQHandler() {
+	LPC_TIM0 ->TCR = 0; /* Disable timer 0 */
+	/* if interruption on touchscreen still usable (not a glitch) */
+	if(((LPC_GPIO2->FIOPIN & (1 << 10))== 0))
+		flag_interrupt = 1;
+	/* Clear interrupt flag */
+	LPC_TIM0 ->IR = 1;
+}
 
 //const tImage mario = {image_data_mario, 320, 240};
 
@@ -63,9 +72,11 @@ int main(void) {
 	/* -- Test touchscreen -- */
 	Init_touchscreen();
 	Init_SPI_master_mode(0, 0, 100000, 8);
+	LPC_TIM0 ->MCR = 1; /* Interrupt on MR0 value */
+	NVIC_EnableIRQ(TIMER0_IRQn);
 
 	while(1) {
-		if(flag_interrupt == 1)
+		if((flag_interrupt == 1) && ((LPC_GPIO2->FIOPIN & (1 << 10)) == 0))
 		{
 			uint16_t x = 0;
 			uint16_t y = 0;
