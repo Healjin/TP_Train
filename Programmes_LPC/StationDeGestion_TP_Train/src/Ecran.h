@@ -18,7 +18,6 @@
 #define LCD_HEIGHT 320
 #define SIZE_LCD 76800 // Number of pixels on the lcd
 
-static uint8_t save_data_bus_values = 0xFE;
 
 void Init_ports_display();
 void Index_out(uint8_t idx);

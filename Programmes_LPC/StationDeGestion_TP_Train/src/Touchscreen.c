@@ -62,6 +62,10 @@ uint16_t Read_y_12bits()
 
 void Read_x_and_y_12bits(uint16_t* x, uint16_t* y)
 {
+	/* Disable PEN_IRQ after measure */
+	NVIC_DisableIRQ(EINT3_IRQn);
+	LPC_GPIOINT->IO2IntEnF &=~ 1 << ExtLab2_IRQ;
+
 	Select_control_bus();
 	LPC_GPIO0->FIOCLR = 1 << CS_touchscreen; // Select (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();
@@ -76,7 +80,7 @@ void Read_x_and_y_12bits(uint16_t* x, uint16_t* y)
 	*x |= ((x_msb &~ 0x80) << 5);
 
 	/* Read y with ADC off and PENIRQ enabled */
-	Write_only_SPI_8bits(0x92);					// Options
+	Write_only_SPI_8bits(0x90);					// Options
 	uint8_t y_msb = Write_Read_SPI_8bits(0x00);
 	uint8_t y_lsb = Write_Read_SPI_8bits(0x00);
 
@@ -86,4 +90,13 @@ void Read_x_and_y_12bits(uint16_t* x, uint16_t* y)
 
 	LPC_GPIO0->FIOSET = 1 << CS_touchscreen; // Release (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();
+
+
+	/* Enable PEN_IRQ after measure */
+	LPC_GPIOINT->IO2IntEnF |= 1 << ExtLab2_IRQ;
+	/* -- Clear interrupt on the touchscreen -- */
+	LPC_GPIOINT->IO2IntClr |= 1 << 10;
+
+	/* Enable PEN_IRQ after measure */
+	NVIC_EnableIRQ(EINT3_IRQn);
 }

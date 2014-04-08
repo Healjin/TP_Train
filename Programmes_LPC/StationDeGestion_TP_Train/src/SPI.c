@@ -12,7 +12,7 @@
 *@param S_CPHA  -->  clock phase control
 *@param S_CPOL  -->  rising/failing edge
 *@param SPI_rate  -->  rate of SPI
-*@param _16_or_8bits_com
+*@param _16_or_8bits_com --> select 16 bits or 8 bits mode
 */
 void Init_SPI_master_mode(uint8_t S_CPHA, uint8_t S_CPOL, uint32_t SPI_rate, uint8_t _16_or_8bits_com)
 {
@@ -33,22 +33,23 @@ void Init_SPI_master_mode(uint8_t S_CPHA, uint8_t S_CPOL, uint32_t SPI_rate, uin
 		LPC_SPI->SPCCR = div;
 }
 /**
-*@brief
-*@param datas  -->
+*@brief send data to SPI without return value
+*@param datas  --> data to send on SPI
 */
-void Write_only_SPI_8bits(uint8_t datas)
+void Write_only_SPI_8bits(uint8_t data)
 {
-	LPC_SPI->SPDR = datas;
+	LPC_SPI->SPDR = data;
 	/* Wait the end of transmission */
 	while(!(LPC_SPI->SPSR & (1 << SPIF)));
 }
 /**
-*@brief
-*@param datas  -->
+*@brief send data on SPI bus and read the data received during the
+*@param data  -->  data to send on SPI
+*@return data received on SPI
 */
-uint8_t Write_Read_SPI_8bits(uint8_t datas)
+uint8_t Write_Read_SPI_8bits(uint8_t data)
 {
-	LPC_SPI->SPDR = datas;
+	LPC_SPI->SPDR = data;
 	/* Wait the end of transmission */
 	while((LPC_SPI->SPSR & (1 << SPIF)) == 0);
 	return LPC_SPI->SPDR;
