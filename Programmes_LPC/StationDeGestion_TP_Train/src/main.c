@@ -51,6 +51,10 @@ int main(void) {
 
 	Init_display();
 	Select_display_bus();
+
+
+
+
 	Set_cursor(0,0);
 	/* -- All screen selected -- */
 	/* Display size = 320x240 */
@@ -63,7 +67,12 @@ int main(void) {
 	}
 
 
-	Create_button("yolo",100,50,100,50);  // x,y, hauteur, largeur
+
+
+
+	//Create_button("RECULER",25,230,80,80);  // x,y, hauteur, largeur
+
+
 
 
 
@@ -88,9 +97,11 @@ int main(void) {
 
 	/* -- Test touchscreen -- */
 	Init_touchscreen();
-	Init_SPI_master_mode(0, 0, 100000, 8);
+	Init_SPI_master_mode(0, 0, 400000, 8);
 	LPC_TIM0 ->MCR = 1; /* Interrupt on MR0 value */
 	NVIC_EnableIRQ(TIMER0_IRQn);
+
+	init_SD();
 
     /* -- Test writing letter without background -- */
 	//Select_display_bus();

@@ -644,39 +644,61 @@ void Write_string(char * string,uint8_t x,uint8_t y, uint8_t *color_character){
 */
 void Create_button(char * string,uint8_t x,uint8_t y,uint8_t hauteur,uint8_t largeur){
 
+	uint8_t grey[3]={200,200,200};
+	uint8_t black[3]={0,0,0};
+
+
+	int nbr_char=0;
+	int i=0;
+	while(string[i] != 0){
+		nbr_char++;
+		i++;
+	}
+
+
+	Write_string_with_background(string,x,y,black,grey);
+
+	Set_cursor(x-10,y-10);
+	Create_partial_screen(y-10,y+10+8+10,x-10,x+nbr_char*8);
+
+	int taille = ((nbr_char*8)+20)*(28);
+			int c;
+	for (c = 1; c < taille; c++) {
+			Write_pixel(200,200,200);
+	}
+
+
+
+
+
+
+
+	/*
+
+
 	Set_cursor(x,y);
-	Create_partial_screen(x,x+hauteur,y,y+largeur);
+	Create_partial_screen(y,y+hauteur,x,x+largeur);
 	int c;
 	int taille= hauteur*largeur;
-			for (c = 1; c < taille-1; c++) {
+			for (c = 1; c < taille; c++) {
 				Write_pixel(0,0,0);
 			}
 
+	Set_cursor(x+2,y+2);
+	Create_partial_screen(y+2,y+hauteur-2,x+2,x+largeur-2);
+	int a;
+	taille = (hauteur-4)*(largeur-4);
+	for (a = 1; a < taille; a++) {
+			Write_pixel(200,200,200);
+	}
 
+	int centre_y = y+(hauteur/4);
+	int centre_x = x+(largeur/4);
 
-
-/*
-		uint8_t grey[3]={200,200,200};
-		uint8_t black[3]={0,0,0};
-
-		int taille = h_cote*v_cote;
-		Set_cursor(x,y);
-		Create_partial_screen(v_start,v_end,h_start,h_end);
-
-		int c;
-		for (c = 1; c < taille; c++) {
-			Write_pixel(0,0,0);
-		}
-
-		Set_cursor(x+2,y+2);
-		Create_partial_screen(x+2, x+v_cote-2, x+2, x+h_cote-2);
-		int a;
-		taille = (h_cote-4)*(v_cote-4);
-			for (a = 1; a < taille; a++) {
-				Write_pixel(200,200,200);
-			}
+	Write_string_with_background(string,centre_x,centre_y,black,grey);
 
 */
+
 }
 
 
