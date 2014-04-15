@@ -27,14 +27,15 @@ void EINT3_IRQHandler(void)
 	/* -- Clear interrupt on the touchscreen -- */
 	LPC_GPIOINT->IO2IntClr |= 1 << 10;
 
-	flag_interrupt = 1;
+	//flag_interrupt = 1;
 	/* if anti-rebound is not running */
-//	if(!LPC_TIM0 -> TCR)
-//	{
-//		LPC_TIM0 -> MR0 = LPC_TIM0 -> TC + 12500; /* Interruption in the next 0.5ms */
-//		LPC_TIM0 -> TCR = 1; /* Enable timer 0 for anti-rebound */
-//	}
+	if(!LPC_TIM0 -> TCR)
+	{
+		LPC_TIM0 -> MR0 = LPC_TIM0 -> TC + 25000; /* Interruption in the next 0.5ms */
+		LPC_TIM0 -> TCR = 1; /* Enable timer 0 for anti-rebound */
+	}
 }
+
 /* Interrupt for anti-rebound */
 void TIMER0_IRQHandler() {
 	LPC_TIM0 ->TCR = 0; /* Disable timer 0 */
@@ -44,8 +45,6 @@ void TIMER0_IRQHandler() {
 	/* Clear interrupt flag */
 	LPC_TIM0 ->IR = 1;
 }
-
-//const tImage mario = {image_data_mario, 320, 240};
 
 int main(void) {
 
@@ -61,12 +60,6 @@ int main(void) {
 	for (var = 0; var < 320*240; var++) {
 		Write_pixel(255,255,255);
 	}
-
-
-	Create_button("yolo",100,50,100,50);  // x,y, hauteur, largeur
-
-
-
 
 	uint8_t red[3]={255,0,0};
 	uint8_t green[3]={0,255,0};
