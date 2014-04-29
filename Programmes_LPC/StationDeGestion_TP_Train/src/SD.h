@@ -10,7 +10,7 @@
 
 #include "LPC17xx.h"
 #include <cr_section_macros.h>
-#include "SPI.h";
+#include "SPI.h"
 void init_SD();
 
 #endif /* POLICE_H_ */

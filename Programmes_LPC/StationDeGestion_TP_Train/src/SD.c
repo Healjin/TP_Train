@@ -5,12 +5,12 @@
 *@date 8 april 2014
 *@brief SD configuration
 */
-#include "SD.h";
+#include "SD.h"
 void init_SD(){
 	int x=0;
 	int error = 0;
 	int Table_SPDR[40] = {0};
-	uint64_t R3 = 0
+	uint64_t R3 = 0;
 
 //assert CS
 	LPC_GPIO0->FIODIR |= 1 << 10;
@@ -80,9 +80,6 @@ void init_SD(){
 	Write_only_SPI_8bits(0b00000000);//15--8
 	Write_only_SPI_8bits(0b00000001);//7--0
 
-	for(i=0;i<5;i++){
-
-	}
 
 // if 3.3V allowed then Return ok else return error exit
 	if(LPC_SPI->SPDR & (1 << 20)){

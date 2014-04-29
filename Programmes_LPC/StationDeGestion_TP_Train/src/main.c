@@ -12,6 +12,7 @@
 #include "police.h"
 //#include "mario.h"
 #include "SPI.h"
+#include "SD.h"
 #include "Touchscreen.h"
 #endif
 
@@ -92,10 +93,6 @@ int main(void) {
 
 	init_SD();
 
-    /* -- Test writing letter without background -- */
-	//Select_display_bus();
-	//uint8_t color2[3] = {0,0,0};
-	//Write_char('B',200,200,red);
 	while(1) {
 		if((flag_interrupt == 1) && ((LPC_GPIO2->FIOPIN & (1 << 10)) == 0))
 		{
