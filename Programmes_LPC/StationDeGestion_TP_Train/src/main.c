@@ -50,6 +50,10 @@ int main(void) {
 
 	Init_display();
 	Select_display_bus();
+
+
+
+
 	Set_cursor(0,0);
 	/* -- All screen selected -- */
 	/* Display size = 320x240 */
@@ -60,6 +64,7 @@ int main(void) {
 	for (var = 0; var < 320*240; var++) {
 		Write_pixel(255,255,255);
 	}
+
 
 	uint8_t red[3]={255,0,0};
 	uint8_t green[3]={0,255,0};
@@ -81,9 +86,11 @@ int main(void) {
 
 	/* -- Test touchscreen -- */
 	Init_touchscreen();
-	Init_SPI_master_mode(0, 0, 100000, 8);
+	Init_SPI_master_mode(0, 0, 400000, 8);
 	LPC_TIM0 ->MCR = 1; /* Interrupt on MR0 value */
 	NVIC_EnableIRQ(TIMER0_IRQn);
+
+	init_SD();
 
     /* -- Test writing letter without background -- */
 	//Select_display_bus();
