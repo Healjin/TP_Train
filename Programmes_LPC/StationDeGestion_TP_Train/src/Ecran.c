@@ -1,51 +1,6 @@
-
 #include "Ecran.h"
 
-static uint8_t save_data_bus_values = 0xFE;
 
-/**
-*@brief
-*@details
-*@param
-*@param
-*/
-void Select_control_bus()
-{
-	/* -- Restore bus control -- */
-	LPC_GPIO0->FIOMASK = ~ (0xFF << 4);
-	LPC_GPIO0->FIOPIN = (save_data_bus_values << 4);
-	LPC_GPIO0->FIOMASK = 0;
-	/* -- Select control bus -- */
-	LPC_GPIO0->FIOPIN &=~ (0x3 << 21);
-	LPC_GPIO0->FIOPIN |= 0x3 << 21;
-}
-
-/**
-*@brief
-*@details
-*@param
-*@param
-*/
-void Select_display_bus()
-{
-	/* -- Select display control -- */
-	LPC_GPIO0->FIOPIN &=~ (0x3 << 21);
-	LPC_GPIO0->FIOPIN |= 0x2 << 21;
-}
-
-/**
-*@brief
-*@details
-*@param
-*@param
-*/
-void Valide_datas_bus_to_extlab2()
-{
-	save_data_bus_values = (LPC_GPIO0->FIOPIN >> 4) & 0xFF ;
-	/* -- Validate all values set on P2 bus -- */
-	LPC_GPIO2->FIOPIN |= 1 << 8;
-	LPC_GPIO2->FIOPIN &=~ (1 << 8);
-}
 /**
 *@brief
 *@details

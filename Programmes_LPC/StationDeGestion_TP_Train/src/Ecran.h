@@ -9,6 +9,7 @@
 #define ECRAN_H_
 
 #include "LPC17xx.h"
+#include "ExtLab2.h"
 #include <cr_section_macros.h>
 
 #define DISPLAY_CS 19
@@ -27,9 +28,7 @@ void Init_display();
 void Write_pixel(uint8_t red,uint8_t green,uint8_t blue);
 void Set_cursor(uint16_t x,uint16_t y);
 void Create_partial_screen(uint16_t v_start, uint16_t v_end, uint8_t h_start, uint8_t h_end);
-void Select_display_bus();
-void Select_control_bus();
-void Valide_datas_bus_to_extlab2();
+
 
 
 
