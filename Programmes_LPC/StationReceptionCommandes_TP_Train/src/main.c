@@ -1,32 +1,29 @@
-/*
-===============================================================================
- Name        : main.c
- Author      : $(author)
- Version     :
- Copyright   : $(copyright)
- Description : main definition
-===============================================================================
-*/
+/**
+ *@file main.c
+ *@author Swagteam
+ *@version 1.0
+ *@date 29 avril 2014
+ *@brief content constants and header of functions used on BusCan.h
+ */
 
 #ifdef __USE_CMSIS
 #include "LPC17xx.h"
+#include "BusCan.h"
+#include <cr_section_macros.h>
 #endif
 
-#include <cr_section_macros.h>
-
-// TODO: insert other include files here
-
-// TODO: insert other definitions and declarations here
 
 int main(void) {
+	str_bus str;
+	Init_BusCan();
 
-    // TODO: insert code here
-
-    // Force the counter to be placed into memory
-    volatile static int i = 0 ;
-    // Enter an infinite loop, just incrementing a counter
-    while(1) {
-        i++ ;
-    }
-    return 0 ;
+	str.id_Bus = 0x00004711;
+	str.dlc = 0x5;
+	str.data = 0;
+	while(1)
+	{
+		//while((LPC_CAN1->GSR & 0x1 << 3) == 0);
+		str.data ^=1;
+		Write_BusCan(&str);
+	}
 }
