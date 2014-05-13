@@ -11,6 +11,7 @@
 #include "LPC17xx.h"
 #include <cr_section_macros.h>
 #include "SPI.h"
+#include "ExtLab2.h"
 void init_SD();
 
 #endif /* POLICE_H_ */

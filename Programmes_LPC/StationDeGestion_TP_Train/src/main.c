@@ -87,7 +87,7 @@ int main(void) {
 
 	/* -- Test touchscreen -- */
 	Init_touchscreen();
-	Init_SPI_master_mode(0, 0, 400000, 8);
+	Init_SPI_master_mode(0, 0, 300000, 8);
 	LPC_TIM0 ->MCR = 1; /* Interrupt on MR0 value */
 	NVIC_EnableIRQ(TIMER0_IRQn);
 
