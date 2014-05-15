@@ -92,6 +92,7 @@ void init_SD(){
 //Return OK
 
 /*
+/*
 ===============================================================================
  Name        : main.c
  Author      :
@@ -123,7 +124,7 @@ int Sd_initialisation(){
 	int x=0;
 	int y=0;
 	int i=0;
-
+	uint8_t rep;
 
 	int Tab[5]={0,0,0,0,0};
 
@@ -131,6 +132,7 @@ int Sd_initialisation(){
 
 	ChipSetSelect();
 	init_spi(8, 64);
+	change_clock_spi(64);
 
 
 
@@ -140,16 +142,16 @@ int Sd_initialisation(){
 	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
 
 	//80 coups d'horloges
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
+	write_SPI(0xFF);
+	write_SPI(0xFF);
+	write_SPI(0xFF);
+	write_SPI(0xFF);
+	write_SPI(0xFF);
+	write_SPI(0xFF);
+	write_SPI(0xFF);
+	write_SPI(0xFF);
+	write_SPI(0xFF);
+	write_SPI(0xFF);
 
 
 	LPC_GPIO0 -> FIOSET = 1 << 10;
@@ -157,13 +159,13 @@ int Sd_initialisation(){
 	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
 
 	// 24 coups d'horloges
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
+	write_SPI(0xFF);
+	write_SPI(0xFF);
+//	write_SPI(0b00000000);
+//	write_SPI(0b00000000);
+//	write_SPI(0b00000000);
 
-	do{
+//	do{
 	//Envoie de la CMD0
 	LPC_GPIO0 -> FIOCLR= 1 << 10;
 	LPC_GPIO2 ->FIOSET = 0b1 << 8;
@@ -174,15 +176,16 @@ int Sd_initialisation(){
 	write_SPI(0b00000000);//
 	write_SPI(0b00000000);//fin argument
 	write_SPI(0b10010101);// CRC7 + endBit
-	x= read_SPI();
-	x= read_SPI();
+	do{
+	rep = read_SPI();
+	} while (rep>>7);
 
 	LPC_GPIO0 -> FIOSET= 1 << 10;
 	LPC_GPIO2 ->FIOSET = 0b1 << 8;
 	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
+	rep = read_SPI();
 
-
-	}while (x != 1);
+	//	}while (x != 1);
 	//tant que IDLE <> 0 renvoyer les CMD
 	do {
 		LPC_GPIO0 -> FIOCLR= 1 << 10;
@@ -190,43 +193,45 @@ int Sd_initialisation(){
 		LPC_GPIO2 ->FIOCLR = 0b1 << 8;
 
 	//Envoie de la CMD55 pour pouvoir envoyer ACMD41
-	do{
+//	do{
 	write_SPI(0b01110111);//startBit + Transmission+ CM
 	write_SPI(0b00000000);//argument
 	write_SPI(0b00000000);//
 	write_SPI(0b00000000);//
 	write_SPI(0b00000000);//fin argument
 	write_SPI(0b00000001);// CRC7 + endBit
-	x=read_SPI();
-	x=read_SPI();
+	do{
+	rep = read_SPI();
+	} while (rep>>7);
+
 
 	LPC_GPIO0 -> FIOSET= 1 << 10;
 	LPC_GPIO2 ->FIOSET = 0b1 << 8;
 	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
-	}while(x !=0);
+	read_SPI();
+//	}while(x !=0);
+
 	LPC_GPIO0 -> FIOCLR= 1 << 10;
-		LPC_GPIO2 ->FIOSET = 0b1 << 8;
-		LPC_GPIO2 ->FIOCLR = 0b1 << 8;
+	LPC_GPIO2 ->FIOSET = 0b1 << 8;
+	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
+
 	//Envoie de la ACMD41
-	write_SPI(0b01101101);//startBit + Transmission+ CM
+	write_SPI(0b01101001);//startBit + Transmission+ CM
 	write_SPI(0b00000000);//argument
 	write_SPI(0b00000000);//
 	write_SPI(0b00000000);//
 	write_SPI(0b00000000);//fin argument
 	write_SPI(0b00000001);// CRC7 + endBit
+	do{
+	rep = read_SPI();
+	} while (rep>>7);
 
-
-
-	for ( i=0;i<5; i++){
-		x=read_SPI();
-		Tab[i]=x;
-	}
 	LPC_GPIO0 -> FIOSET= 1 << 10;
 	LPC_GPIO2 ->FIOSET = 0b1 << 8;
 	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
+	read_SPI();
 
-	y = Tab[2];
-	} while (((y & (0x01 <<6 )) != 1   |   (y & (0x01 <<7 ))!=1)); //end while
+	} while(rep&1) ; //end while
 
 
 	LPC_GPIO0 -> FIOCLR= 1 << 10;
@@ -241,23 +246,34 @@ int Sd_initialisation(){
 	write_SPI(0b00000000);//fin argument
 	write_SPI(0b00000001);// CRC7 + endBit
 
+	do{
+	rep = read_SPI();
+	} while (rep>>7);
+	Tab[0]=x;
+	for ( i=1;i<5; i++){
+			x=read_SPI();
+			Tab[i]=x;
+		}
+
 	LPC_GPIO0 -> FIOSET= 1 << 10;
-		LPC_GPIO2 ->FIOSET = 0b1 << 8;
-		LPC_GPIO2 ->FIOCLR = 0b1 << 8;
+	LPC_GPIO2 ->FIOSET = 0b1 << 8;
+	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
+
+	y = Tab[2];
 
 
-	// si 3V3 est bon change la CLK
-	if ((x & (0x1 << 20))== 1) {
+	 if((y & (1<<6))| (y& (1<<7))){
 		 change_clock_spi(4);
-	}else return 1;
+	}else
+		return 1;
 
 
-	//
-	LPC_GPIO0 -> FIOCLR= 1 << 10;
 	return 0;
 
 
 }
+
+
 
 */
 
