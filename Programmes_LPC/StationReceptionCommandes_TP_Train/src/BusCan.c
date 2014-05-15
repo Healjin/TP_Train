@@ -30,7 +30,7 @@ void Init_BusCan(){
 	LPC_CAN1->MOD &=~ 0x01 << 5;		//Receive Polarity Mode
 	LPC_CAN1->MOD &=~ 0x01 << 7;		//Test Mode
 }
-
+/*
 void Write_BusCan(str_bus *s){
 
 	LPC_CAN1->TFI1 |= 0x01 << 31; 		//Id 29 bits FF = 1
@@ -39,7 +39,7 @@ void Write_BusCan(str_bus *s){
 	LPC_CAN1->TDA1 |= s->data;			//Datas
 
 	LPC_CAN1->CMR |= 0x01;				//Transmission
-}
+}*/
 void Read_BusCan(){
 
 }

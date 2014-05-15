@@ -32,7 +32,7 @@ void EINT3_IRQHandler(void)
 	/* if anti-rebound is not running */
 	if(!LPC_TIM0 -> TCR)
 	{
-		LPC_TIM0 -> MR0 = LPC_TIM0 -> TC + 25000; /* Interruption in the next 0.5ms */
+		LPC_TIM0 -> MR0 = LPC_TIM0 -> TC + 25000; /* Interruption in the next 1ms */
 		LPC_TIM0 -> TCR = 1; /* Enable timer 0 for anti-rebound */
 	}
 }
@@ -52,9 +52,6 @@ int main(void) {
 	Init_display();
 	Select_display_bus();
 
-
-
-
 	Set_cursor(0,0);
 	/* -- All screen selected -- */
 	/* Display size = 320x240 */
@@ -65,7 +62,6 @@ int main(void) {
 	for (var = 0; var < 320*240; var++) {
 		Write_pixel(255,255,255);
 	}
-
 
 	uint8_t red[3]={255,0,0};
 	uint8_t green[3]={0,255,0};

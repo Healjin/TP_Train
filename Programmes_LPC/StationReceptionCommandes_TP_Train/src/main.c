@@ -8,22 +8,36 @@
 
 #ifdef __USE_CMSIS
 #include "LPC17xx.h"
-#include "BusCan.h"
+#include "uart.h"
+//#include "BusCan.h"
 #include <cr_section_macros.h>
 #endif
 
 
 int main(void) {
+	/*
 	str_bus str;
 	Init_BusCan();
 
 	str.id_Bus = 0x00004711;
 	str.dlc = 0x5;
-	str.data = 0;
+	str.data = 0;*/
+	uart0_init(9600);
+	char data_in[10];
+	uint32_t len;
+	char data_send[11] = "helloworld";
+	char ch;
 	while(1)
 	{
+		/* Test Bus CAN */
 		//while((LPC_CAN1->GSR & 0x1 << 3) == 0);
-		str.data ^=1;
-		Write_BusCan(&str);
+		/*str.data ^=1;
+		Write_BusCan(&str);*/
+
+
+		/* Test UART */
+		len = uart0_read_one_char(&ch);
+
+		uart0_send(data_send, 11);
 	}
 }

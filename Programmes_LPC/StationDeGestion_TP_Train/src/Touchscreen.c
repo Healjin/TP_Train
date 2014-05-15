@@ -70,7 +70,7 @@ void Read_x_and_y_12bits(uint16_t* x, uint16_t* y)
 	LPC_GPIO0->FIOCLR = 1 << CS_touchscreen; // Select (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();
 
-	/* Read y with ADC on and PENIRQ disabled */
+	/* Read x with ADC on and PENIRQ disabled */
 	Write_only_SPI_8bits(0xD3);					// Options
 	uint8_t x_msb = Write_Read_SPI_8bits(0x00);
 	uint8_t x_lsb = Write_Read_SPI_8bits(0x00);

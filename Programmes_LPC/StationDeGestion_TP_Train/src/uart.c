@@ -6,6 +6,7 @@
 *@brief
 */
 #include "LPC17xx.h"
+#include <string.h>
 
 /******************************************************************
 * Description:    Initialize UART port, setup pin select,
@@ -49,4 +50,29 @@ void Uart0_init(uint32_t baudrate)
   LPC_UART0->FCR = 0x07;            /* Enable and reset TX and RX FIFO. */
 }
 
+/*********************************************************
+ * Description : 	Envoi de données sur l'UART 0
+ *
+ * data: 			Pointeur sur les données à envoyer
+ * length: 			Nombre d'octets à envoyer
+ ********************************************************/
+void uart0_send(uint8_t *data, uint32_t length)
+{
+	int var;
+	for (var = 0; var < length; var++) {
+		while (!(LPC_UART0->LSR & 0x1 << 5));
+			LPC_UART0->THR = data[var];
+	}
+}
 
+
+uint32_t uart0_read(uint8_t *data, uint32_t length)
+{
+	uint32_t var;
+		for (var = 0; var < length; var++) {
+			// Read Rx buffer while we have data in input
+			while (!(LPC_UART0->LSR & 0x1));
+				data[var] =LPC_UART0->RBR;
+	}
+	return var;
+}

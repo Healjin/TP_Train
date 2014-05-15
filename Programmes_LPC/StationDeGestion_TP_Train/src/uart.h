@@ -11,5 +11,6 @@
 #include <stdint.h>
 
 void uart0_init(uint32_t baudrate);
+void uart0_send(uint8_t *data, uint32_t length);
 
 #endif
