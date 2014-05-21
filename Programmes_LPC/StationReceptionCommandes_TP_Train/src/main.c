@@ -22,10 +22,10 @@ int main(void) {
 	str.id_Bus = 0x00004711;
 	str.dlc = 0x5;
 	str.data = 0;*/
-	uart0_init(9600);
+	uart3_init(9600);
 	char data_in[10];
 	uint32_t len;
-	char data_send[11] = "helloworld";
+	char data_send[11] = "aaaaaaaaaaa";
 	char ch;
 	while(1)
 	{
@@ -36,8 +36,8 @@ int main(void) {
 
 
 		/* Test UART */
-		len = uart0_read_one_char(&ch);
+		len = uart3_read_one_char(&ch);
 
-		uart0_send(data_send, 11);
+		uart3_send(data_send, 11);
 	}
 }

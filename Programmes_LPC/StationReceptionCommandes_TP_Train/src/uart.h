@@ -23,5 +23,9 @@ void uart0_init(uint32_t baudrate);
 void uart0_send(char *data, uint32_t length);
 uint32_t uart0_read(char *data, uint32_t length);
 uint32_t uart0_read_one_char(char *ch);
+void uart3_init(uint32_t baudrate);
+void uart3_send(char *data, uint32_t length);
+uint32_t uart3_read(char *data, uint32_t length);
+uint32_t uart3_read_one_char(char *ch);
 
 #endif
