@@ -10,8 +10,13 @@
 #define BusCan_h_
 
 #include "LPC17xx.h"
-#include <cr_section_macros.h>
-#define BRP 4					//BR = CAN_CLK/(BRP + 1)(20)
+#define BRP 4
+
+typedef struct{
+	uint32_t id_Bus;
+	uint8_t dlc;
+	uint8_t data[8];
+}str_bus;
 
 void Init_BusCan();
 void Write_BusCan();
