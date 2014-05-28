@@ -37,7 +37,7 @@ void ChangeDirection(str_bus* str,int NoTrain,int direction){
 	str->data[6] = 0;
 	str->data[7] = 0;
 }
-void ControlData(str_bus* str,int NoTrain,int speed){
+void ChangeSpeed(str_bus* str,int NoTrain,int speed){
 	str->id_Bus = 0x00084711;
 	str->dlc = 0x6;
 
