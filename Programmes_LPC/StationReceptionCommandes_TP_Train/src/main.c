@@ -9,19 +9,29 @@
 #ifdef __USE_CMSIS
 #include "LPC17xx.h"
 #include "uart.h"
-//#include "BusCan.h"
+#include "BusCan.h"
+#include "ControlTrain.h"
 #include <cr_section_macros.h>
 #endif
 
 
 int main(void) {
-	/*
 	str_bus str;
-	Init_BusCan();
+	int speed,NoTrain;
 
-	str.id_Bus = 0x00004711;
-	str.dlc = 0x5;
-	str.data = 0;*/
+	Init_BusCan();
+	NoTrain = 44;
+	speed = 400;
+
+	StopGoTrain(&str,1);
+	Write_BusCan(&str);
+
+	ChangeDirection(&str,NoTrain,FORWARD_TRAIN);
+	Write_BusCan(&str);
+
+	ChangeSpeed(&str,NoTrain,speed);
+	Write_BusCan(&str);
+	
 	uart3_init(9600);
 	char data_in[10];
 	uint32_t len;
@@ -29,12 +39,6 @@ int main(void) {
 	char ch[10];
 	while(1)
 	{
-		/* Test Bus CAN */
-		//while((LPC_CAN1->GSR & 0x1 << 3) == 0);
-		/*str.data ^=1;
-		Write_BusCan(&str);*/
-
-
 		/* Test UART */
 		len = uart3_read(&ch, 10);
 	}
