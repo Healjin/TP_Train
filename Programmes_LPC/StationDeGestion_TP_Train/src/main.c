@@ -14,10 +14,10 @@
 #include "SPI.h"
 #include "SD.h"
 #include "Touchscreen.h"
+#include "uart.h"
 #endif
 
 int flag_interrupt = 0;
-
 
 /**
 *@brief Interuption Timer 3
@@ -49,6 +49,10 @@ void TIMER0_IRQHandler() {
 
 int main(void) {
 
+	/* Wait screen to be ready */
+	int var;
+	for (var = 0; var < 10000000; ++var);
+
 	Init_display();
 	Select_display_bus();
 
@@ -58,7 +62,7 @@ int main(void) {
 	Create_partial_screen(0, 319, 0, 239);
 
 	/* -- Set the "background" on the LCD -- */
-	int var;
+	//int var;
 	for (var = 0; var < 320*240; var++) {
 		Write_pixel(255,255,255);
 	}
@@ -88,8 +92,10 @@ int main(void) {
 	NVIC_EnableIRQ(TIMER0_IRQn);
 
 	init_SD();
+	uart3_init(9600); /* Init UART to use on XBEE */
 
 	while(1) {
+		/* If touchscreen pressed */
 		if((flag_interrupt == 1) && ((LPC_GPIO2->FIOPIN & (1 << 10)) == 0))
 		{
 			uint16_t x = 0;
@@ -104,6 +110,7 @@ int main(void) {
 
 			uint32_t x_pixel = (240*(uint32_t)x)/4096;
 			uint32_t y_pixel = 320 - (320*(uint32_t)y)/4096;
+
 			/* Draw a square on click */
 			Select_display_bus();
 			Set_cursor(x_pixel, y_pixel);
@@ -114,6 +121,9 @@ int main(void) {
 			Write_pixel(0,0,0);
 			Set_cursor(x_pixel+1, y_pixel+1);
 			Write_pixel(0,0,0);
+			char data_send[10] = "LXXSXVXXXX";
+			uart3_send(data_send, 10); // Send data on uart
+
 			flag_interrupt = 0;
 		}
 	}

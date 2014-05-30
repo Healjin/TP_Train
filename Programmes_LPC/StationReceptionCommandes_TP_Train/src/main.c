@@ -25,8 +25,8 @@ int main(void) {
 	uart3_init(9600);
 	char data_in[10];
 	uint32_t len;
-	char data_send[11] = "aaaaaaaaaaa";
-	char ch;
+	char data_send[10] = "LXXSXVXXXX";
+	char ch[10];
 	while(1)
 	{
 		/* Test Bus CAN */
@@ -36,8 +36,6 @@ int main(void) {
 
 
 		/* Test UART */
-		len = uart3_read_one_char(&ch);
-
-		uart3_send(data_send, 11);
+		len = uart3_read(&ch, 10);
 	}
 }

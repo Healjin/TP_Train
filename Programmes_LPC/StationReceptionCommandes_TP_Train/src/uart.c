@@ -113,15 +113,12 @@ void uart0_send(char *data, uint32_t length)
 
 uint32_t uart0_read(char *data, uint32_t length)
 {
-	uint32_t var;
-	for (var = 0; var < length; var++) {
-		// Read Rx buffer while we have data in input
-		if ((LPC_UART0->LSR & 0x1) == 1)
-			data[var] =LPC_UART0->RBR;
-		else
-			break;
+	int i;
+	for (i = 0; i < length; i++) {
+		if(uart3_read_one_char(&data[i]) == 0)
+			return 0;
 	}
-	return var;
+	return 1;
 }
 
 uint32_t uart0_read_one_char(char *ch)
