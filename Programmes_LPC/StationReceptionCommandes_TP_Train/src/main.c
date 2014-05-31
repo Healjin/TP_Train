@@ -12,7 +12,21 @@
 #include "BusCan.h"
 #include "ControlTrain.h"
 #include <cr_section_macros.h>
+#include "string.h"
 #endif
+
+
+int atoi(char *str)
+{
+    int res = 0; // Initialize result
+    int i;
+    // Iterate through all characters of input string and update result
+    for (i = 0; str[i] != '\0'; ++i)
+        res = res*10 + str[i] - '0';
+
+    // return result.
+    return res;
+}
 
 
 int main(void) {
@@ -33,13 +47,79 @@ int main(void) {
 	Write_BusCan(&str);
 	
 	uart3_init(9600);
-	char data_in[10];
+
 	uint32_t len;
-	char data_send[10] = "LXXSXVXXXX";
-	char ch[10];
+	char data_send[11] = "LXXSXVXXXX";
+	char data_read[11];
 	while(1)
 	{
 		/* Test UART */
-		len = uart3_read(&ch, 10);
+		len = uart3_read(data_read, 11);
+
+
+		switch(len)
+		{
+		case 5:
+			/* Change direction on the specified train
+			 *  LxxSx ==> L = line number, S = direction   */
+			if(data_read[0] == 'L' && data_read[3] == 'S')
+			{
+				char tmp_char[4];
+
+				tmp_char[0] = data_read[1];
+				tmp_char[1] = data_read[2];
+				tmp_char[2] = 0;
+				int n_train = atoi(tmp_char);
+
+				if(data_read[4] == '1')
+				{
+					ChangeDirection(&str,n_train,FORWARD_TRAIN);
+					Write_BusCan(&str);
+				}
+				else if(data_read[4] == '0')
+				{
+					ChangeDirection(&str,n_train,BACK_TRAIN);
+					Write_BusCan(&str);
+				}
+			}
+			break;
+		case 9:
+			/* Change speed on the specified train
+			 *  LxxVxxxx ==> L = line number, V = speed   */
+			if(data_read[0] == 'L' && data_read[3] == 'V')
+			{
+				char tmp_char[4];
+
+				tmp_char[0] = data_read[1];
+				tmp_char[1] = data_read[2];
+				tmp_char[2] = 0;
+				int n_train = atoi(tmp_char);
+
+				tmp_char[0] = data_read[4];
+				tmp_char[1] = data_read[5];
+				tmp_char[2] = data_read[6];
+				tmp_char[3] = data_read[7];
+				tmp_char[4] = 0;
+
+				int speed = atoi(tmp_char);
+				ChangeSpeed(&str,n_train,speed);
+				Write_BusCan(&str);
+			}
+			break;
+		case 10:
+			/* Power ON the circuit */
+			if(strcmp("STATRAIN", data_read))
+			{
+				StopGoTrain(&str,1);
+				Write_BusCan(&str);
+			}
+			/* Power off the circuit */
+			else if(strcmp("STOTRAIN", data_read))
+			{
+				StopGoTrain(&str,0);
+				Write_BusCan(&str);
+			}
+			break;
+		}
 	}
 }

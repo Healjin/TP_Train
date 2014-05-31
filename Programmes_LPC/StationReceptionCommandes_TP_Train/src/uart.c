@@ -157,10 +157,10 @@ uint32_t uart3_read(char *data, uint32_t length)
 {
 	uint32_t var;
 	for (var = 0; var < length; var++) {
-		// Read Rx buffer while we have data in input
+		// Read Rx buffer while we have data inside
 		if ((LPC_UART3->LSR & 0x1) == 1)
 			data[var] =LPC_UART3->RBR;
-		else
+		else // no more data
 			break;
 	}
 	return var;
