@@ -1,3 +1,10 @@
+/**
+*@file ExtLab2.c
+*@author Swagteam
+*@version 1.0
+*@date June 2014
+*@brief Contain functions
+*/
 #include "ExtLab2.h"
 
 static uint8_t save_data_bus_values = 0xFE;

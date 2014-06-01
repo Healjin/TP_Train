@@ -2,18 +2,17 @@
 *@file uart.c
 *@author Swagteam
 *@version 1.0
-*@date 27 march 2014
-*@brief
+*@date June 2014
+*@brief Contain all fonction to initzialise, write and read on UART 0 and 3
 */
 #include "LPC17xx.h"
 #include "uart.h"
 
-/******************************************************************
-* Description:    Initialize UART port, setup pin select,
-*                 clock, parity, stop bits, FIFO, etc.
-*
-* Parameter:      UART baudrate [bit/s]
-*******************************************************************/
+/**
+*@brief Initialize UART0 port, setup pin select,
+*@brief clock, parity, stop bits, FIFO, etc.
+*@param baudrate UART0 baudrate [bit/s]
+*/
 void uart0_init(uint32_t baudrate)
 {
   uint32_t Fdiv;
@@ -51,12 +50,11 @@ void uart0_init(uint32_t baudrate)
 }
 
 
-/******************************************************************
-* Description:    Initialize UART port, setup pin select,
-*                 clock, parity, stop bits, FIFO, etc.
-*
-* Parameter:      UART baudrate [bit/s]
-*******************************************************************/
+/**
+*@brief Initialize UART3 port, setup pin select,
+*@brief clock, parity, stop bits, FIFO, etc.
+*@param baudrate UART3 baudrate [bit/s]
+*/
 void uart3_init(uint32_t baudrate)
 {
   uint32_t Fdiv;
@@ -95,13 +93,11 @@ void uart3_init(uint32_t baudrate)
   LPC_UART3->FCR = 0x07;            /* Enable and reset TX and RX FIFO. */
 }
 
-
-/*********************************************************
- * Description : 	Envoi de données sur l'UART 0
- *
- * data: 			Pointeur sur les données à envoyer
- * length: 			Nombre d'octets à envoyer
- ********************************************************/
+/**
+*@brief Send data on UART0
+*@param data Pointer on the datas to be sent
+*@param baudrate Number of bytes to send
+*/
 void uart0_send(char *data, uint32_t length)
 {
 	int var;
@@ -111,11 +107,16 @@ void uart0_send(char *data, uint32_t length)
 	}
 }
 
+/**
+*@brief Read data from UART0
+*@param data Pointer that store the data read from UART 0
+*@param length Number of bytes to read
+*/
 uint32_t uart0_read(char *data, uint32_t length)
 {
 	uint32_t var;
 	for (var = 0; var < length; var++) {
-		// Read Rx buffer while we have data in input
+		// Read Rx buffer while we have data inside
 		if ((LPC_UART0->LSR & 0x1) == 1)
 			data[var] =LPC_UART0->RBR;
 		else
@@ -124,6 +125,10 @@ uint32_t uart0_read(char *data, uint32_t length)
 	return var;
 }
 
+/**
+*@brief Read one byte from UART0
+*@param ch Pointer that store the byte read from UART 0
+*/
 uint32_t uart0_read_one_char(char *ch)
 {
 	if ( LPC_UART0->LSR & (LSR_OE|LSR_PE|LSR_FE|LSR_RXFE|LSR_BI) )
@@ -141,12 +146,11 @@ uint32_t uart0_read_one_char(char *ch)
 	return 0;
 }
 
-/*********************************************************
- * Description : 	Envoi de données sur l'UART 0
- *
- * data: 			Pointeur sur les données à envoyer
- * length: 			Nombre d'octets à envoyer
- ********************************************************/
+/**
+*@brief Send data on UART3
+*@param data Pointer on the datas to be sent
+*@param baudrate Number of bytes to send
+*/
 void uart3_send(char *data, uint32_t length)
 {
 	int var;
@@ -156,11 +160,16 @@ void uart3_send(char *data, uint32_t length)
 	}
 }
 
+/**
+*@brief Read data from UART3
+*@param data Pointer that store the data read from UART 3
+*@param length Number of bytes to read
+*/
 uint32_t uart3_read(char *data, uint32_t length)
 {
 	uint32_t var;
 	for (var = 0; var < length; var++) {
-		// Read Rx buffer while we have data in input
+		// Read Rx buffer while we have data inside
 		if ((LPC_UART3->LSR & 0x1) == 1)
 			data[var] =LPC_UART3->RBR;
 		else
@@ -169,6 +178,10 @@ uint32_t uart3_read(char *data, uint32_t length)
 	return var;
 }
 
+/**
+*@brief Read one byte from UART3
+*@param ch Pointer that store the byte read from UART 3
+*/
 uint32_t uart3_read_one_char(char *ch)
 {
 	if ( LPC_UART3->LSR & (LSR_OE|LSR_PE|LSR_FE|LSR_RXFE|LSR_BI) )

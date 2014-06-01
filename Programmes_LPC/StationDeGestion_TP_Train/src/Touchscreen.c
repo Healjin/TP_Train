@@ -6,6 +6,10 @@
  */
 #include "Touchscreen.h"
 
+/**
+*@brief Initialization on touchscreen, set an interruption when we press
+*@brief touchscreen. This interruption is linked to EINT3.
+*/
 void Init_touchscreen()
 {
 	NVIC_EnableIRQ(EINT3_IRQn);
@@ -18,6 +22,10 @@ void Init_touchscreen()
 	Valide_datas_bus_to_extlab2();
 }
 
+/**
+*@brief Read the x value from the touchscreen
+*@return x value coded between 0 and 4096
+*/
 uint16_t Read_x_12bits()
 {
 	Select_control_bus();
@@ -39,6 +47,10 @@ uint16_t Read_x_12bits()
 	return x;
 }
 
+/**
+*@brief Read the y value from the touchscreen
+*@return y value coded between 0 and 4096
+*/
 uint16_t Read_y_12bits()
 {
 	Select_control_bus();
@@ -60,6 +72,10 @@ uint16_t Read_y_12bits()
 	return y;
 }
 
+/**
+*@brief Read the x and y values from the touchscreen
+*@return x and y values coded between 0 and 4096
+*/
 void Read_x_and_y_12bits(uint16_t* x, uint16_t* y)
 {
 	/* Disable PEN_IRQ after measure */
