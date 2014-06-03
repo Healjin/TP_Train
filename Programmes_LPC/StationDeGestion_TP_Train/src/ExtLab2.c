@@ -49,3 +49,15 @@ void Valide_datas_bus_to_extlab2()
 	LPC_GPIO2->FIOPIN |= 1 << 8;
 	LPC_GPIO2->FIOPIN &=~ (1 << 8);
 }
+
+void Init_Rotate_button()
+{
+	LPC_GPIO2->FIODIR |= 0b111 << 11; // Put ouput on select rotate button
+	LPC_GPIO2->FIOCLR = 1 << 13;
+	LPC_GPIO2->FIOSET = 0b11 << 11;
+
+	NVIC_ClearPendingIRQ(EINT3_IRQn);
+	LPC_GPIOINT->IO2IntEnR = 1 << 6;
+	LPC_GPIOINT->IO2IntClr = 1 << 6;
+	NVIC_EnableIRQ(EINT3_IRQn);
+}

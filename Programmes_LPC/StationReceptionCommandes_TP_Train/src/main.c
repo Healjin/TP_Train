@@ -13,6 +13,7 @@
 #include "ControlTrain.h"
 #include <cr_section_macros.h>
 #include "string.h"
+#include "stdbool.h"
 #endif
 
 
@@ -36,78 +37,87 @@ int main(void) {
 	
 	uart3_init(9600);
 
-	uint32_t len;
-	char data_send[11] = "LXXSXVXXXX";
+	uint32_t len = 0;
 	char data_read[11];
+
+	char ch;
+	bool trame_ready = false;
 	while(1)
 	{
 		/* Test UART */
-		len = uart3_read(data_read, 11);
-
-
-		switch(len)
+		if(uart3_read_one_char(&ch))
 		{
-		case 5:
-			/* Change direction on the specified train
-			 *  LxxSx ==> L = line number, S = direction   */
-			if(data_read[0] == 'L' && data_read[3] == 'S')
+			data_read[len++] = ch;
+			if(ch == 0)
+				trame_ready = true;
+		}
+
+		if(trame_ready)
+		{
+			switch(len)
 			{
-				char tmp_char[4];
-
-				tmp_char[0] = data_read[1];
-				tmp_char[1] = data_read[2];
-				tmp_char[2] = 0;
-				int n_train = atoi(tmp_char);
-
-				if(data_read[4] == '1')
+			case 5:
+				/* Change direction on the specified train
+				 *  LxxSx ==> L = line number, S = direction   */
+				if(data_read[0] == 'L' && data_read[3] == 'S')
 				{
-					ChangeDirection(&str,n_train,FORWARD_TRAIN);
+					char tmp_char[4];
+
+					tmp_char[0] = data_read[1];
+					tmp_char[1] = data_read[2];
+					tmp_char[2] = 0;
+					int n_train = atoi(tmp_char);
+
+					if(data_read[4] == '1')
+					{
+						ChangeDirection(&str,n_train,FORWARD_TRAIN);
+						Write_BusCan(&str);
+					}
+					else if(data_read[4] == '0')
+					{
+						ChangeDirection(&str,n_train,BACK_TRAIN);
+						Write_BusCan(&str);
+					}
+				}
+				break;
+			case 9:
+				/* Power ON the circuit */
+				if(!strcmp(data_read, "STATRAIN"))
+				{
+					StopGoTrain(&str,1);
 					Write_BusCan(&str);
 				}
-				else if(data_read[4] == '0')
+				/* Power off the circuit */
+				else if(!strcmp(data_read,"STOTRAIN"))
 				{
-					ChangeDirection(&str,n_train,BACK_TRAIN);
+					StopGoTrain(&str,0);
 					Write_BusCan(&str);
 				}
-			}
-			break;
-		case 9:
-			/* Change speed on the specified train
-			 *  LxxVxxxx ==> L = line number, V = speed   */
-			if(data_read[0] == 'L' && data_read[3] == 'V')
-			{
-				char tmp_char[4];
+				/* Change speed on the specified train
+				 *  LxxVxxxx ==> L = line number, V = speed   */
+				else if(data_read[0] == 'L' && data_read[3] == 'V')
+				{
+					char tmp_char[4];
 
-				tmp_char[0] = data_read[1];
-				tmp_char[1] = data_read[2];
-				tmp_char[2] = 0;
-				int n_train = atoi(tmp_char);
+					tmp_char[0] = data_read[1];
+					tmp_char[1] = data_read[2];
+					tmp_char[2] = 0;
+					int n_train = atoi(tmp_char);
 
-				tmp_char[0] = data_read[4];
-				tmp_char[1] = data_read[5];
-				tmp_char[2] = data_read[6];
-				tmp_char[3] = data_read[7];
-				tmp_char[4] = 0;
+					tmp_char[0] = data_read[4];
+					tmp_char[1] = data_read[5];
+					tmp_char[2] = data_read[6];
+					tmp_char[3] = data_read[7];
+					tmp_char[4] = 0;
 
-				int speed = atoi(tmp_char);
-				ChangeSpeed(&str,n_train,speed);
-				Write_BusCan(&str);
+					int speed = atoi(tmp_char);
+					ChangeSpeed(&str,n_train,speed);
+					Write_BusCan(&str);
+				}
+				break;
 			}
-			break;
-		case 10:
-			/* Power ON the circuit */
-			if(!strcmp("STATRAIN", data_read))
-			{
-				StopGoTrain(&str,1);
-				Write_BusCan(&str);
-			}
-			/* Power off the circuit */
-			else if(!strcmp("STOTRAIN", data_read))
-			{
-				StopGoTrain(&str,0);
-				Write_BusCan(&str);
-			}
-			break;
+			trame_ready = false;
+			len = 0;
 		}
 	}
 }
