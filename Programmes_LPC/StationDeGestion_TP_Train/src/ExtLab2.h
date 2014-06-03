@@ -15,6 +15,7 @@
 void Select_display_bus();
 void Select_control_bus();
 void Valide_datas_bus_to_extlab2();
+void Init_Rotate_button();
 
 
 

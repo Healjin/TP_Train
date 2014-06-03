@@ -6,6 +6,7 @@
 *@brief
 */
 #include "LPC17xx.h"
+#include "uart.h"
 
 /******************************************************************
 * Description:    Initialize UART port, setup pin select,
@@ -13,7 +14,7 @@
 *
 * Parameter:      UART baudrate [bit/s]
 *******************************************************************/
-void Uart0_init(uint32_t baudrate)
+void uart0_init(uint32_t baudrate)
 {
   uint32_t Fdiv;
   uint32_t pclkdiv, pclk;
@@ -50,3 +51,134 @@ void Uart0_init(uint32_t baudrate)
 }
 
 
+/******************************************************************
+* Description:    Initialize UART port, setup pin select,
+*                 clock, parity, stop bits, FIFO, etc.
+*
+* Parameter:      UART baudrate [bit/s]
+*******************************************************************/
+void uart3_init(uint32_t baudrate)
+{
+  uint32_t Fdiv;
+  uint32_t pclkdiv, pclk;
+
+  LPC_SC->PCONP |= 0x1 << 25;			// Enable UART 3
+
+  // Enable pin TXD3 and RXD3
+  LPC_PINCON->PINSEL9 |= 0b1111 << 24;
+  /* By default, the PCLKSELx value is zero, thus, the PCLK for
+  all the peripherals is 1/4 of the SystemFrequency. */
+  /* Bit 6~7 is for UART0 */
+  pclkdiv = (LPC_SC->PCLKSEL0 >> 6) & 0x03;
+  switch ( pclkdiv )
+  {
+    case 0x00:
+    default:
+      pclk = SystemCoreClock/4;
+      break;
+    case 0x01:
+      pclk = SystemCoreClock;
+      break;
+    case 0x02:
+      pclk = SystemCoreClock/2;
+      break;
+    case 0x03:
+      pclk = SystemCoreClock/8;
+      break;
+  }
+
+  LPC_UART3->LCR = 0x83;            /* 8 bits, no Parity, 1 Stop bit */
+  Fdiv = ( pclk / 16 ) / baudrate ; /* setup baud rate */
+  LPC_UART3->DLM = Fdiv / 256;
+  LPC_UART3->DLL = Fdiv % 256;
+  LPC_UART3->LCR = 0x03;            /* DLAB = 0 */
+  LPC_UART3->FCR = 0x07;            /* Enable and reset TX and RX FIFO. */
+}
+
+
+/*********************************************************
+ * Description : 	Envoi de données sur l'UART 0
+ *
+ * data: 			Pointeur sur les données à envoyer
+ * length: 			Nombre d'octets à envoyer
+ ********************************************************/
+void uart0_send(char *data, uint32_t length)
+{
+	int var;
+	for (var = 0; var < length; var++) {
+		while (!(LPC_UART0->LSR & 0x1 << 5));
+		LPC_UART0->THR = data[var];
+	}
+}
+
+uint32_t uart0_read(char *data, uint32_t length)
+{
+	int i;
+	for (i = 0; i < length; i++) {
+		if(uart3_read_one_char(&data[i]) == 0)
+			return 0;
+	}
+	return 1;
+}
+
+uint32_t uart0_read_one_char(char *ch)
+{
+	if ( LPC_UART0->LSR & (LSR_OE|LSR_PE|LSR_FE|LSR_RXFE|LSR_BI) )
+	{
+		/* Clear errors */
+		ch[0] = LPC_UART0->LSR;
+		ch[0] = LPC_UART0->RBR;
+		return 0;
+	}
+	if ( LPC_UART0->LSR & LSR_RDR )       /* Receive Data Ready */
+	{
+		*ch = LPC_UART0->RBR;
+		return 1;
+	}
+	return 0;
+}
+
+/*********************************************************
+ * Description : 	Envoi de données sur l'UART 0
+ *
+ * data: 			Pointeur sur les données à envoyer
+ * length: 			Nombre d'octets à envoyer
+ ********************************************************/
+void uart3_send(char *data, uint32_t length)
+{
+	int var;
+	for (var = 0; var < length; var++) {
+		while (!(LPC_UART3->LSR & 0x1 << 5));
+		LPC_UART3->THR = data[var];
+	}
+}
+
+uint32_t uart3_read(char *data, uint32_t length)
+{
+	uint32_t var;
+	for (var = 0; var < length; var++) {
+		// Read Rx buffer while we have data inside
+		if ((LPC_UART3->LSR & 0x1) == 1)
+			data[var] =LPC_UART3->RBR;
+		else // no more data
+			break;
+	}
+	return var;
+}
+
+uint32_t uart3_read_one_char(char *ch)
+{
+	if ( LPC_UART3->LSR & (LSR_OE|LSR_PE|LSR_FE|LSR_RXFE|LSR_BI) )
+	{
+		/* Clear errors */
+		ch[0] = LPC_UART3->LSR;
+		ch[0] = LPC_UART3->RBR;
+		return 0;
+	}
+	if ( LPC_UART3->LSR & LSR_RDR )       /* Receive Data Ready */
+	{
+		ch[0] = LPC_UART3->RBR;
+		return 1;
+	}
+	return 0;
+}
