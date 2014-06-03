@@ -1,117 +1,110 @@
-/*
-*@file SD.c
-*@author Swagteam
-*@version 1.0
-*@date 8 april 2014
-*@brief SD configuration
-*/
+
+#include "SPI.h"
 #include "SD.h"
-void init_SD(){
+int x,i,y,data,k,l =0;
+uint8_t rep;
+int reponse[512];
+uint8_t Tab[512];
+
+void Clear_pin(){
+	LPC_GPIO0 -> FIOCLR= 1 << 10;
+	Valide_datas_bus_to_extlab2();
+}
+
+void Set_pin(){
+	LPC_GPIO0 -> FIOSET= 1 << 10;
+	Valide_datas_bus_to_extlab2();
+}
+
+void Read_SD_one_block(uint32_t n_block){
+
 	Select_control_bus();
-//assert CS
-	LPC_GPIO0->FIODIR |= 1 << 10;
-	LPC_GPIO0->FIOCLR = 1 << 10;
-	Valide_datas_bus_to_extlab2();
 
 
-//delay 74 clocks
-	Write_only_SPI_8bits(0b00000000);
-	Write_only_SPI_8bits(0b00000000);
-	Write_only_SPI_8bits(0b00000000);
-	Write_only_SPI_8bits(0b00000000);
-	Write_only_SPI_8bits(0b00000000);
-	Write_only_SPI_8bits(0b00000000);
-	Write_only_SPI_8bits(0b00000000);
-	Write_only_SPI_8bits(0b00000000);
+		rep = Write_Read_SPI_8bits(0xff);
+		Clear_pin();
+
+		//Envoie de la CMD17
+		Write_only_SPI_8bits(0b01010001);//startBit + Transmission+ CM
+
+		uint32_t arg = n_block * 512;
+		Write_only_SPI_8bits(arg >> 24);//argument
+		Write_only_SPI_8bits(arg >> 16);//
+		Write_only_SPI_8bits(arg >> 8);//
+		Write_only_SPI_8bits(arg);//fin argument
 
 
-//deassert CS
-	LPC_GPIO0->FIOSET |= 1 << 10;
-	Valide_datas_bus_to_extlab2();
+		Write_only_SPI_8bits(0b00000001);// CRC7 + endBit
+		do{
+			rep = Write_Read_SPI_8bits(0xff);
+		} while (rep!=0);
 
+		Set_pin();
+		Clear_pin();
 
-//delay 16 clocks
-	Write_only_SPI_8bits(0b00000000);
-	Write_only_SPI_8bits(0b00000000);
+		while(rep != 0xFE){
+			rep = Write_Read_SPI_8bits(0xff);
+		}
 
+		for(i=0;i<514;i++){
+			data = Write_Read_SPI_8bits(0xff);
+			if(i<512){
+				Tab[i] = data;
+			}
+		}
+		Set_pin();
+}
 
-//CMD0
-	LPC_GPIO0->FIOCLR = 1 << 10;
-	Valide_datas_bus_to_extlab2();
-	Write_only_SPI_8bits(0b01000000);//47--40 start bit and transmission bit
-	Write_only_SPI_8bits(0b00000000);//39-32
-	Write_only_SPI_8bits(0b00000000);//31--24
-	Write_only_SPI_8bits(0b00000000);//23--16
-	Write_only_SPI_8bits(0b00000000);//15--8
-	Write_only_SPI_8bits(0b10010101);//7--0
+void Read_SD_multi_block(uint32_t n_block_multi){
+	int k_0 = 0;
+	for(y=0;y<n_block_multi;y++){
+		Read_SD_one_block(y);
+		Select_display_bus();
 
-	uint8_t x = Write_Read_SPI_8bits(0b00000000);
-
-
-
-//If idle = 0 then CMD58 else go to ACMD41
-	do{
-
-	//CMD55
-	Write_only_SPI_8bits(0b01111011);//47--40 start bit and transmission bit
-	Write_only_SPI_8bits(0b00000000);//39-32
-	Write_only_SPI_8bits(0b00000000);//31--24
-	Write_only_SPI_8bits(0b00000000);//23--16
-	Write_only_SPI_8bits(0b00000000);//15--8
-	Write_only_SPI_8bits(0b00000001);//7--0
-
-	//ACMD41
-	Write_only_SPI_8bits(0b00101001);//47--40 start bit and transmission bit
-	Write_only_SPI_8bits(0b00000000);//39-32
-	Write_only_SPI_8bits(0b00000000);//31--24
-	Write_only_SPI_8bits(0b00000000);//23--16
-	Write_only_SPI_8bits(0b00000000);//15--8
-	Write_only_SPI_8bits(0b00000001);//7--0
-
-	}while(LPC_SPI->SPDR & (1 << 10));
-
-
-	//CMD58
-	Write_only_SPI_8bits(0b00111010);//47--40 start bit and transmission bit
-	Write_only_SPI_8bits(0b00000000);//39-32
-	Write_only_SPI_8bits(0b00000000);//31--24
-	Write_only_SPI_8bits(0b00000000);//23--16
-	Write_only_SPI_8bits(0b00000000);//15--8
-	Write_only_SPI_8bits(0b00000001);//7--0
-
-
-// if 3.3V allowed then Return ok else return error exit
-	if(LPC_SPI->SPDR & (1 << 20)){
-		//set clock to maximum
-
+		for(;k<(510 +k_0);k=k+3){
+			Write_pixel(Tab[k],Tab[k+1],Tab[k+2]);
+		}
+		Write_pixel(0,0,0);
+		k = (k_0 + 1) % 3;
+		k_0 = (k_0 + 1) % 3;
 	}
+}
 
-//Return OK
+void Write_SD(){
 
-	LPC_GPIO0->FIOSET |= 1 << 10;
-	Valide_datas_bus_to_extlab2();
-/*
- * /*
-===============================================================================
- Name        : main.c
- Author      :
- Version     :
- Copyright   : Copyright (C)
- Description : main definition
-===============================================================================
+		rep = Write_Read_SPI_8bits(0xff);
+		Clear_pin();
 
-#include "spi.h"
-#include "sd.h"
+		//Envoie de la CMD24
+		Write_only_SPI_8bits(0b01011000);//startBit + Transmission+ CM
+		Write_only_SPI_8bits(0b00000000);//argument
+		Write_only_SPI_8bits(0b00000000);//
+		Write_only_SPI_8bits(0b00000000);//
+		Write_only_SPI_8bits(0b00000000);//fin argument
+		Write_only_SPI_8bits(0b00000001);// CRC7 + endBit
+		do{
+			rep = Write_Read_SPI_8bits(0xff);
+		} while (rep!=0);
+
+		Set_pin();
+		Clear_pin();
+
+		Write_only_SPI_8bits(0xFE);
+
+		for(i=0;i<514;i++){
+
+			Write_only_SPI_8bits(0x56);
+
+		}
+		Set_pin();
 
 
+}
 
 void ChipSetSelect(){
 
 	LPC_GPIO0 -> FIODIR |= 0b11 << 21;
-
 	LPC_GPIO0 -> FIOSET = 0b11 << 21;
-
-
 	LPC_GPIO2 ->FIODIR |= 0b1 << 8;
 	LPC_GPIO2 ->FIOSET = 0b1 << 8;
 	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
@@ -119,7 +112,7 @@ void ChipSetSelect(){
 
 
 
-int Sd_initialisation(){
+void init_SD(){
 	int x=0;
 	int y=0;
 	int i=0;
@@ -127,142 +120,122 @@ int Sd_initialisation(){
 
 	int Tab[5]={0,0,0,0,0};
 
-	//int IDLE;
+
 
 	ChipSetSelect();
-	init_spi(8, 64);
-
-
+	Init_SPI_master_mode(0, 0, 400000, 8);
 
 	LPC_GPIO0 -> FIODIR |= 1 << 10;// met la pin en sortie
-	LPC_GPIO0 -> FIOCLR= 1 << 10;
-	LPC_GPIO2 ->FIOSET = 0b1 << 8;
-	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
+	Clear_pin();
 
 	//80 coups d'horloges
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
+	Write_only_SPI_8bits(0xFF);
+	Write_only_SPI_8bits(0xFF);
+	Write_only_SPI_8bits(0xFF);
+	Write_only_SPI_8bits(0xFF);
+	Write_only_SPI_8bits(0xFF);
+	Write_only_SPI_8bits(0xFF);
+	Write_only_SPI_8bits(0xFF);
+	Write_only_SPI_8bits(0xFF);
+	Write_only_SPI_8bits(0xFF);
+	Write_only_SPI_8bits(0xFF);
 
-
-	LPC_GPIO0 -> FIOSET = 1 << 10;
-	LPC_GPIO2 ->FIOSET = 0b1 << 8;
-	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
+	Set_pin();
 
 	// 24 coups d'horloges
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
-	write_SPI(0b00000000);
+	Write_only_SPI_8bits(0xFF);
+	Write_only_SPI_8bits(0xFF);
 
-	do{
 	//Envoie de la CMD0
-	LPC_GPIO0 -> FIOCLR= 1 << 10;
-	LPC_GPIO2 ->FIOSET = 0b1 << 8;
-	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
-	write_SPI(0b01000000);//startBit + Transmission+ CMD
-	write_SPI(0b00000000);//argument
-	write_SPI(0b00000000);//
-	write_SPI(0b00000000);//
-	write_SPI(0b00000000);//fin argument
-	write_SPI(0b10010101);// CRC7 + endBit
-	x= read_SPI();
-	x= read_SPI();
+	Clear_pin();
+	Write_only_SPI_8bits(0b01000000);//startBit + Transmission+ CMD
+	Write_only_SPI_8bits(0b00000000);//argument
+	Write_only_SPI_8bits(0b00000000);//
+	Write_only_SPI_8bits(0b00000000);//
+	Write_only_SPI_8bits(0b00000000);//fin argument
+	Write_only_SPI_8bits(0b10010101);// CRC7 + endBit
+	do{
+	rep = Write_Read_SPI_8bits(0xFF);
+	} while (rep>>7);
 
-	LPC_GPIO0 -> FIOSET= 1 << 10;
-	LPC_GPIO2 ->FIOSET = 0b1 << 8;
-	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
+	Set_pin();
+	rep = Write_Read_SPI_8bits(0xff);
 
-
-	}while (x != 1);
 	//tant que IDLE <> 0 renvoyer les CMD
 	do {
-		LPC_GPIO0 -> FIOCLR= 1 << 10;
-		LPC_GPIO2 ->FIOSET = 0b1 << 8;
-		LPC_GPIO2 ->FIOCLR = 0b1 << 8;
+		Clear_pin();
 
 	//Envoie de la CMD55 pour pouvoir envoyer ACMD41
+
+		Write_only_SPI_8bits(0b01110111);//startBit + Transmission+ CM
+		Write_only_SPI_8bits(0b00000000);//argument
+		Write_only_SPI_8bits(0b00000000);//
+		Write_only_SPI_8bits(0b00000000);//
+		Write_only_SPI_8bits(0b00000000);//fin argument
+		Write_only_SPI_8bits(0b00000001);// CRC7 + endBit
 	do{
-	write_SPI(0b01110111);//startBit + Transmission+ CM
-	write_SPI(0b00000000);//argument
-	write_SPI(0b00000000);//
-	write_SPI(0b00000000);//
-	write_SPI(0b00000000);//fin argument
-	write_SPI(0b00000001);// CRC7 + endBit
-	x=read_SPI();
-	x=read_SPI();
+	rep = Write_Read_SPI_8bits(0xff);
+	} while (rep>>7);
 
-	LPC_GPIO0 -> FIOSET= 1 << 10;
-	LPC_GPIO2 ->FIOSET = 0b1 << 8;
-	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
-	}while(x !=0);
-	LPC_GPIO0 -> FIOCLR= 1 << 10;
-		LPC_GPIO2 ->FIOSET = 0b1 << 8;
-		LPC_GPIO2 ->FIOCLR = 0b1 << 8;
+	Set_pin();
+
+	Write_Read_SPI_8bits(0xff);
+
+
+	Clear_pin();
+
 	//Envoie de la ACMD41
-	write_SPI(0b01101101);//startBit + Transmission+ CM
-	write_SPI(0b00000000);//argument
-	write_SPI(0b00000000);//
-	write_SPI(0b00000000);//
-	write_SPI(0b00000000);//fin argument
-	write_SPI(0b00000001);// CRC7 + endBit
+	Write_only_SPI_8bits(0b01101001);//startBit + Transmission+ CM
+	Write_only_SPI_8bits(0b00000000);//argument
+	Write_only_SPI_8bits(0b00000000);//
+	Write_only_SPI_8bits(0b00000000);//
+	Write_only_SPI_8bits(0b00000000);//fin argument
+	Write_only_SPI_8bits(0b00000001);// CRC7 + endBit
+	do{
+	rep = Write_Read_SPI_8bits(0xff);
+	} while (rep>>7);
+
+	Set_pin();
+	Write_Read_SPI_8bits(0xff);
+
+	} while(rep&1) ; //end while
 
 
-
-	for ( i=0;i<5; i++){
-		x=read_SPI();
-		Tab[i]=x;
-	}
-	LPC_GPIO0 -> FIOSET= 1 << 10;
-	LPC_GPIO2 ->FIOSET = 0b1 << 8;
-	LPC_GPIO2 ->FIOCLR = 0b1 << 8;
-
-	y = Tab[2];
-	} while (((y & (0x01 <<6 )) != 1   |   (y & (0x01 <<7 ))!=1)); //end while
-
-
-	LPC_GPIO0 -> FIOCLR= 1 << 10;
-			LPC_GPIO2 ->FIOSET = 0b1 << 8;
-			LPC_GPIO2 ->FIOCLR = 0b1 << 8;
+	Clear_pin();
 
 	//Envoie CMD 58
-	write_SPI(0b01111010);//startBit + Transmission+ CM
-	write_SPI(0b00000000);//argument
-	write_SPI(0b00000000);//
-	write_SPI(0b00000000);//
-	write_SPI(0b00000000);//fin argument
-	write_SPI(0b00000001);// CRC7 + endBit
+	Write_only_SPI_8bits(0b01111010);//startBit + Transmission+ CM
+	Write_only_SPI_8bits(0b00000000);//argument
+	Write_only_SPI_8bits(0b00000000);//
+	Write_only_SPI_8bits(0b00000000);//
+	Write_only_SPI_8bits(0b00000000);//fin argument
+	Write_only_SPI_8bits(0b00000001);// CRC7 + endBit
 
-	LPC_GPIO0 -> FIOSET= 1 << 10;
-		LPC_GPIO2 ->FIOSET = 0b1 << 8;
-		LPC_GPIO2 ->FIOCLR = 0b1 << 8;
+	do{
+	rep = Write_Read_SPI_8bits(0xff);
+	} while (rep>>7);
+	Tab[0]=x;
+	for ( i=1;i<5; i++){
+		x=Write_Read_SPI_8bits(0xff);
+		Tab[i]=x;
+		}
 
+	Set_pin();
 
-	// si 3V3 est bon change la CLK
-	if ((x & (0x1 << 20))== 1) {
-		 change_clock_spi(4);
-	}else return 1;
-
-
-	//
-	LPC_GPIO0 -> FIOCLR= 1 << 10;
-	return 0;
+	y = Tab[2];
 
 
-}
- *
- *
- */
+	 if((y & (1<<6))| (y& (1<<7))){
+		 Init_SPI_master_mode(0, 0, 5000000, 8);
+	}
 
 
 
 }
+
+
+
+
+
+
 

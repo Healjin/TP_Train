@@ -13,5 +13,11 @@
 #include "SPI.h"
 #include "ExtLab2.h"
 void init_SD();
+void Read_SD_one_block();
+void Read_SD_multi_block(uint32_t n_block);
+void Clear_pin();
+void Set_pin();
+void Write_SD();
+void Read_SD_multiBLocks();
 
 #endif /* POLICE_H_ */

@@ -1,0 +1,10 @@
+*.o
+*.launch
+*.mk
+*.ld
+*.map
+*.afx
+*.d
+*.project
+*.cproject
+*.metadata

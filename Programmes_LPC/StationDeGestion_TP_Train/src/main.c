@@ -63,7 +63,7 @@ int main(void) {
 	/* -- Set the "background" on the LCD -- */
 	int var;
 	for (var = 0; var < 320*240; var++) {
-		Write_pixel(255,255,255);
+		Write_pixel(120,0,0);
 	}
 
 
@@ -92,6 +92,8 @@ int main(void) {
 	NVIC_EnableIRQ(TIMER0_IRQn);
 
 	init_SD();
+	//Write_SD();
+	Read_SD_multi_block(449);
 
 	while(1) {
 		if((flag_interrupt == 1) && ((LPC_GPIO2->FIOPIN & (1 << 10)) == 0))
