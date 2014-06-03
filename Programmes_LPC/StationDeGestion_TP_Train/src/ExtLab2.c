@@ -3,7 +3,7 @@
 *@author Swagteam
 *@version 1.0
 *@date June 2014
-*@brief Contain functions
+*@brief Contain functions to control the ExtLab2 card
 */
 #include "ExtLab2.h"
 

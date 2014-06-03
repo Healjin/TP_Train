@@ -33,6 +33,19 @@ void Init_SPI_master_mode(uint8_t S_CPHA, uint8_t S_CPOL, uint32_t SPI_rate, uin
 		LPC_SPI->SPCCR = div;
 }
 /**
+*@brief Initialization of master mode on SPI
+*@param SPI_rate  -->  frequency SPI
+*/
+void Change_Frequency_SPI(uint32_t SPI_rate)
+{
+	uint16_t div = (SystemCoreClock/4) / SPI_rate;
+	if (div % 2)
+		LPC_SPI->SPCCR = div + 1;
+	else
+		LPC_SPI->SPCCR = div;
+}
+
+/**
 *@brief send data to SPI without return value
 *@param datas  --> data to send on SPI
 */

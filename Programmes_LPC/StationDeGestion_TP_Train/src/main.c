@@ -29,6 +29,7 @@ int flag_interrupt = 0;
 */
 void EINT3_IRQHandler(void)
 {
+
 	/* -- Clear interrupt on the touchscreen -- */
 	LPC_GPIOINT->IO2IntClr |= 1 << 10;
 
@@ -100,7 +101,7 @@ int main(void) {
 	LPC_TIM0 ->MCR = 1; /* Interrupt on MR0 value */
 	NVIC_EnableIRQ(TIMER0_IRQn);
 
-	init_SD();
+	//init_SD();
 	uart3_init(9600); /* Init UART to use on XBEE */
 
 	/* Add buttons to specifics positions */
@@ -142,23 +143,25 @@ int main(void) {
 			char * button_name = IsClickOnAButton(x_pixel, y_pixel);
 			if(button_name != 0)
 			{
-				if(strcmp(button_name,"test1"))
+				if(!strcmp(button_name,"Test1"))
 				{
-					char data_send[10] = "test1";
-					uart3_send(data_send, 10); // Send data on uart
-				}else if(strcmp(button_name,"test2"))
+					char data_send[10] = "STATRAIN";
+					uart3_send(data_send, 9); // Send data on uart
+				}else if(!strcmp(button_name,"Test2"))
 				{
-					char data_send[10] = "test2";
-					uart3_send(data_send, 10); // Send data on uart
-				}else if(strcmp(button_name,"test3"))
+					char data_send[10] = "STOTRAIN";
+					uart3_send(data_send, 9); // Send data on uart
+				}else if(!strcmp(button_name,"Test3"))
 				{
 					char data_send[10] = "test3";
 					uart3_send(data_send, 10); // Send data on uart
-				}else if(strcmp(button_name,"test4"))
+				}else if(!strcmp(button_name,"Test4"))
 				{
 					char data_send[10] = "test4";
 					uart3_send(data_send, 10); // Send data on uart
 				}
+				int test = strcmp(button_name,"test2");
+				test = test;
 			}
 			flag_interrupt = 0;
 		}

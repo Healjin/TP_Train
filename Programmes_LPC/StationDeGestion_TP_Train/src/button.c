@@ -37,7 +37,7 @@ char* IsClickOnAButton(uint16_t x, uint16_t y)
 void AddButton(char* button_name, uint16_t x_start,uint16_t x_stop, uint16_t y_start, uint16_t y_stop)
 {
 	nb_buttons_available++;
-	strcpy(button_name, buttons[nb_buttons_available].name);
+	strcpy(buttons[nb_buttons_available].name, button_name);
 	buttons[nb_buttons_available].x_start = x_start;
 	buttons[nb_buttons_available].x_stop = x_stop;
 	buttons[nb_buttons_available].y_start = y_start;

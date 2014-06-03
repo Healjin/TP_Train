@@ -31,20 +31,8 @@ int atoi(char *str)
 
 int main(void) {
 	str_bus str;
-	int speed,NoTrain;
 
 	Init_BusCan();
-	NoTrain = 44;
-	speed = 400;
-
-	StopGoTrain(&str,1);
-	Write_BusCan(&str);
-
-	ChangeDirection(&str,NoTrain,FORWARD_TRAIN);
-	Write_BusCan(&str);
-
-	ChangeSpeed(&str,NoTrain,speed);
-	Write_BusCan(&str);
 	
 	uart3_init(9600);
 
@@ -108,13 +96,13 @@ int main(void) {
 			break;
 		case 10:
 			/* Power ON the circuit */
-			if(strcmp("STATRAIN", data_read))
+			if(!strcmp("STATRAIN", data_read))
 			{
 				StopGoTrain(&str,1);
 				Write_BusCan(&str);
 			}
 			/* Power off the circuit */
-			else if(strcmp("STOTRAIN", data_read))
+			else if(!strcmp("STOTRAIN", data_read))
 			{
 				StopGoTrain(&str,0);
 				Write_BusCan(&str);
