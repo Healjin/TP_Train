@@ -531,15 +531,15 @@ const unsigned char vga_fonts[] =
 *@param *color_letter  -->  color of the char RGB
 *@param *color_background  -->  color of the background RGB
 */
-void Write_char_with_background(char character, uint8_t x,uint8_t y, uint8_t *color_letter, uint8_t *color_background)
+void Write_char_with_background(char character, uint16_t x,uint16_t y, uint8_t *color_letter, uint8_t *color_background)
 {
 	Set_cursor(x, y);
 	Create_partial_screen( y, y+21 , x, x+7);
-	int pos_tab = (int)character * 22;
+	int pos_tab = (int)character * LETTER_HEIGHT;
 	int i;
 	int shift;
 	uint8_t mask;
-	for(i = pos_tab; i < pos_tab + 22; i++){
+	for(i = pos_tab; i < pos_tab + LETTER_HEIGHT; i++){
 		mask = 0x80;
 		for (shift= 7; shift >= 0; shift--){
 			if((vga_fonts[i] & mask) >> shift)
@@ -561,13 +561,13 @@ void Write_char(char character, uint16_t x,uint16_t y, uint8_t *color_character)
 {
 	Set_cursor(x, y);
 	Create_partial_screen( y, y+LETTER_HEIGHT-1 , x, x+LETTER_WIDTH-1);
-	int pos_tab = (int)character * 22;
+	int pos_tab = (int)character * LETTER_HEIGHT;
 	int x_actual = x; int y_actual = y;
 	uint8_t pixel_ignored = 0;
 	int i;
 	int shift;
 	uint8_t mask ;
-	for(i = pos_tab; i < pos_tab + 22; i++){
+	for(i = pos_tab; i < pos_tab + LETTER_HEIGHT; i++){
 		mask = 0x80;
 		for (shift = 7; shift >= 0; shift--){
 			if((vga_fonts[i] & mask) >> shift)
@@ -611,11 +611,11 @@ void Write_char(char character, uint16_t x,uint16_t y, uint8_t *color_character)
 *@param *color_character  -->  color of the char RGB
 *@param *color_background -->  color of the background RGB
 */
-void Write_string_with_background(char * string,uint8_t x,uint8_t y, uint8_t *color_character,uint8_t *color_background){
+void Write_string_with_background(char * string,uint16_t x,uint16_t y, uint8_t *color_character,uint8_t *color_background){
 	int i =0;
 	while(string[i] != 0){
 		Write_char_with_background(string[i],x,y,color_character,color_background);
-		x += 8;
+		x += LETTER_WIDTH;
 		i++;
 	}
 }
@@ -626,101 +626,11 @@ void Write_string_with_background(char * string,uint8_t x,uint8_t y, uint8_t *co
 *@param y	-->  position y on the screen (0 - 319)
 *@param *color_character  -->  color of the char RGB
 */
-void Write_string(char * string,uint8_t x,uint8_t y, uint8_t *color_character){
+void Write_string(char * string,uint16_t x,uint16_t y, uint8_t *color_character){
 	int i =0;
 	while(string[i] != 0){
 		Write_char(string[i],x,y,color_character);
-		x += 8;
+		x += LETTER_WIDTH;
 		i++;
 	}
 }
-
-/**
-*@brief Create a button on the screen
-*@param x
-*@param y
-*@param v_cote largeur du bouton
-*@param h_cote longueur du bouton
-*/
-void Create_button(char * string,uint8_t x,uint8_t y,uint8_t hauteur,uint8_t largeur){
-
-	uint8_t grey[3]={200,200,200};
-	uint8_t black[3]={0,0,0};
-
-
-	int nbr_char=0;
-	int i=0;
-	while(string[i] != 0){
-		nbr_char++;
-		i++;
-	}
-
-
-	Write_string_with_background(string,x,y,black,grey);
-
-	Set_cursor(x-10,y-10);
-	Create_partial_screen(y-10,y+10+8+10,x-10,x+nbr_char*8);
-
-	int taille = ((nbr_char*8)+20)*(28);
-			int c;
-	for (c = 1; c < taille; c++) {
-			Write_pixel(200,200,200);
-	}
-
-
-
-
-
-
-
-	/*
-
-
-	Set_cursor(x,y);
-	Create_partial_screen(y,y+hauteur,x,x+largeur);
-	int c;
-	int taille= hauteur*largeur;
-			for (c = 1; c < taille; c++) {
-				Write_pixel(0,0,0);
-			}
-
-	Set_cursor(x+2,y+2);
-	Create_partial_screen(y+2,y+hauteur-2,x+2,x+largeur-2);
-	int a;
-	taille = (hauteur-4)*(largeur-4);
-	for (a = 1; a < taille; a++) {
-			Write_pixel(200,200,200);
-	}
-
-	int centre_y = y+(hauteur/4);
-	int centre_x = x+(largeur/4);
-
-	Write_string_with_background(string,centre_x,centre_y,black,grey);
-
-*/
-
-}
-
-
-/**
-void Write_forme(uint8_t r,uint8_t*color_character){
-	int x =100;
-	int d = r - 1;
-	int y = r;
-	while(y>=x) {
-		Set_cursor(x,y);
-		Write_pixel(color_character[0], color_character[1], color_character[2]);
-		if(d>=2*x){
-			d = d-2*x-1;
-			x ++;
-		}else if(d<2*(r-y)){
-			d = d+2*y-1;
-			y = y-1;
-		}else{
-			d = d+2*(y-x-1);
-			y -=1;
-			x ++;
-		}
-	}
-}**/
-

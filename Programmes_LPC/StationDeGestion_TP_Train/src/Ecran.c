@@ -202,3 +202,13 @@ void Create_partial_screen(uint16_t v_start, uint16_t v_end, uint8_t h_start, ui
 	Parameter_out((h_start << 8)|h_end);
 }
 
+void change_zone_color(uint16_t x_start, uint16_t x_stop, uint16_t y_start, uint16_t y_stop, uint8_t *color_character)
+{
+	Select_display_bus();
+	Create_partial_screen(y_start, y_stop, x_start, x_stop);
+	Set_cursor(x_start,y_start);
+	uint16_t var;
+	uint32_t nb_pixels = (x_stop-x_start+1)*(y_stop-y_start+1);
+	for (var = 0; var < nb_pixels; var++)
+		Write_pixel(color_character[0],color_character[1],color_character[2]);
+}

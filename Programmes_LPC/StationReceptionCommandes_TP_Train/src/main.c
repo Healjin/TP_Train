@@ -56,7 +56,7 @@ int main(void) {
 		{
 			switch(len)
 			{
-			case 5:
+			case 6:
 				/* Change direction on the specified train
 				 *  LxxSx ==> L = line number, S = direction   */
 				if(data_read[0] == 'L' && data_read[3] == 'S')
