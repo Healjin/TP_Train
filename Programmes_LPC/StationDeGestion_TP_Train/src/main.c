@@ -83,6 +83,7 @@ int main(void) {
 	int var;
 	for (var = 0; var < 10000000; ++var);
 
+	Init_Extlab2();
 	Init_display();
 	Select_display_bus();
 
@@ -94,7 +95,7 @@ int main(void) {
 	/* -- Set the "background" on the LCD -- */
 	//int var;
 	for (var = 0; var < 320*240; var++) {
-		Write_pixel(120,0,0);
+		Write_pixel(255,255,255);
 	}
 
 	uint8_t red[3]={255,0,0};
@@ -121,12 +122,9 @@ int main(void) {
 	LPC_TIM0 ->MCR = 1; /* Interrupt on MR0 value */
 	NVIC_EnableIRQ(TIMER0_IRQn);
 
-<<<<<<< HEAD
 	init_SD();
-	//Write_SD();
-	Read_SD_multi_block(449);
-=======
-	//init_SD();
+	//Read_SD_multi_block(450);
+
 	uart3_init(9600); /* Init UART to use on XBEE */
 
 	/* Add buttons to specifics positions */
@@ -136,7 +134,6 @@ int main(void) {
 	AddButton("Test4", 140, 240, 220, 320);
 
 	Init_Rotate_button();
->>>>>>> b5e035db8db0b7023972aab5f37697fb29131679
 
 	while(1) {
 		/* If touchscreen pressed */

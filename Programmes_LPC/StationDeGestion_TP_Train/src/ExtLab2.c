@@ -9,6 +9,13 @@
 
 static uint8_t save_data_bus_values = 0xFE;
 
+void Init_Extlab2()
+{
+	LPC_GPIO0->FIODIR |= 0x3 << 21;
+	LPC_GPIO2->FIODIR |= 1 << 8;
+	LPC_GPIO2->FIODIR |= 0b111 << 11;
+}
+
 /**
 *@brief Select bus control on the ExtLab2
 *@details Select the control bus on the ExtLab2 and restore the old
