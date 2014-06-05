@@ -61,6 +61,21 @@ void Write_BusCan(str_bus *s){
 	LPC_CAN1->CMR |= 0x01;						//Transmission
 }
 
-void Read_BusCan(){
+void Read_BusCan(str_bus *l){
+	if(!(LPC_CAN1->RFS >> 31))
+		return;
+	else{
+		l->id_Bus = LPC_CAN1->RID ;					//Identifier
+		l->dlc = (LPC_CAN1->RFS >> 16)& 0xFF;		//Data Length Code
 
+		l->data[0] = (LPC_CAN1->RDA)& 0xFF;					//Datas
+		l->data[1] = (LPC_CAN1->RDA >> 8)& 0xFF;
+		l->data[2] = (LPC_CAN1->RDA >> 16)& 0xFF;
+		l->data[3] = (LPC_CAN1->RDA >> 24)& 0xFF;
+		l->data[4] = (LPC_CAN1->RDB)& 0xFF;
+		l->data[5] = (LPC_CAN1->RDB >> 8)& 0xFF;
+		l->data[6] = (LPC_CAN1->RDB >> 16)& 0xFF;
+		l->data[7] = (LPC_CAN1->RDB >> 24)& 0xFF;
+	}
 }
+
