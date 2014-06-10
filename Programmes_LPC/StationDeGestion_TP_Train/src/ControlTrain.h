@@ -14,6 +14,7 @@
 
 void send_direction(uint8_t n_train, bool direction);
 void send_speed(uint8_t n_train, uint16_t speed_train);
+void send_lights(uint8_t n_train, bool state);
 
 
 #endif /* CONTROLTRAIN_H_ */

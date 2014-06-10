@@ -78,6 +78,16 @@ int main(void) {
 						ChangeDirection(&str,n_train,BACK_TRAIN);
 						Write_BusCan(&str);
 					}
+				}else if(data_read[0] == 'L' && data_read[3] == 'L')
+				{
+					char tmp_char[4];
+
+					tmp_char[0] = data_read[1];
+					tmp_char[1] = data_read[2];
+					tmp_char[2] = 0;
+					int n_train = atoi(tmp_char);
+					TurnLight(&str, n_train, data_read[4]-'0');
+					Write_BusCan(&str);
 				}
 				break;
 			case 9:

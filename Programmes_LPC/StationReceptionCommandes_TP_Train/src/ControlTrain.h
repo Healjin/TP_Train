@@ -19,7 +19,7 @@ void StopGoTrain(str_bus* str,int statu);
 void ChangeSpeed(str_bus *str,int NoTrain,int speed);
 void ChangeDirection(str_bus* str,int NoTrain,int direction);
 void SwitchSelect(uint8_t NoSwitch,uint8_t position);
-void TurnLight(uint8_t statu);
+void TurnLight(str_bus* str,int NoTrain,int statu);
 
 
 #endif /* ControlTrain_h_ */

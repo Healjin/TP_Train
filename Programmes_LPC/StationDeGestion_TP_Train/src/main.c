@@ -31,6 +31,7 @@
 #define SPI_RATE_TOUCHSCREEN 1500000
 
 bool flag_interrupt = 0;
+uint16_t lights[MAX_TRAIN];
 uint16_t speed_train[MAX_TRAIN];
 bool train_direction[MAX_TRAIN]; // 1 => forward, 0 => back
 int n_train = 1;
@@ -159,6 +160,7 @@ int main(void) {
 	{
 		train_direction[var] = 1;
 		speed_train[var] = 0;
+		lights[var] = 1;
 	}
 
 	Init_Extlab2();
@@ -246,6 +248,8 @@ int main(void) {
 				} else if (!strcmp(button_name, "SPEED")) {
 					option_selected = OPTION_SPEED;
 				} else if (!strcmp(button_name, "LIGHTS")) {
+					send_lights(n_train, lights[n_train]);
+					lights[n_train] = !lights[n_train];
 				}
 			}
 			flag_interrupt = 0;
