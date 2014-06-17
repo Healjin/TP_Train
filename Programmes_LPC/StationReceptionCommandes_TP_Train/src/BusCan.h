@@ -10,7 +10,6 @@
 #define BusCan_h_
 
 #include "LPC17xx.h"
-#define BRP 4
 
 typedef struct{
 	uint32_t id_Bus;
