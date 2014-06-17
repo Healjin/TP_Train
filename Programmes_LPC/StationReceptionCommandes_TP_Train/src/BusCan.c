@@ -34,9 +34,9 @@ void Init_BusCan(){
 /*
 *@brief Write BusCan
 *@param str_bus
-*@param			uint32_t id_Bus;
-				uint8_t dlc;
-				uint8_t data[8];
+*@param			uint32_t id_Bus
+				uint8_t dlc
+				uint8_t data[8]
 */
 void Write_BusCan(str_bus *s){
 	while((LPC_CAN1->GSR & 0x1 << 2) == 0); 		//check buffer libre
@@ -63,9 +63,9 @@ void Write_BusCan(str_bus *s){
 /*
 *@brief Read BusCan
 *@param str_bus
-*@param			uint32_t id_Bus;
-				uint8_t dlc;
-				uint8_t data[8];
+*@param			uint32_t id_Bus
+				uint8_t dlc
+				uint8_t data[8]
 */
 void Read_BusCan(str_bus *l){
 	if(!(LPC_CAN1->RFS >> 31))
