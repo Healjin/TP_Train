@@ -1,8 +1,8 @@
 /**
 *@file BusCan.h
-*@author Swagteam
+*@author Marques Rafael, Berger Antoine et Da Silva David
 *@version 1.0
-*@date 11 march 2014
+*@date 1 avril 2014
 *@brief content constants and header of functions used on BusCan.h
 */
 
