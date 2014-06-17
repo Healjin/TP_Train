@@ -29,7 +29,7 @@ all: StationDeGestion_TP_Train.axf
 StationDeGestion_TP_Train.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"/Users/David/Google Drive/TP_Train/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"/home/mignam/HEPIA/TP_TRAIN/Programmes_LPC/CMSISv2p00_LPC17xx/Debug" -Xlinker -Map="StationDeGestion_TP_Train.map" -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "StationDeGestion_TP_Train_Debug.ld" -o "StationDeGestion_TP_Train.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build

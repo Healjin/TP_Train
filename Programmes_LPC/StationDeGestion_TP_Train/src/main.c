@@ -171,6 +171,7 @@ int main(void) {
 	/* Display size = 320x240 */
 	Create_partial_screen(0, 319, 0, 239);
 
+
 	/* -- Init touchscreen and configuration anti-rebound -- */
 	Init_SPI_master_mode(0, 0, 300000, 8);
 	LPC_TIM0->MCR = 1; /* Interrupt on MR0 value */
@@ -178,7 +179,15 @@ int main(void) {
 	Init_touchscreen();
 
 	init_SD();
-	Read_SD_multi_block(450);
+	//interface
+	//Read_SD_multi_block(0,449);
+	//LOCO ROUGE
+	//Set_cursor(0, 0);
+	//Create_partial_screen(0, 149, 0, 179);
+	//Read_SD_multi_block(444,609);
+	//LOCO VERTE
+	//Read_SD_multi_block(610,768);
+
 	/* Restore frequency used with the touchscreen */
 	Change_Frequency_SPI(SPI_RATE_TOUCHSCREEN);
 

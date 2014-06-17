@@ -51,20 +51,20 @@ void Read_SD_one_block(uint32_t n_block) {
 	Set_pin();
 }
 
-void Read_SD_multi_block(uint32_t n_block_multi) {
-	uint8_t offset = 0; int i;
+void Read_SD_multi_block(uint32_t n_block_depart,uint32_t n_block_arrive) {
+	uint8_t offset = n_block_depart; int i;
 	uint8_t pixel_to_next_page[2];
-	for (y = 0; y < n_block_multi; y++) {
+	for (y = n_block_depart; y < n_block_arrive; y++) {
 		Read_SD_one_block(y);
 
 		Select_display_bus();
 
-		if((y > 0) && (offset == 1))
+		if((y > n_block_depart) && (offset == 1))
 			Write_pixel(Tab[1],Tab[0],pixel_to_next_page[1]);
-		else if ((y > 0) && (offset == 0))
+		else if ((y > n_block_depart) && (offset == 0))
 			Write_pixel(Tab[0],pixel_to_next_page[1],pixel_to_next_page[0]);
 
-		if(y > 0)
+		if(y > n_block_depart)
 		{
 			offset = (offset + 1) % 3;
 			k = offset;
