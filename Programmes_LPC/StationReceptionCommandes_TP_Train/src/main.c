@@ -14,8 +14,38 @@
 #include <cr_section_macros.h>
 #include "string.h"
 #include "stdbool.h"
+#include "SendUARTFormat.h"
 #endif
 
+void CAN_IRQHandler(){
+	str_bus str;
+	Read_BusCan(&str);
+	LPC_CAN1->CMR = 1 << 2;  //receipt interrupt
+	switch(str.id_Bus)
+	{
+	case 0x1 :
+	case 0x0 :		// Stop and go
+		if(str.data[4] == 1)
+			uart3_send(START_TRAIN, 9); // Send data on uart
+		else if(str.data[4] == 0)
+			uart3_send(STOP_TRAIN, 9); // Send data on uart
+		break;
+	case 0x9 :
+	case 0x8 :  	//
+		send_speed(str.data[2] << 8 | str.data[3], str.data[4] << 8 | str.data[5]);
+		break;
+
+	case 0xB :
+	case 0xA:		// Direction
+		send_direction(str.data[2] << 8 | str.data[3], str.data[4]-1);
+		break;
+
+	case 0xD :
+	case 0xC :		// Lights
+		send_lights(str.data[2] << 8 | str.data[3], str.data[5]);
+	break;
+	}
+}
 
 int atoi(char *str)
 {
@@ -78,6 +108,16 @@ int main(void) {
 						ChangeDirection(&str,n_train,BACK_TRAIN);
 						Write_BusCan(&str);
 					}
+				}else if(data_read[0] == 'L' && data_read[3] == 'L')
+				{
+					char tmp_char[4];
+
+					tmp_char[0] = data_read[1];
+					tmp_char[1] = data_read[2];
+					tmp_char[2] = 0;
+					int n_train = atoi(tmp_char);
+					TurnLight(&str, n_train, data_read[4]-'0');
+					Write_BusCan(&str);
 				}
 				break;
 			case 9:

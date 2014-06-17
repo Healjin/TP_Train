@@ -8,7 +8,6 @@
 #ifndef TOUCHSCREEN_H_
 #define TOUCHSCREEN_H_
 
-
 #include "LPC17xx.h"
 #include <cr_section_macros.h>
 #include "SPI.h"
@@ -17,7 +16,6 @@
 #define IRQ_Touchscreen 0  	// P2.0
 #define ExtLab2_IRQ 10 		// P2.10
 #define CS_touchscreen 8		// P0.8
-
 
 void Init_touchscreen();
 uint16_t Read_y_12bits();

@@ -1,10 +1,10 @@
 /**
-*@file uart.h
-*@author Swagteam
-*@version 1.0
-*@date 25 march 2014
-*@brief
-*/
+ *@file uart.h
+ *@author Swagteam
+ *@version 1.0
+ *@date 25 march 2014
+ *@brief
+ */
 #ifndef UART0_INIT_H
 #define UART0_INIT_H
 

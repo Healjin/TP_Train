@@ -7,11 +7,10 @@
 #include "Touchscreen.h"
 
 /**
-*@brief Initialization on touchscreen, set an interruption when we press
-*@brief touchscreen. This interruption is linked to EINT3.
-*/
-void Init_touchscreen()
-{
+ *@brief Initialization on touchscreen, set an interruption when we press
+ *@brief touchscreen. This interruption is linked to EINT3.
+ */
+void Init_touchscreen() {
 	NVIC_EnableIRQ(EINT3_IRQn);
 	LPC_GPIOINT->IO2IntEnF |= 1 << ExtLab2_IRQ;
 
@@ -23,11 +22,10 @@ void Init_touchscreen()
 }
 
 /**
-*@brief Read the x value from the touchscreen
-*@return x value coded between 0 and 4096
-*/
-uint16_t Read_x_12bits()
-{
+ *@brief Read the x value from the touchscreen
+ *@return x value coded between 0 and 4096
+ */
+uint16_t Read_x_12bits() {
 	Select_control_bus();
 	LPC_GPIO0->FIOCLR = 1 << CS_touchscreen; // Select (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();
@@ -39,7 +37,7 @@ uint16_t Read_x_12bits()
 
 	/* Convert data frame to x on 12 bits */
 	uint16_t x = x_lsb >> 3;
-	x |= ((x_msb &~ 0x80) << 5);
+	x |= ((x_msb & ~0x80) << 5);
 
 	LPC_GPIO0->FIOSET = 1 << CS_touchscreen; // Release (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();
@@ -57,11 +55,10 @@ uint16_t Read_x_12bits()
 }
 
 /**
-*@brief Read the y value from the touchscreen
-*@return y value coded between 0 and 4096
-*/
-uint16_t Read_y_12bits()
-{
+ *@brief Read the y value from the touchscreen
+ *@return y value coded between 0 and 4096
+ */
+uint16_t Read_y_12bits() {
 	Select_control_bus();
 	LPC_GPIO0->FIOCLR = 1 << CS_touchscreen; // Select (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();
@@ -73,7 +70,7 @@ uint16_t Read_y_12bits()
 
 	/* Convert data frame to y on 12 bits */
 	uint16_t y = y_lsb >> 3;
-	y |= ((y_msb &~ 0x80) << 5);
+	y |= ((y_msb & ~0x80) << 5);
 
 	LPC_GPIO0->FIOSET = 1 << CS_touchscreen; // Release (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();
@@ -91,14 +88,13 @@ uint16_t Read_y_12bits()
 }
 
 /**
-*@brief Read the x and y values from the touchscreen
-*@return x and y values coded between 0 and 4096
-*/
-void Read_x_and_y_12bits(uint16_t* x, uint16_t* y)
-{
+ *@brief Read the x and y values from the touchscreen
+ *@return x and y values coded between 0 and 4096
+ */
+void Read_x_and_y_12bits(uint16_t* x, uint16_t* y) {
 	/* Disable PEN_IRQ after measure */
 	NVIC_DisableIRQ(EINT3_IRQn);
-	LPC_GPIOINT->IO2IntEnF &=~ 1 << ExtLab2_IRQ;
+	LPC_GPIOINT->IO2IntEnF &= ~1 << ExtLab2_IRQ;
 
 	Select_control_bus();
 	LPC_GPIO0->FIOCLR = 1 << CS_touchscreen; // Select (/CS) touchscreen
@@ -111,7 +107,7 @@ void Read_x_and_y_12bits(uint16_t* x, uint16_t* y)
 
 	/* Convert data frame to x on 12 bits */
 	*x = x_lsb >> 3;
-	*x |= ((x_msb &~ 0x80) << 5);
+	*x |= ((x_msb & ~0x80) << 5);
 
 	/* Read y with ADC off and PENIRQ enabled */
 	Write_only_SPI_8bits(0x90);					// Options
@@ -120,7 +116,7 @@ void Read_x_and_y_12bits(uint16_t* x, uint16_t* y)
 
 	/* Convert data frame to y on 12 bits */
 	*y = y_lsb >> 3;
-	*y |= ((y_msb &~ 0x80) << 5);
+	*y |= ((y_msb & ~0x80) << 5);
 
 	LPC_GPIO0->FIOSET = 1 << CS_touchscreen; // Release (/CS) touchscreen
 	Valide_datas_bus_to_extlab2();

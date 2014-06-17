@@ -53,9 +53,9 @@ void ChangeSpeed(str_bus* str,int NoTrain,int speed){
 	str->data[6] = 0;
 	str->data[7] = 0;
 }
-void TurnLight(str_bus* str,int statu){
+void TurnLight(str_bus* str,int NoTrain,int statu){
 	str->id_Bus = 0x000C4711;
-	str->dlc = 0x5;
+	str->dlc = 0x6;
 
 	str->data[0] = 0;
 	str->data[1] = 0;
@@ -63,8 +63,8 @@ void TurnLight(str_bus* str,int statu){
 	str->data[2] = NoTrain >> 8;
 	str->data[3] = NoTrain & 255;
 
-	str->data[4] = statu;
-	str->data[5] = 0;
+	str->data[4] = 0;
+	str->data[5] = statu;
 
 	str->data[6] = 0;
 	str->data[7] = 0;
