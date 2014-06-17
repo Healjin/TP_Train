@@ -30,6 +30,10 @@ void Init_BusCan(){
 	LPC_CAN1->MOD &=~ 0x01 << 4;		//Sleep Mode
 	LPC_CAN1->MOD &=~ 0x01 << 5;		//Receive Polarity Mode
 	LPC_CAN1->MOD &=~ 0x01 << 7;		//Test Mode
+
+	LPC_CAN1->IER = 1;
+	LPC_CANAF->AFMR = 2;
+	NVIC_EnableIRQ(CAN_IRQn);
 }
 /*
 *@brief Write BusCan
@@ -65,7 +69,7 @@ void Read_BusCan(str_bus *l){
 	if(!(LPC_CAN1->RFS >> 31))
 		return;
 	else{
-		l->id_Bus = LPC_CAN1->RID ;					//Identifier
+		l->id_Bus = (LPC_CAN1->RID >> 16) & 0xFFFF ;					//Identifier
 		l->dlc = (LPC_CAN1->RFS >> 16)& 0xFF;		//Data Length Code
 
 		l->data[0] = (LPC_CAN1->RDA)& 0xFF;					//Datas

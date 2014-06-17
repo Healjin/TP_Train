@@ -18,11 +18,9 @@
 #define MODE_SELECT 5
 #define SPIF 7
 
-
 void Write_only_SPI_8bits(uint8_t data);
 uint8_t Write_Read_SPI_8bits(uint8_t data);
 void Init_SPI_master_mode(uint8_t S_CPHA, uint8_t S_CPOL, uint32_t SPI_rate, uint8_t _16_or_8bits_com);
 void Change_Frequency_SPI(uint32_t SPI_rate);
-
 
 #endif /* SPI_H_ */

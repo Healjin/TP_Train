@@ -19,18 +19,18 @@
 #define LCD_HEIGHT 320
 #define SIZE_LCD 76800 // Number of pixels on the lcd
 
-
 void Init_ports_display();
 void Index_out(uint8_t idx);
 void Parameter_out(uint16_t param);
 void Send_color(uint8_t color);
 void Init_display();
-void Write_pixel(uint8_t red,uint8_t green,uint8_t blue);
-void Set_cursor(uint16_t x,uint16_t y);
+void Write_pixel(uint8_t red, uint8_t green, uint8_t blue);
+void Set_cursor(uint16_t x, uint16_t y);
 void Create_partial_screen(uint16_t v_start, uint16_t v_end, uint8_t h_start, uint8_t h_end);
 void change_zone_color(uint16_t x_start, uint16_t x_stop, uint16_t y_start, uint16_t y_stop, uint8_t *color_character);
-
-
-
+void draw_arrow_right(uint16_t x_start, uint16_t y_start, uint8_t thickness, uint8_t heigth_arrow, uint8_t length,
+		uint8_t *color);
+void draw_arrow_left(uint16_t x_start, uint16_t y_start, uint8_t thickness, uint8_t heigth_arrow, uint8_t length,
+		uint8_t *color);
 
 #endif /* ECRAN_H_ */

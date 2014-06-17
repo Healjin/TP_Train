@@ -1,10 +1,10 @@
 /*
- * ControlTrain.c
+ * SendUARTFormat.c
  *
  *  Created on: 4 juin 2014
  *      Author: David
  */
-#include "ControlTrain.h"
+#include "SendUARTFormat.h"
 
 void send_speed(uint8_t n_train, uint16_t speed_train)
 {
