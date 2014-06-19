@@ -7,8 +7,14 @@
  */
 #include "ExtLab2.h"
 
+/* Contain the saving configuration on the bits of control */
 static uint8_t save_data_bus_values = 0xFE;
 
+/**
+ *@brief Select bus control on the ExtLab2
+ *@details Select the control bus on the ExtLab2 and restore the old
+ *@details state of this one ( with the variable save_data_bus_values).
+ */
 void Init_Extlab2() {
 	LPC_GPIO0->FIODIR |= 0x3 << 21;
 	LPC_GPIO2->FIODIR |= 1 << 8;
@@ -53,8 +59,13 @@ void Valide_datas_bus_to_extlab2() {
 	LPC_GPIO2->FIOPIN &= ~(1 << 8);
 }
 
+/**
+ *@brief Initialization to use the rotate button
+ *@details Active an interruption on the rotation of the button and
+ *@details configure the GPIO to use the rotate button
+ */
 void Init_Rotate_button() {
-	LPC_GPIO2->FIODIR |= 0b111 << 11; // Put ouput on select rotate button
+	LPC_GPIO2->FIODIR |= 0b111 << 11; // Put output on select rotate button
 	LPC_GPIO2->FIOCLR = 1 << 13;
 	LPC_GPIO2->FIOSET = 0b11 << 11;
 

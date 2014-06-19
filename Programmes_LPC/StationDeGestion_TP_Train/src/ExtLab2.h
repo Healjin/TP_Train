@@ -1,8 +1,9 @@
-/*
- * ExtLab2.h
- *
- *  Created on: 29 avr. 2014
- *      Author: David
+/**
+ *@file ExtLab2.h
+ *@author Swagteam
+ *@version 1.0
+ *@date June 2014
+ *@brief Contain functions to control the ExtLab2 card
  */
 
 #ifndef EXTLAB2_H_

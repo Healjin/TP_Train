@@ -1,8 +1,9 @@
 /*
- * Ecran.h
- *
- *  Created on: 4 mars 2014
- *      Author: David
+ *@file main.c
+ *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
+ *@version 1.0
+ *@date 19 June 2014
+ *@briefs Contain functions to control the screen.
  */
 
 #ifndef ECRAN_H_
@@ -27,10 +28,5 @@ void Init_display();
 void Write_pixel(uint8_t red, uint8_t green, uint8_t blue);
 void Set_cursor(uint16_t x, uint16_t y);
 void Create_partial_screen(uint16_t v_start, uint16_t v_end, uint8_t h_start, uint8_t h_end);
-void change_zone_color(uint16_t x_start, uint16_t x_stop, uint16_t y_start, uint16_t y_stop, uint8_t *color_character);
-void draw_arrow_right(uint16_t x_start, uint16_t y_start, uint8_t thickness, uint8_t heigth_arrow, uint8_t length,
-		uint8_t *color);
-void draw_arrow_left(uint16_t x_start, uint16_t y_start, uint8_t thickness, uint8_t heigth_arrow, uint8_t length,
-		uint8_t *color);
-void display_lights(uint8_t *color, uint8_t length);
+
 #endif /* ECRAN_H_ */

@@ -1,8 +1,10 @@
 /*
- * SendUARTFormat.h
- *
- *  Created on: 4 juin 2014
- *      Author: David
+ *@file SendUARTFormat.h
+ *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
+ *@version 1.0
+ *@date 19 June 2014
+ *@briefs Contain function to send frames on the UART with a defined
+ *@briefs syntax to control the train.
  */
 
 #ifndef SENDUARTFORMAT_H_

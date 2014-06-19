@@ -1,8 +1,10 @@
 /*
- * button.h
- *
- *  Created on: 1 juin 2014
- *      Author: David
+ *@file button.h
+ *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
+ *@version 1.0
+ *@date 19 June 2014
+ *@briefs Permit to add buttons (virtuals) and to test when we
+ *@briefs press on the screen if the preassure is on a button.
  */
 
 #ifndef BUTTON_H_
@@ -12,6 +14,7 @@
 
 #define NB_BUTTONS 10
 
+/* Structure used to store a button */
 typedef struct {
 	char name[20];
 	uint16_t x_start;
