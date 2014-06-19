@@ -1,9 +1,9 @@
 /**
- *@file main.c
+ *@file Ecran.h
  *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
  *@version 1.0
  *@date 19 June 2014
- *@briefs Contain functions to control the screen.
+ *Contain functions to control the screen.
  */
 
 #ifndef ECRAN_H_
