@@ -1,13 +1,13 @@
 /**
-*@file BusCan.c
-*@author Marques Rafael, Berger Antoine et David Da Silva
-*@version 1.0
-*@date 1 April 2014
-*@brief BusCan configuration initialization, write ans read busCan
+* @file BusCan.c
+* @author Marques Rafael, Berger Antoine et David Da Silva
+* @version 1.0
+* @date 1 April 2014
+* @brief BusCan configuration initialization, write ans read busCan
 */
 #include "BusCan.h"
 /**
-*@brief Initialization BusCan
+* Initialization BusCan
 */
 void Init_BusCan(){
 
@@ -36,9 +36,9 @@ void Init_BusCan(){
 	NVIC_EnableIRQ(CAN_IRQn);
 }
 /**
-*@brief Write BusCan
-*@param str_bus
-*@param			uint32_t id_Bus
+* Write BusCan
+* @param str_bus
+* @param			uint32_t id_Bus
 				uint8_t dlc
 				uint8_t data[8]
 */
@@ -65,11 +65,8 @@ void Write_BusCan(str_bus *s){
 	LPC_CAN1->CMR |= 0x01;							//Transmission
 }
 /**
-*@brief Read BusCan
-*@param str_bus
-*@param			uint32_t id_Bus
-				uint8_t dlc
-				uint8_t data[8]
+* Read BusCan
+* @param str_bus contain the structure with the datas from CAN bus
 */
 void Read_BusCan(str_bus *l){
 	if(!(LPC_CAN1->RFS >> 31))

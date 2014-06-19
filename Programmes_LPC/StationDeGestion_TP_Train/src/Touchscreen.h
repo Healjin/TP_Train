@@ -1,9 +1,9 @@
 /**
- *@file Touchscreen.h
- *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
- *@version 1.0
- *@date 19 June 2014
- *@brief Contain all function configure and read the values from the touchscreen.
+ * @file Touchscreen.h
+ * @author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
+ * @version 1.0
+ * @date 19 June 2014
+ * @brief Contain all function configure and read the values from the touchscreen.
  */
 
 #ifndef TOUCHSCREEN_H_

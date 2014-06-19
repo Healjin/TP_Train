@@ -1,15 +1,15 @@
 /**
- *@file Touchscreen.c
- *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
- *@version 1.0
- *@date 19 June 2014
- *@brief Contain all function configure and read the values from the touchscreen.
+ * @file Touchscreen.c
+ * @author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
+ * @version 1.0
+ * @date 19 June 2014
+ * @brief Contain all function configure and read the values from the touchscreen.
  */
 #include "Touchscreen.h"
 
 /**
- *@brief Initialization on touchscreen, set an interruption when we press
- *@brief touchscreen. This interruption is linked to EINT3.
+ * Initialization on touchscreen, set an interruption when we press
+ * touchscreen. This interruption is linked to EINT3.
  */
 void Init_touchscreen() {
 	NVIC_EnableIRQ(EINT3_IRQn);
@@ -23,8 +23,8 @@ void Init_touchscreen() {
 }
 
 /**
- *@brief Read the x value from the touchscreen
- *@return x value coded between 0 and 4096
+ * Read the x value from the touchscreen
+ * @return x value coded between 0 and 4096
  */
 uint16_t Read_x_12bits() {
 	Select_control_bus();
@@ -56,8 +56,8 @@ uint16_t Read_x_12bits() {
 }
 
 /**
- *@brief Read the y value from the touchscreen
- *@return y value coded between 0 and 4096
+ * Read the y value from the touchscreen
+ * @return y value coded between 0 and 4096
  */
 uint16_t Read_y_12bits() {
 	Select_control_bus();
@@ -89,8 +89,8 @@ uint16_t Read_y_12bits() {
 }
 
 /**
- *@brief Read the x and y values from the touchscreen
- *@return x and y values coded between 0 and 4096
+ * Read the x and y values from the touchscreen
+ * @return x and y values coded between 0 and 4096
  */
 void Read_x_and_y_12bits(uint16_t* x, uint16_t* y) {
 	/* Disable PEN_IRQ after measure */

@@ -1,10 +1,10 @@
 /**
- *@file button.c
- *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
- *@version 1.0
- *@date 19 June 2014
- *@briefs Permit to add buttons (virtuals) and to test when we
- *@briefs press on the screen if the preassure is on a button.
+ * @file button.c
+ * @author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
+ * @version 1.0
+ * @date 19 June 2014
+ * @brief Permit to add buttons (virtuals) and to test when we
+ * @brief press on the screen if the preassure is on a button.
  */
 
 #include "button.h"
@@ -13,9 +13,9 @@ button_t buttons[NB_BUTTONS];
 int nb_buttons_available = -1;
 
 /**
- *@brief Permit to test if a button is present where the pressure occurred
- *@param x Value of x where the pressure occurred
- *@param y Value of y where the pressure occurred
+ *Permit to test if a button is present where the pressure occurred
+ * @param x Value of x where the pressure occurred
+ * @param y Value of y where the pressure occurred
  */
 char* IsClickOnAButton(uint16_t x, uint16_t y) {
 	int i;
@@ -27,12 +27,12 @@ char* IsClickOnAButton(uint16_t x, uint16_t y) {
 }
 
 /**
- *@brief Add a new button to the list
- *@param button_name String that contain button name
- *@param x_start Where the button start on X
- *@param x_stop Where the button start on X
- *@param y_start Where the button start on Y
- *@param y_stop Where the button stop on Y
+ * Add a new button to the list
+ * @param button_name String that contain button name
+ * @param x_start Where the button start on X
+ * @param x_stop Where the button start on X
+ * @param y_start Where the button start on Y
+ * @param y_stop Where the button stop on Y
  */
 void AddButton(char* button_name, uint16_t x_start, uint16_t x_stop, uint16_t y_start, uint16_t y_stop) {
 	nb_buttons_available++;

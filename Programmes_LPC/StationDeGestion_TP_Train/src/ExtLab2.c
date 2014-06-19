@@ -1,9 +1,9 @@
 /**
- *@file ExtLab2.c
- *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
- *@version 1.0
- *@date 19 June 2014
- *@brief Contain functions to control the ExtLab2 card
+ * @file ExtLab2.c
+ * @author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
+ * @version 1.0
+ * @date 19 June 2014
+ * @brief Contain functions to control the ExtLab2 card
  */
 #include "ExtLab2.h"
 
@@ -11,9 +11,9 @@
 static uint8_t save_data_bus_values = 0xFE;
 
 /**
- *@brief Select bus control on the ExtLab2
- *@details Select the control bus on the ExtLab2 and restore the old
- *@details state of this one ( with the variable save_data_bus_values).
+ * Select bus control on the ExtLab2
+ * @brief Select the control bus on the ExtLab2 and restore the old
+ * @brief state of this one ( with the variable save_data_bus_values).
  */
 void Init_Extlab2() {
 	LPC_GPIO0->FIODIR |= 0x3 << 21;
@@ -22,9 +22,9 @@ void Init_Extlab2() {
 }
 
 /**
- *@brief Select bus control on the ExtLab2
- *@details Select the control bus on the ExtLab2 and restore the old
- *@details state of this one ( with the variable save_data_bus_values).
+ * Select bus control on the ExtLab2
+ * @brief Select the control bus on the ExtLab2 and restore the old
+ * @brief state of this one ( with the variable save_data_bus_values).
  */
 void Select_control_bus() {
 	/* -- Restore bus control -- */
@@ -37,9 +37,9 @@ void Select_control_bus() {
 }
 
 /**
- *@brief Select the dispay bus on ExtLab2
- *@details Once the display bus selected all datas will directly sent to
- *@details the lcd screen
+ * Select the dispay bus on ExtLab2
+ * @brief Once the display bus selected all datas will directly sent to
+ * @brief the lcd screen
  */
 void Select_display_bus() {
 	/* -- Select display control -- */
@@ -48,9 +48,9 @@ void Select_display_bus() {
 }
 
 /**
- *@brief Valide all datas put on the control bus
- *@details Switch the state on p2.8 to launch to validate the datas, but we also save the
- *@details datas (in case we switch to the display bus)
+ * Valide all datas put on the control bus
+ * @brief Switch the state on p2.8 to launch to validate the datas, but we also save the
+ * @brief datas (in case we switch to the display bus)
  */
 void Valide_datas_bus_to_extlab2() {
 	save_data_bus_values = (LPC_GPIO0->FIOPIN >> 4) & 0xFF;
@@ -60,9 +60,9 @@ void Valide_datas_bus_to_extlab2() {
 }
 
 /**
- *@brief Initialization to use the rotate button
- *@details Active an interruption on the rotation of the button and
- *@details configure the GPIO to use the rotate button
+ * Initialization to use the rotate button
+ * @brief Active an interruption on the rotation of the button and
+ * @brief configure the GPIO to use the rotate button
  */
 void Init_Rotate_button() {
 	LPC_GPIO2->FIODIR |= 0b111 << 11; // Put output on select rotate button

@@ -1,9 +1,9 @@
 /**
-*@file BusCan.h
-*@author Marques Rafael, Berger Antoine et Da Silva David
-*@version 1.0
-*@date 1 avril 2014
-*@brief content constants and header of functions used on BusCan.h
+* @file BusCan.h
+* @author Marques Rafael, Berger Antoine et Da Silva David
+* @version 1.0
+* @date 1 avril 2014
+* @brief Content constants and header of functions used on BusCan.h
 */
 
 #ifndef BusCan_h_

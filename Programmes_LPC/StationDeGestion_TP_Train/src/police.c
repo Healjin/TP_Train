@@ -1,9 +1,9 @@
 /**
- *@file police.c
- *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
- *@version 1.0
- *@date 19 June 2014
- *@brief Write chosen letter on screen
+ * @file police.c
+ * @author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
+ * @version 1.0
+ * @date 19 June 2014
+ * @brief Write chosen letter on screen
  */
 #include "police.h"
 // Table where characters are stocked in hexa
@@ -637,12 +637,12 @@ const unsigned char vga_fonts[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x
 		0x00, 0x00, 0x00, 0x00, 0x00, 0x66, 0x66, 0x7e, 0x66, 0x66, 0x00, 0x7e, 0x60, 0x7c, 0x60, 0x60, 0x60, 0x00,
 		0x00, 0x00, };
 /**
- *@brief Write chosen letter on screen
- *@param character
- *@param x	-->  position x on the screen (0 - 239)
- *@param y	-->  position y on the screen (0 - 319)
- *@param *color_letter  -->  color of the char RGB
- *@param *color_background  -->  color of the background RGB
+ * Write chosen letter on screen
+ * @param character
+ * @param x	-->  position x on the screen (0 - 239)
+ * @param y	-->  position y on the screen (0 - 319)
+ * @param *color_letter  -->  color of the char RGB
+ * @param *color_background  -->  color of the background RGB
  */
 void Write_char_with_background(char character, uint16_t x, uint16_t y, uint8_t *color_letter,
 		uint8_t *color_background) {
@@ -664,11 +664,11 @@ void Write_char_with_background(char character, uint16_t x, uint16_t y, uint8_t 
 	}
 }
 /**
- *@brief Write chosen letter on screen
- *@param character
- *@param x	-->  position x on the screen (0 - 239)
- *@param y	-->  position y on the screen (0 - 319)
- *@param *color_character  -->  color of the char RGB
+ * Write chosen letter on screen
+ * @param character
+ * @param x	-->  position x on the screen (0 - 239)
+ * @param y	-->  position y on the screen (0 - 319)
+ * @param *color_character  -->  color of the char RGB
  */
 void Write_char(char character, uint16_t x, uint16_t y, uint8_t *color_character) {
 	Set_cursor(x, y);
@@ -709,12 +709,12 @@ void Write_char(char character, uint16_t x, uint16_t y, uint8_t *color_character
 	}
 }
 /**
- *@brief Write chosen letter on screen with background
- *@param string
- *@param x	-->  position x on the screen (0 - 239)
- *@param y	-->  position y on the screen (0 - 319)
- *@param *color_character  -->  color of the char RGB
- *@param *color_background -->  color of the background RGB
+ * Write chosen letter on screen with background
+ * @param string
+ * @param x	-->  position x on the screen (0 - 239)
+ * @param y	-->  position y on the screen (0 - 319)
+ * @param *color_character  -->  color of the char RGB
+ * @param *color_background -->  color of the background RGB
  */
 void Write_string_with_background(char * string, uint16_t x, uint16_t y, uint8_t *color_character,
 		uint8_t *color_background) {
@@ -726,11 +726,11 @@ void Write_string_with_background(char * string, uint16_t x, uint16_t y, uint8_t
 	}
 }
 /**
- *@brief Write chosen letter on screen
- *@param string
- *@param x	-->  position x on the screen (0 - 239)
- *@param y	-->  position y on the screen (0 - 319)
- *@param *color_character  -->  color of the char RGB
+ * Write chosen letter on screen
+ * @param string
+ * @param x	-->  position x on the screen (0 - 239)
+ * @param y	-->  position y on the screen (0 - 319)
+ * @param *color_character  -->  color of the char RGB
  */
 void Write_string(char * string, uint16_t x, uint16_t y, uint8_t *color_character) {
 	int i = 0;

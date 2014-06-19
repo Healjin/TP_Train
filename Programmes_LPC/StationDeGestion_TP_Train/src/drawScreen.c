@@ -1,20 +1,20 @@
 /**
- *@file drawScreen.c
- *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
- *@version 1.0
- *@date 19 June 2014
- *@briefs Contain functions to draws things on the screen.
+ * @file drawScreen.c
+ * @author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
+ * @version 1.0
+ * @date 19 June 2014
+ * @brief Contain functions to draws things on the screen.
  */
 
 #include "drawScreen.h"
 
 /**
- *@brief Change a color in a zone
- *@param x_start Where start x in the screen
- *@param x_stop Where stop x in the screen
- *@param y_start Where start y in the screen
- *@param y_stop Where stop y in the screen
- *@param color_characted Which color the zone is changed [Red, Green, Blue]
+ * Change a color in a zone
+ * @param x_start Where start x in the screen
+ * @param x_stop Where stop x in the screen
+ * @param y_start Where start y in the screen
+ * @param y_stop Where stop y in the screen
+ * @param color_characted Which color the zone is changed [Red, Green, Blue]
  */
 void change_zone_color(uint16_t x_start, uint16_t x_stop, uint16_t y_start, uint16_t y_stop, uint8_t *color_character) {
 	Select_display_bus();
@@ -27,12 +27,12 @@ void change_zone_color(uint16_t x_start, uint16_t x_stop, uint16_t y_start, uint
 }
 
 /**
- *@brief Draw an arrow to the right
- *@param x_start Where the arrow base start on x
- *@param y_start Where the arrow base start on y
- *@param thickness Thickness of the arrow
- *@param height_arrow Arrow's height
- *@param color Arrow color [Red, Green, Blue]
+ * Draw an arrow to the right
+ * @param x_start Where the arrow base start on x
+ * @param y_start Where the arrow base start on y
+ * @param thickness Thickness of the arrow
+ * @param height_arrow Arrow's height
+ * @param color Arrow color [Red, Green, Blue]
  */
 void draw_arrow_right(uint16_t x_start, uint16_t y_start, uint8_t thickness, uint8_t height_arrow, uint8_t length,
 		uint8_t *color) {
@@ -62,12 +62,12 @@ void draw_arrow_right(uint16_t x_start, uint16_t y_start, uint8_t thickness, uin
 }
 
 /**
- *@brief Draw an arrow to the left
- *@param x_start Where the arrow tip start on x
- *@param y_start Where the arrow tip start on y
- *@param thickness Thickness of the arrow
- *@param height_arrow Arrow's height
- *@param color Arrow color [Red, Green, Blue]
+ * Draw an arrow to the left
+ * @param x_start Where the arrow tip start on x
+ * @param y_start Where the arrow tip start on y
+ * @param thickness Thickness of the arrow
+ * @param height_arrow Arrow's height
+ * @param color Arrow color [Red, Green, Blue]
  */
 void draw_arrow_left(uint16_t x_start, uint16_t y_start, uint8_t thickness, uint8_t height_arrow, uint8_t length,
 		uint8_t *color) {
@@ -98,9 +98,9 @@ void draw_arrow_left(uint16_t x_start, uint16_t y_start, uint8_t thickness, uint
 }
 
 /**
- *@brief Draw 6 sunbeams around the lamp to show the lights on
- *@param color Sunbeams color [Red, Green, Blue]
- *@param length Length of the sunbeams
+ * Draw 6 sunbeams around the lamp to show the lights on
+ * @param color Sunbeams color [Red, Green, Blue]
+ * @param length Length of the sunbeams
  */
 void display_lights(uint8_t *color, uint8_t length) {
 	int i;

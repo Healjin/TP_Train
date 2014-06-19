@@ -1,9 +1,9 @@
 /*
- *@file SD.c
- *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
- *@version 1.0
- *@date 19 June 2014
- *@briefs Contain functions to init SD card, read blocs on SD card.
+ * @file SD.c
+ * @author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
+ * @version 1.0
+ * @date 19 June 2014
+ * @briefContain functions to init SD card, read blocs on SD card.
  */
 
 #include "SD.h"
@@ -12,14 +12,14 @@ uint8_t rep;
 int reponse[512];
 uint8_t Tab[512];
 /*
- *@briefs Chip Select
+ * Chip Select
  */
 void Clear_pin() {
 	LPC_GPIO0->FIOCLR = 1 << 10;
 	Valide_datas_bus_to_extlab2();
 }
 /*
- *@briefs Chip Select
+ * Chip Select
  */
 void Set_pin() {
 	LPC_GPIO0->FIOSET = 1 << 10;
@@ -27,9 +27,9 @@ void Set_pin() {
 }
 
 /*
- *@briefs Read a block on the SD card by sending CMD17 command on SPI
- *@brief stock block on array
- *@param n_block Is the block you want to read
+ * Read a block on the SD card by sending CMD17 command on SPI
+ * stock block on array
+ * @param n_block Is the block you want to read
  */
 void Read_SD_one_block(uint32_t n_block) {
 
@@ -68,10 +68,10 @@ void Read_SD_one_block(uint32_t n_block) {
 	Set_pin();
 }
 /*
- *@briefs Read multiple blocks on SD card by using Read_SD_one_block function
- *@brief chose an interval with a starting block and end block
- *@param n_block_depart Starting block
- *@param n_block_arrive End block
+ * Read multiple blocks on SD card by using Read_SD_one_block function
+ * chose an interval with a starting block and end block
+ * @param n_block_depart Starting block
+ * @param n_block_arrive End block
  */
 void Read_SD_multi_block(uint32_t n_block_depart,uint32_t n_block_arrive) {
 	uint8_t offset = 0; int i = 0;
@@ -102,8 +102,8 @@ void Read_SD_multi_block(uint32_t n_block_depart,uint32_t n_block_arrive) {
 	}
 }
 /*
- *@briefs Write on SD card -----THIS FUNCTION DOESN'T WORK-----------
- *@brief Function isn't necesary in our work
+ * Write on SD card -----THIS FUNCTION DOESN'T WORK-----------
+ * Function isn't necesary in our work
  */
 void Write_SD() {
 
@@ -140,10 +140,10 @@ void ChipSetSelect() {
 	Valide_datas_bus_to_extlab2();
 }
 /*
- *@briefs SPI initialisation on SD card
- *@brief Send different Command with SPI protocol on SD card 
- *@brief Set SPI frequency for initialisation only
- *@brief Protocol initialisation is describe step by step on our document (scheme)
+ * SPI initialisation on SD card
+ * Send different Command with SPI protocol on SD card
+ * Set SPI frequency for initialisation only
+ * Protocol initialisation is describe step by step on our document (scheme)
  */
 void init_SD() {
 	int x = 0;

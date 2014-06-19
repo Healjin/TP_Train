@@ -8,14 +8,12 @@
 
 #include "ControlTrain.h"
 
-/*
-*@brief Stop and Go Power
-*@param str_bus
-*@param			uint32_t id_Bus
-				uint8_t dlc
-				uint8_t data[8]
-*@param			int statu
+/**
+* Stop and Go Power
+* @param str_bus Return the structure configured with the params
+* @param statu Stop (0) and go (1)
 */
+
 void StopGoTrain(str_bus* str,int statu){
 	str->id_Bus = 0x00004711;
 	str->dlc = 0x5;
@@ -28,14 +26,11 @@ void StopGoTrain(str_bus* str,int statu){
 
 	str->data[4] = statu;
 }
-/*
-*@brief switch direction of train
-*@param str_bus
-*@param			uint32_t id_Bus
-				uint8_t dlc
-				uint8_t data[8]
-*@param			int NoTrain
-*@param			int direction
+/**
+* Switch train direction
+* @param str_bus Return the structure configured with the params
+* @param NoTrain Train number
+* @param direction Train direction
 */
 void ChangeDirection(str_bus* str,int NoTrain,int direction){
 	str->id_Bus = 0x000A4711;
@@ -53,14 +48,11 @@ void ChangeDirection(str_bus* str,int NoTrain,int direction){
 	str->data[6] = 0;
 	str->data[7] = 0;
 }
-/*
-*@brief change speed of train
-*@param str_bus
-*@param			uint32_t id_Bus
-				uint8_t dlc
-				uint8_t data[8]
-*@param			int NoTrain
-*@param			int speed
+/**
+* Change speed of train
+* @param str_bus Return the structure configured with the params
+* @param NoTrain Train number
+* @param speed Train speed
 */
 void ChangeSpeed(str_bus* str,int NoTrain,int speed){
 	str->id_Bus = 0x00084711;
@@ -78,14 +70,11 @@ void ChangeSpeed(str_bus* str,int NoTrain,int speed){
 	str->data[6] = 0;
 	str->data[7] = 0;
 }
-/*
-*@brief trun on/off lights of train
-*@param str_bus
-*@param			uint32_t id_Bus
-				uint8_t dlc
-				uint8_t data[8]
-*@param			int NoTrain
-*@param			int statu
+/**
+* Turn on/off lights of train
+* @param str_bus Return the structure configured with the params
+* @param NoTrain Train number
+* @param statu Turn the light on (1) or off (0)
 */
 void TurnLight(str_bus* str,int NoTrain,int statu){
 	str->id_Bus = 0x000C4711;

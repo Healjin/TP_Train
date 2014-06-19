@@ -1,8 +1,8 @@
 /**
 *@file ControlTrain.h
-*@author Swagteam
+*@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
 *@version 1.0
-*@date 20 may 2014
+*@date 19 June 2014
 *@brief content constants and header of functions used on BusCan.h
 */
 

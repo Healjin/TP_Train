@@ -9,8 +9,8 @@
 #include "uart.h"
 
 /**
- *@brief Initialize UART0 port, setup pin select,
- *@brief clock, parity, stop bits, FIFO, etc.
+ * Initialize UART0 port, setup pin select,
+ * clock, parity, stop bits, FIFO, etc.
  *@param baudrate UART0 baudrate [bit/s]
  */
 void uart0_init(uint32_t baudrate) {
@@ -48,8 +48,8 @@ void uart0_init(uint32_t baudrate) {
 }
 
 /**
- *@brief Initialize UART3 port, setup pin select,
- *@brief clock, parity, stop bits, FIFO, etc.
+ * Initialize UART3 port, setup pin select,
+ * clock, parity, stop bits, FIFO, etc.
  *@param baudrate UART3 baudrate [bit/s]
  */
 void uart3_init(uint32_t baudrate) {
@@ -89,7 +89,7 @@ void uart3_init(uint32_t baudrate) {
 }
 
 /**
- *@brief Send data on UART0
+ * Send data on UART0
  *@param data Pointer on the datas to be sent
  *@param baudrate Number of bytes to send
  */
@@ -103,7 +103,7 @@ void uart0_send(char *data, uint32_t length) {
 }
 
 /**
- *@brief Read data from UART0
+ * Read data from UART0
  *@param data Pointer that store the data read from UART 0
  *@param length Number of bytes to read
  */
@@ -120,7 +120,7 @@ uint32_t uart0_read(char *data, uint32_t length) {
 }
 
 /**
- *@brief Read one byte from UART0
+ * Read one byte from UART0
  *@param ch Pointer that store the byte read from UART 0
  */
 uint32_t uart0_read_one_char(char *ch) {
@@ -139,7 +139,7 @@ uint32_t uart0_read_one_char(char *ch) {
 }
 
 /**
- *@brief Send data on UART3
+ * Send data on UART3
  *@param data Pointer on the datas to be sent
  *@param baudrate Number of bytes to send
  */
@@ -153,7 +153,7 @@ void uart3_send(char *data, uint32_t length) {
 }
 
 /**
- *@brief Read data from UART3
+ * Read data from UART3
  *@param data Pointer that store the data read from UART 3
  *@param length Number of bytes to read
  */
@@ -170,7 +170,7 @@ uint32_t uart3_read(char *data, uint32_t length) {
 }
 
 /**
- *@brief Read one byte from UART3
+ * Read one byte from UART3
  *@param ch Pointer that store the byte read from UART 3
  */
 uint32_t uart3_read_one_char(char *ch) {
