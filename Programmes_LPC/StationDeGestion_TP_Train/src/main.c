@@ -1,9 +1,17 @@
 /*
  *@file main.c
- *@author Swagteam
+ *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
  *@version 1.0
- *@date 1 april 2014
- *@brief main Main
+ *@date 19 June 2014
+ *@brief This function is used to control the station with a touchscreen.
+ *@brief You can select which train you want to control and it will display
+ *@brief an image on the screen that correspond with the train controlled.
+ *@brief To change the train select you need to use the rotation button.
+ *@brief To change the speed you just press on the touchscreen the button
+ *@brief with the text "Vitesse" and just increment with the rotate button.
+ *@brief To turn the lights on or off, you just need to press on the button
+ *@brief "Lumière" on the touchscreen.
+ *@brief
  */
 
 #ifdef __USE_CMSIS
@@ -18,6 +26,8 @@
 #include "stdbool.h"
 #include "SendUARTFormat.h"
 #endif
+
+/* Maximum trains available */
 #define MAX_TRAIN 100
 
 #define OPTION_SPEED 0
@@ -35,6 +45,7 @@ bool start_or_stop = 0; // 0 => stop, 1 => start
 uint8_t red[3] = { 255, 0, 0 };
 uint8_t green[3] = { 0, 255, 0 };
 uint8_t blue[3] = { 0, 0, 255 };
+uint8_t yellow[3] = { 255, 255, 0 };
 uint8_t color_button[3] = { 229, 208, 64 };
 uint8_t black[3] = { 0, 0, 0 };
 
@@ -79,11 +90,11 @@ int atoi(char *str) {
  *@details state to know which way we are turning
  */
 void EINT3_IRQHandler(void) {
+	/* If touchscreen interrupt */
 	if (LPC_GPIOINT->IO2IntStatF == (1 << 10)) {
 		/* -- Clear interrupt on the touchscreen -- */
 		LPC_GPIOINT->IO2IntClr |= 1 << 10;
 
-		//flag_interrupt = 1;
 		/* if anti-rebound is not running */
 		if (!LPC_TIM0->TCR) {
 			LPC_TIM0->MR0 = LPC_TIM0->TC + 25000; /* Interruption in the next 1ms */
@@ -96,11 +107,12 @@ void EINT3_IRQHandler(void) {
 		if ((LPC_GPIO2->FIOPIN & (1 << 5)) == (1 << 5)) {
 			switch (option_selected) {
 			case OPTION_SPEED:
-				if (speed_train[n_train] < 1000) {
+				if ((speed_train[n_train] + 50) < 1000) {
 					speed_train[n_train] = speed_train[n_train] + 50;
 					send_speed(n_train, speed_train[n_train]);
-					//Write_string_with_background("0   ", 170, 280, black,color_button);
-					//Write_string_with_background(itoa(speed_train[n_train], 10), 170, 280, black,color_button);
+				} else {
+					speed_train[n_train] = 1000;
+					send_speed(n_train, 1000);
 				}
 				break;
 			case OPTION_TRAIN_NUMBER:
@@ -112,6 +124,58 @@ void EINT3_IRQHandler(void) {
 					/* Show the speed value of the train selected */
 					Write_string_with_background("0   ", 170, 280, black, color_button);
 					Write_string_with_background(itoa(speed_train[n_train], 10), 170, 280, black, color_button);
+
+					/* Erase arrow tip */
+					change_zone_color(55, 70, 280, 300, color_button);
+					change_zone_color(30, 40, 280, 300, color_button);
+					/* Draw new arrow */
+					if (train_direction[n_train] == 0)
+						draw_arrow_left(30, 290, 4, 8, 35, black);
+					else
+						draw_arrow_right(30, 290, 4, 8, 35, black);
+
+					/* Actualize lights states */
+					if(lights[n_train] == 1)
+						display_lights(yellow, 10);
+					else
+						display_lights(color_button, 10);
+
+					switch(n_train)
+					{
+					case 5:
+						Set_cursor(30, 82);
+						Create_partial_screen(82, 231, 30, 209);
+						Read_SD_multi_block(611, 769);
+						break;
+					case 44:
+						Set_cursor(30, 82);
+						Create_partial_screen(82, 231, 30, 209);
+						Read_SD_multi_block(1091, 1249);
+						break;
+					case 14:
+						Set_cursor(30, 82);
+						Create_partial_screen(82, 231, 30, 209);
+						Read_SD_multi_block(931, 1089);
+						break;
+					case 66:
+						Set_cursor(30, 82);
+						Create_partial_screen(82, 231, 30, 209);
+						Read_SD_multi_block(771, 929);
+						break;
+					/* Trains without images */
+					default :
+						/* We just need to actuliaze if the last train had an image */
+						if((n_train - 1 == 5) || (n_train - 1 == 14)
+								|| (n_train - 1 == 44) || (n_train - 1 == 66))
+						{
+							Set_cursor(30, 82);
+							Create_partial_screen(82, 231, 30, 209);
+							/* Image with a interrogation point */
+							Read_SD_multi_block(451, 609);
+						}
+						break;
+						break;
+					}
 				}
 				break;
 			}
@@ -119,11 +183,12 @@ void EINT3_IRQHandler(void) {
 		} else {
 			switch (option_selected) {
 			case OPTION_SPEED:
-				if (speed_train[n_train] > 0) {
+				if ((speed_train[n_train] - 50) > 0) {
 					speed_train[n_train] = speed_train[n_train] - 50;
 					send_speed(n_train, speed_train[n_train]);
-					//Write_string_with_background("0   ", 170, 280, black,color_button);
-					//Write_string_with_background(itoa(speed_train[n_train], 10), 170, 280, black,color_button);
+				} else {
+					speed_train[n_train] = 0;
+					send_speed(n_train, 0);
 				}
 				break;
 			case OPTION_TRAIN_NUMBER:
@@ -135,6 +200,52 @@ void EINT3_IRQHandler(void) {
 					/* Show the speed value of the train selected */
 					Write_string_with_background("0   ", 170, 280, black, color_button);
 					Write_string_with_background(itoa(speed_train[n_train], 10), 170, 280, black, color_button);
+
+					/* Erase tip on the arrow */
+					change_zone_color(55, 70, 280, 300, color_button);
+					change_zone_color(30, 40, 280, 300, color_button);
+					/* Draw new arrow */
+					if (train_direction[n_train] == 1)
+						draw_arrow_right(30, 290, 4, 8, 35, black);
+					else
+						draw_arrow_left(30, 290, 4, 8, 35, black);
+
+					if(lights[n_train] == 1)
+						display_lights(yellow, 10);
+					else
+						display_lights(color_button, 10);
+
+					switch(n_train)
+					{
+					case 5:
+						Set_cursor(30, 82);
+						Create_partial_screen(82, 231, 30, 209);
+						Read_SD_multi_block(611, 769);
+						break;
+					case 44:
+						Set_cursor(30, 82);
+						Create_partial_screen(82, 231, 30, 209);
+						Read_SD_multi_block(1091, 1249);
+						break;
+					case 14:
+						Set_cursor(30, 82);
+						Create_partial_screen(82, 231, 30, 209);
+						Read_SD_multi_block(931, 1089);
+						break;
+					case 66:
+						Set_cursor(30, 82);
+						Create_partial_screen(82, 231, 30, 209);
+						Read_SD_multi_block(771, 929);
+						break;
+					default :
+						if((n_train + 1 == 5) || (n_train + 1 == 14) || (n_train + 1 == 44) || (n_train + 1 == 66))
+						{
+							Set_cursor(30, 82);
+							Create_partial_screen(82, 231, 30, 209);
+							Read_SD_multi_block(451, 609);
+						}
+						break;
+					}
 				}
 				break;
 			}
@@ -160,14 +271,7 @@ int main(void) {
 
 	/* Wait screen to be ready */
 	int var;
-	for (var = 0; var < 10000000; ++var)
-		;
-
-	for (var = 0; var < MAX_TRAIN; var++) {
-		train_direction[var] = 1;
-		speed_train[var] = 0;
-		lights[var] = 1;
-	}
+	for (var = 0; var < 10000000; ++var);
 
 	Init_Extlab2();
 	Init_Rotate_button();
@@ -179,6 +283,8 @@ int main(void) {
 	/* Display size = 320x240 */
 	Create_partial_screen(0, 319, 0, 239);
 
+	/* Init UART to use on XBEE */
+	uart3_init(9600);
 
 	/* -- Init touchscreen and configuration anti-rebound -- */
 	Init_SPI_master_mode(0, 0, 300000, 8);
@@ -188,19 +294,26 @@ int main(void) {
 
 	init_SD();
 	//interface
-	//Read_SD_multi_block(0,449);
+	Read_SD_multi_block(0, 449);
 	//LOCO ROUGE
-	//Set_cursor(0, 0);
-	//Create_partial_screen(0, 149, 0, 179);
-	//Read_SD_multi_block(444,609);
+	/*Set_cursor(30, 82);
+	Create_partial_screen(82, 231, 30, 209);
+	Read_SD_multi_block(931, 1089);*/
+	// ???
+	/*Set_cursor(30, 82);
+	Create_partial_screen(82, 231, 30, 209);
+	Read_SD_multi_block(451, 609);
 	//LOCO VERTE
-	//Read_SD_multi_block(610,768);
+	Set_cursor(30, 82);
+	Create_partial_screen(82, 231, 30, 209);
+	Read_SD_multi_block(771, 929);
+	//LOCO ROUGE 2
+	Set_cursor(30, 82);
+	Create_partial_screen(82, 231, 30, 209);
+	Read_SD_multi_block(1091, 1249);*/
 
 	/* Restore frequency used with the touchscreen */
 	Change_Frequency_SPI(SPI_RATE_TOUCHSCREEN);
-
-	/* Init UART to use on XBEE */
-	uart3_init(9600);
 
 	/* Add buttons to specifics positions */
 	AddButton("START_STOP", 30, 90, 10, 70);
@@ -225,6 +338,17 @@ int main(void) {
 
 	/* Draw arrow */
 	draw_arrow_right(30, 290, 4, 8, 35, black);
+
+	/* Initialization all train informations */
+	for (var = 0; var < MAX_TRAIN; var++) {
+		train_direction[var] = 1;
+		speed_train[var] = 0;
+		lights[var] = 1;
+		send_direction(var, 1);
+		send_lights(var, 1);
+	}
+
+	display_lights(yellow, 10);
 
 	/* Char read on uart */
 	char ch;
@@ -264,12 +388,17 @@ int main(void) {
 				} else if (!strcmp(button_name, "TRAIN_NUMBER")) {
 					option_selected = OPTION_TRAIN_NUMBER;
 				} else if (!strcmp(button_name, "DIRECTION")) {
-					send_direction(n_train, train_direction[n_train]);
+					send_direction(n_train, !train_direction[n_train]);
+					bool test = !train_direction[n_train];
+					send_speed(n_train, 0);
+					speed_train[n_train] = 0;
+					/* Show the speed value of the train selected */
+					Write_string_with_background("0   ", 170, 280, black, color_button);
+					Write_string_with_background(0, 170, 280, black, color_button);
 				} else if (!strcmp(button_name, "SPEED")) {
 					option_selected = OPTION_SPEED;
 				} else if (!strcmp(button_name, "LIGHTS")) {
 					send_lights(n_train, !lights[n_train]);
-					//lights[n_train] = !lights[n_train];
 				}
 			}
 			flag_interrupt = 0;
@@ -297,12 +426,19 @@ int main(void) {
 					if (data_read[4] == '1') {
 						//ChangeDirection(&str,n_train,FORWARD_TRAIN);
 						train_direction[tmp_train] = data_read[4] - '0';
+						if (tmp_train == n_train) {
+							change_zone_color(55, 70, 280, 300, color_button);
+							change_zone_color(30, 40, 280, 300, color_button);
+							draw_arrow_right(30, 290, 4, 8, 35, black);
+						}
 					} else if (data_read[4] == '0') {
 						//ChangeDirection(&str,n_train,BACK_TRAIN);
 						train_direction[tmp_train] = data_read[4] - '0';
-						/*if (tmp_train = n_train) {
-						 draw_arrow_right(30, 290);
-						 }*/
+						if (tmp_train == n_train) {
+							change_zone_color(55, 70, 280, 300, color_button);
+							change_zone_color(30, 40, 280, 300, color_button);
+							draw_arrow_left(30, 290, 4, 8, 35, black);
+						}
 					}
 				} else if (data_read[0] == 'L' && data_read[3] == 'L') {
 					char tmp_char[4];
@@ -313,6 +449,14 @@ int main(void) {
 					int tmp_train = atoi(tmp_char);
 
 					lights[tmp_train] = (data_read[4] - '0');
+
+					if(tmp_train == n_train)
+					{
+						if(lights[n_train] == 1)
+							display_lights(yellow, 10);
+						else
+							display_lights(color_button, 10);
+					}
 				}
 				break;
 			case 9:

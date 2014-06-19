@@ -50,8 +50,7 @@ void Change_Frequency_SPI(uint32_t SPI_rate) {
 void Write_only_SPI_8bits(uint8_t data) {
 	LPC_SPI->SPDR = data;
 	/* Wait the end of transmission */
-	while (!(LPC_SPI->SPSR & (1 << SPIF)))
-		;
+	while (!(LPC_SPI->SPSR & (1 << SPIF)));
 }
 /**
  *@brief send data on SPI bus and read the data received during the

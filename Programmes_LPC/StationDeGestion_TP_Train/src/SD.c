@@ -52,9 +52,10 @@ void Read_SD_one_block(uint32_t n_block) {
 }
 
 void Read_SD_multi_block(uint32_t n_block_depart,uint32_t n_block_arrive) {
-	uint8_t offset = n_block_depart; int i;
+	uint8_t offset = 0; int i = 0;
+	k = 0;
 	uint8_t pixel_to_next_page[2];
-	for (y = n_block_depart; y < n_block_arrive; y++) {
+	for (y = n_block_depart; y <= n_block_arrive; y++) {
 		Read_SD_one_block(y);
 
 		Select_display_bus();

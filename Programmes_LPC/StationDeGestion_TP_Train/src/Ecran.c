@@ -255,3 +255,44 @@ void draw_arrow_left(uint16_t x_start, uint16_t y_start, uint8_t thickness, uint
 		}
 	}
 }
+
+void display_lights(uint8_t *color, uint8_t length)
+{
+	int i;
+	Set_cursor(110-length, 283);
+	for (i = 0; i < length; i++)
+		Write_pixel(color[0], color[1], color[2]);
+	Set_cursor(110-length, 284);
+	for (i = 0; i < length; i++)
+		Write_pixel(color[0], color[1], color[2]);
+	Set_cursor(110-length, 288);
+	for (i = 0; i < length; i++)
+		Write_pixel(color[0], color[1], color[2]);
+	Set_cursor(110-length, 289);
+	for (i = 0; i < length; i++)
+		Write_pixel(color[0], color[1], color[2]);
+	Set_cursor(110-length, 292);
+	for (i = 0; i < length; i++)
+		Write_pixel(color[0], color[1], color[2]);
+	Set_cursor(110-length, 293);
+	for (i = 0; i < length; i++)
+		Write_pixel(color[0], color[1], color[2]);
+	Set_cursor(131, 283);
+	for (i = 0; i < length; i++)
+		Write_pixel(color[0], color[1], color[2]);
+	Set_cursor(131, 284);
+	for (i = 0; i < length; i++)
+		Write_pixel(color[0], color[1], color[2]);
+	Set_cursor(131, 288);
+	for (i = 0; i < length; i++)
+		Write_pixel(color[0], color[1], color[2]);
+	Set_cursor(131, 289);
+	for (i = 0; i < length; i++)
+		Write_pixel(color[0], color[1], color[2]);
+	Set_cursor(131, 292);
+	for (i = 0; i < length; i++)
+		Write_pixel(color[0], color[1], color[2]);
+	Set_cursor(131, 293);
+	for (i = 0; i < length; i++)
+		Write_pixel(color[0], color[1], color[2]);
+}

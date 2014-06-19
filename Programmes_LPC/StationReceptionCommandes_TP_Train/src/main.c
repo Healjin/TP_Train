@@ -37,7 +37,10 @@ void CAN_IRQHandler(){
 
 	case 0xB :
 	case 0xA:		// Direction
-		send_direction(str.data[2] << 8 | str.data[3], str.data[4]-1);
+		if(str.data[4] == 2)
+			send_direction(str.data[2] << 8 | str.data[3], 0);
+		else
+			send_direction(str.data[2] << 8 | str.data[3], 1);
 		break;
 
 	case 0xD :
