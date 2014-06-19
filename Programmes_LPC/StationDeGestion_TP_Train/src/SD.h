@@ -1,13 +1,11 @@
 /*
-*@file police.h
-*@author Swagteam
-*@version 1.0
-*@date 11 march 2014
-*@brief content constants and header of functions used on police.c
-*/
-#ifndef SD_H_
-#define SD_H_
-
+ *@file SD.h
+ *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
+ *@version 1.0
+ *@date 19 June 2014
+ *@briefs Resume functions on SD.c
+ */
+ 
 #include "LPC17xx.h"
 #include <cr_section_macros.h>
 #include "SPI.h"
