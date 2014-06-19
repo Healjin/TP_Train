@@ -1,9 +1,9 @@
 /**
  *@file uart.c
- *@author Swagteam
+ *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
  *@version 1.0
- *@date June 2014
- *@brief Contain all fonction to initzialise, write and read on UART 0 and 3
+ *@date 19 June 2014
+ *@brief Contain all functions to initialize, write and read on UART 0 and 3
  */
 #include "LPC17xx.h"
 #include "uart.h"

@@ -1,8 +1,8 @@
-/*
+/**
  *@file police.c
- *@author ITI_2
+ *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
  *@version 1.0
- *@date 11 march 2014
+ *@date 19 June 2014
  *@brief Write chosen letter on screen
  */
 #include "police.h"
@@ -708,7 +708,7 @@ void Write_char(char character, uint16_t x, uint16_t y, uint8_t *color_character
 		}
 	}
 }
-/*
+/**
  *@brief Write chosen letter on screen with background
  *@param string
  *@param x	-->  position x on the screen (0 - 239)

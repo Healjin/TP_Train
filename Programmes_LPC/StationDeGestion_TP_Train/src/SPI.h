@@ -1,8 +1,9 @@
-/*
- * SPI.h
- *
- *  Created on: 14 mars 2014
- *      Author: David
+/**
+ *@file SPI.h
+ *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
+ *@version 1.0
+ *@date 19 June 2014
+ *@brief Contain all function to communication with the SPI.
  */
 
 #ifndef SPI_H_

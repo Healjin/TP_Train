@@ -1,9 +1,9 @@
 /**
  *@file uart.h
- *@author Swagteam
+ *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
  *@version 1.0
- *@date 25 march 2014
- *@brief
+ *@date 19 June 2014
+ *@brief Contain all functions to initialize, write and read on UART 0 and 3
  */
 #ifndef UART0_INIT_H
 #define UART0_INIT_H

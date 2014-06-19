@@ -1,8 +1,9 @@
-/*
- * Touchscreen.c
- *
- *  Created on: 15 mars 2014
- *      Author: David
+/**
+ *@file Touchscreen.c
+ *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
+ *@version 1.0
+ *@date 19 June 2014
+ *@brief Contain all function configure and read the values from the touchscreen.
  */
 #include "Touchscreen.h"
 

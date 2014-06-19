@@ -1,4 +1,4 @@
-/*
+/**
  *@file drawScreen.h
  *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
  *@version 1.0
@@ -20,6 +20,5 @@ void draw_arrow_right(uint16_t x_start, uint16_t y_start, uint8_t thickness, uin
 void draw_arrow_left(uint16_t x_start, uint16_t y_start, uint8_t thickness, uint8_t heigth_arrow, uint8_t length,
 		uint8_t *color);
 void display_lights(uint8_t *color, uint8_t length);
-
 
 #endif /* DRAWSCREEN_H_ */

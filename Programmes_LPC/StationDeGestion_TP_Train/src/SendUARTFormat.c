@@ -1,4 +1,4 @@
-/*
+/**
  *@file SendUARTFormat.c
  *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
  *@version 1.0
@@ -9,7 +9,7 @@
 
 #include "SendUARTFormat.h"
 
-/*
+/**
  *@brief Send the speed on the UART to control the chosen train.
  *@param n_train Train number
  *@param speed_train The speed sent to the train
@@ -26,7 +26,7 @@ void send_speed(uint8_t n_train, uint16_t speed_train) {
 	uart3_send(data_send, 9); // Send data on uart
 }
 
-/*
+/**
  *@brief Send the direction on the UART to control the chosen train.
  *@param n_train Train number
  *@param direction The direction sent to the train
@@ -40,7 +40,7 @@ void send_direction(uint8_t n_train, bool direction) {
 	uart3_send(data_send, 6); // Send data on uart
 }
 
-/*
+/**
  *@brief Send the state of the lights on the UART to control the chosen train.
  *@param n_train Train number
  *@param state Turn on (true) or turn off (false) on the chosen train.

@@ -1,4 +1,4 @@
-/*
+/**
  *@file button.h
  *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
  *@version 1.0

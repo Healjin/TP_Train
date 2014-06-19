@@ -1,8 +1,8 @@
-/*
+/**
 *@file ControlTrain.c
-*@author Swagteam
+*@author Marques Rafael, Berger Antoine et Da Silva David
 *@version 1.0
-*@date 1 April 2014
+*@date 1 avril 2014
 *@brief BusCan configuration
 */
 

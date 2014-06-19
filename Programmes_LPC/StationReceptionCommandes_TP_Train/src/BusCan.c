@@ -1,4 +1,4 @@
-/*
+/**
 *@file BusCan.c
 *@author Marques Rafael, Berger Antoine et David Da Silva
 *@version 1.0
@@ -6,7 +6,7 @@
 *@brief BusCan configuration initialization, write ans read busCan
 */
 #include "BusCan.h"
-/*
+/**
 *@brief Initialization BusCan
 */
 void Init_BusCan(){
@@ -35,7 +35,7 @@ void Init_BusCan(){
 	LPC_CANAF->AFMR = 2;
 	NVIC_EnableIRQ(CAN_IRQn);
 }
-/*
+/**
 *@brief Write BusCan
 *@param str_bus
 *@param			uint32_t id_Bus
@@ -64,7 +64,7 @@ void Write_BusCan(str_bus *s){
 
 	LPC_CAN1->CMR |= 0x01;							//Transmission
 }
-/*
+/**
 *@brief Read BusCan
 *@param str_bus
 *@param			uint32_t id_Bus

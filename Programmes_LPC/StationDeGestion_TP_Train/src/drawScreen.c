@@ -1,4 +1,4 @@
-/*
+/**
  *@file drawScreen.c
  *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
  *@version 1.0
@@ -73,7 +73,8 @@ void draw_arrow_left(uint16_t x_start, uint16_t y_start, uint8_t thickness, uint
 		uint8_t *color) {
 
 	/* PartialScreen to draw the line */
-	Create_partial_screen(y_start - thickness / 2, y_start + thickness / 2, x_start + thickness - 1, x_start + length - 1 + thickness - 1);
+	Create_partial_screen(y_start - thickness / 2, y_start + thickness / 2, x_start + thickness - 1,
+			x_start + length - 1 + thickness - 1);
 	Set_cursor(x_start + thickness - 1, y_start - thickness / 2);
 
 	int i;
@@ -101,25 +102,24 @@ void draw_arrow_left(uint16_t x_start, uint16_t y_start, uint8_t thickness, uint
  *@param color Sunbeams color [Red, Green, Blue]
  *@param length Length of the sunbeams
  */
-void display_lights(uint8_t *color, uint8_t length)
-{
+void display_lights(uint8_t *color, uint8_t length) {
 	int i;
-	Set_cursor(110-length, 283);
+	Set_cursor(110 - length, 283);
 	for (i = 0; i < length; i++)
 		Write_pixel(color[0], color[1], color[2]);
-	Set_cursor(110-length, 284);
+	Set_cursor(110 - length, 284);
 	for (i = 0; i < length; i++)
 		Write_pixel(color[0], color[1], color[2]);
-	Set_cursor(110-length, 288);
+	Set_cursor(110 - length, 288);
 	for (i = 0; i < length; i++)
 		Write_pixel(color[0], color[1], color[2]);
-	Set_cursor(110-length, 289);
+	Set_cursor(110 - length, 289);
 	for (i = 0; i < length; i++)
 		Write_pixel(color[0], color[1], color[2]);
-	Set_cursor(110-length, 292);
+	Set_cursor(110 - length, 292);
 	for (i = 0; i < length; i++)
 		Write_pixel(color[0], color[1], color[2]);
-	Set_cursor(110-length, 293);
+	Set_cursor(110 - length, 293);
 	for (i = 0; i < length; i++)
 		Write_pixel(color[0], color[1], color[2]);
 	Set_cursor(131, 283);

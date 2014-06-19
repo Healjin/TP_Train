@@ -1,8 +1,8 @@
 /**
  *@file ExtLab2.h
- *@author Swagteam
+ *@author Da Silva Andrade David, Antoine Berger, Dos Santos Rafael
  *@version 1.0
- *@date June 2014
+ *@date 19 June 2014
  *@brief Contain functions to control the ExtLab2 card
  */
 
